@@ -69,10 +69,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap"
         rel="stylesheet" />
     @yield('css')
+<style>
+    .font_family {
+        font-family: Tajawal!important;
+    }
+
+    .white {
+        color: whitesmoke;
+    }
+
+
+
+    .letter_spacing {
+        letter-spacing: -1px;
+    }
+
+    .width_btn {
+        width: 209px;
+        height: 35px;
+    }
+
+
+
+    .margin_top {
+        margin-top: 14px !important;
+    }
+
+
+    /* .list_style {
+        background-color: #F9F9F9;
+        border-radius: 5px;
+        padding: 3px;
+    } */
+
+
+    .footer {
+        /* height: 380px; */
+        background-color: #00A3D8;
+    }
+
+    .text_decoration {
+        text-decoration: none;
+    }
+
+    .line_height_footer {
+        line-height: 2;
+    }
+
+    .font_size {
+        font-size: 14px;
+    }
+
+    .blue_background {
+        background-color: #00A3D8;
+        color: whitesmoke;
+    }
+
+     ::placeholder {
+        color: whitesmoke;
+        /* Change the color to your desired color */
+    }
+
+    .blue_background:focus {
+        border: 1px solid whitesmoke;
+        background-color: #00A3D8;
+        outline: none;
+        color: whitesmoke;
+    }
+</style>
 </head>
 
 <body
-    class="envato_tk_templates-template envato_tk_templates-template-elementor_header_footer single single-envato_tk_templates postid-16 elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-16 letter-spacing padding_bottom font_family">
+    class="envato_tk_templates-template envato_tk_templates-template-elementor_header_footer single single-envato_tk_templates postid-16 elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-16 letter-spacing padding_bottom font_family pb-0">
     <div id="root">
         @include('layouts.partials.header')
         @yield('content')
