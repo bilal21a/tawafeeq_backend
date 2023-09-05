@@ -46,7 +46,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/CS-Interface/style.css" />
+    <link rel="stylesheet" href="{{ asset('css/CS-Interface/style.css') }}" />
     <!-- Font Tags End -->
     <!-- Vendor Styles Start -->
     <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.min.css') }}" />
@@ -62,7 +62,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-    <script src="{{ asset('assets/js/base/loader.js') }}"></script>
+    <script src="{{ asset('js/base/loader.js') }}"></script>
 
 
 
@@ -169,7 +169,7 @@
     <!-- Vendor Scripts End -->
 
     <!-- Template Base Scripts Start -->
-    <script src="font/CS-Line/csicons.min.js "></script>
+    <script src="{{ asset('font/CS-Line/csicons.min.js') }}"></script>
     <script src="{{ asset('js/base/helpers.js') }}"></script>
     <script src="{{ asset('js/base/globals.js') }}"></script>
     <script src="{{ asset('js/base/nav.js') }} "></script>
@@ -184,8 +184,6 @@
 
     <script src="{{ asset('js/forms/layouts.js') }} "></script>
     <!-- Vendor Scripts End -->
-    <!-- Page Specific Scripts End -->
-
     @yield('js')
 </body>
 
