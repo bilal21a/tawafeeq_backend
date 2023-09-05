@@ -88,7 +88,7 @@
 
 
     <script src="{{ asset('icon/acorn-icons.js') }}"></script>
-    <script src="{{ asset('assets/img/icon/acorn-icons-interface.js') }}"></script>
+    <script src="{{ asset('icon/acorn-icons-interface.js') }}"></script>
 
     <script src="{{ asset('js/cs/scrollspy.js') }}"></script>
 
@@ -115,7 +115,7 @@
     <script src="{{ asset('js/scripts.js') }} "></script>
 
     <script src="{{ asset('js/forms/layouts.js') }} "></script>
-
+    <!-- Vendor Scripts End -->
     <!-- Page Specific Scripts End -->
 
     @yield('js')
