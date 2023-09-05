@@ -15,34 +15,29 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('profile', function () {
     return view('profile_new');
-});
+})->name("profile");
+
 Route::get('about', function () {
     return view('about');
-});
+})->name("about");
+
 Route::get('contact', function () {
     return view('contact');
-});
+})->name("contact");
 
 Route::get('login_page', function () {
     return view('login_page');
-});
+})->name("login_page");
 
 Route::get('pricing', function () {
     return view('pricing');
-});
-
-Route::get('profile_new', function () {
-    return view('profile_new');
-});
+})->name("pricing");
 
 Route::get('register', function () {
     return view('register');
-});
+})->name("register");
 
 Route::get('tawafeeq', function () {
     return view('tawafeeq');
-});
+})->name("tawafeeq");
 
-Route::get('welcome', function () {
-    return view('welcome');
-});

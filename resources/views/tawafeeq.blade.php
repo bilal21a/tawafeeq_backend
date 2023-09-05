@@ -17,6 +17,7 @@
         .star-row {
             display: inline-flex;
         }
+
         .section_align {
             margin-left: auto;
             width: 70%;
@@ -24,13 +25,12 @@
         }
 
         .backgound_1 {
-            background-image: url('tawfeeq_background_1.png');
+            background-image: url('{{ asset('assets/img/tawfeeq_background_1.png') }}');
             background-repeat: round;
-            width: 670px !important;
         }
 
         .backgound_2 {
-            background-image: url('tawfeeq_background_2.png');
+            background-image: url('{{ asset('assets/img/tawfeeq_background_2.png') }}');
             background-repeat: round;
         }
 
@@ -150,8 +150,8 @@
                                 </div>
                                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 p-sm-0">
                                     <div class="">
-                                        <img class="width_couple_pic" width="400px" src="{{ asset('assets/img/find_partner.png') }}" alt=""
-                                            srcset="">
+                                        <img class="width_couple_pic" width="400px"
+                                            src="{{ asset('assets/img/find_partner.png') }}" alt="" srcset="">
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@
             <h2 class="" dir="rtl"><span class="fw-bold fs-4">الأعضاء الجدد</span>(عرض الكل)</h2>
             <div class="slide-container swiper">
                 <div class="slide-content">
-                    <div class="card-wrapper swiper-wrapper">
+                    <div class="card-wrapper swiper-wrapper" style="height: unset">
                         <div class="card swiper-slide" style="width: unset !important;">
                             <div class=" p-0 width_silder ">
                                 <div class="card" dir="rtl">
@@ -181,7 +181,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -220,7 +221,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -259,7 +261,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -298,7 +301,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -337,7 +341,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -376,7 +381,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -415,7 +421,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -454,7 +461,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -493,7 +501,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -532,7 +541,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -571,7 +581,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -610,7 +621,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -649,7 +661,7 @@
             <!-- Second Slider -->
             <div class="slide-container swiper">
                 <div class="slide-content">
-                    <div class="card-wrapper swiper-wrapper">
+                    <div class="card-wrapper swiper-wrapper " style="height: unset">
                         <div class="card swiper-slide" style="width: unset !important;">
                             <div class=" p-0 width_silder ">
                                 <div class="card" dir="rtl">
@@ -663,7 +675,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -702,7 +715,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -741,7 +755,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -780,7 +795,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -819,7 +835,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -858,7 +875,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -897,7 +915,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -936,7 +955,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -975,7 +995,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                            class="card-img-top" alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -1014,7 +1035,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -1053,7 +1075,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                            class="card-img-top" alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -1092,7 +1115,8 @@
                                             class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                                             style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                                             30 دقيقة</span>
-                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                                        <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top"
+                                            alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
 
@@ -1129,17 +1153,20 @@
             <h2 class="" dir="rtl"><span class="fw-bold fs-4">خدماتنا</span>(عرض الكل)</h2>
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <div class="card h-100 hover-scale-up background_color pe-3 backgound_1">
-                        <div class="card-body pb-0 ps-0">
+                    <div class="card h-100 hover-scale-up  backgound_1 background_color">
+                        <div class="card-body pb-0">
                             <div class="d-flex flex-column">
                                 <div class="display-4"> خدمات تجهيز الأفراح </div>
                             </div>
-
-                            <p class="line_height fw-light">المحامي الاقرب لك للحصول على استشارة المستشار القانوني
-                                المختص في الاحوال الشخصية في حدوث اي خلاف بعقد النجاح او مشاكل زوجية او مشاكل عائلية
-                                لمعرفة ما لك وما عليك في قانون دولتك. إخلاء مسؤولية: ( أي معاملة مع مزودي الخدمات
-                                على مسؤوليتك الخاصة )
-                            </p>
+                            <div class="d-flex flex-column">
+                                <div class="d-flex flex-column">
+                                    <p class="line_height fw-light">المحامي الاقرب لك للحصول على استشارة المستشار القانوني
+                                        المختص في الاحوال الشخصية في حدوث اي خلاف بعقد النجاح او مشاكل زوجية او مشاكل عائلية
+                                        لمعرفة ما لك وما عليك في قانون دولتك. إخلاء مسؤولية: ( أي معاملة مع مزودي الخدمات
+                                        على مسؤوليتك الخاصة )
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1169,37 +1196,37 @@
 
 
 @section('js')
-<script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
-<script>
-    var swiper = new Swiper(".slide-content", {
-        slidesPerView: 5,
-        spaceBetween: 25,
-        loop: true,
-        centerSlide: 'true',
-        fade: 'true',
-        grabCursor: 'true',
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            dynamicBullets: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
+    <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
+    <script>
+        var swiper = new Swiper(".slide-content", {
+            slidesPerView: 5,
+            spaceBetween: 25,
+            loop: true,
+            centerSlide: 'true',
+            fade: 'true',
+            grabCursor: 'true',
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
 
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 2,
+                },
+                950: {
+                    slidesPerView: 3,
+                },
             },
-            520: {
-                slidesPerView: 2,
-            },
-            950: {
-                slidesPerView: 3,
-            },
-        },
-    });
-</script>
+        });
+    </script>
 @endsection

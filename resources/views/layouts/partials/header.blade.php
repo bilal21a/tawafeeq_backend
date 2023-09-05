@@ -165,38 +165,38 @@
         <div class="menu-container flex-grow-1">
             <ul id="menu" class="menu">
                 <li class="">
-                    <a href="tawafeeq.html">
+                    <a href="{{ route('tawafeeq') }}">
                         <span>الصفحة الرئيسية</span>
                     </a>
                 </li>
                 <li>
-                    <a href="about.html">
+                    <a href="{{ route('about') }}">
                         <span class="label">من نحن</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pricing.html">
+                    <a href="{{ route('pricing') }}">
                         <span class="label">الباقات</span>
                     </a>
 
                 </li>
                 <li class="mega">
-                    <a href="contact.html">
+                    <a href="{{ route('contact') }}">
                         <span class="label">تواصل معنا</span>
                     </a>
                 </li>
                 <li class="mega">
-                    <a href="login_page.html">
+                    <a href="{{ route('login_page') }}">
                         <span class="label">تسجيل الدخول </span>
                     </a>
                 </li>
                 <li class="mega">
-                    <a href="register.html">
+                    <a href="{{ route('register') }}">
                         <span class="label"> تسجيل</span>
                     </a>
                 </li>
                 <li class="mega">
-                    <a href="profile_new.html">
+                    <a href="{{ route('profile') }}">
                         <span class="label"> After Login</span>
                     </a>
                 </li>

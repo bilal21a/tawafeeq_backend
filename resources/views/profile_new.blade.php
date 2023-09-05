@@ -401,7 +401,7 @@
                                                         <div class=" col-4">
                                                             <div>
                                                                 <img class="img_radius" width="55px" height="55px"
-                                                                    src="homepage_img/woman.png"
+                                                                    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                     alt="User Profile Image">
                                                             </div>
                                                             <!-- User profile image -->
@@ -422,7 +422,7 @@
                                                         <div class=" col-4">
                                                             <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                src="homepage_img/woman.png" alt="User Profile Image">
+                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
@@ -440,7 +440,7 @@
                                                         <div class=" col-4">
                                                             <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                src="homepage_img/woman.png" alt="User Profile Image">
+                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
@@ -458,7 +458,7 @@
                                                         <div class=" col-4">
                                                             <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                src="homepage_img/woman.png" alt="User Profile Image">
+                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
@@ -476,7 +476,7 @@
                                                         <div class=" col-4">
                                                             <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                src="homepage_img/woman.png" alt="User Profile Image">
+                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
@@ -494,7 +494,7 @@
                                                         <div class=" col-4">
                                                             <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                src="homepage_img/woman.png" alt="User Profile Image">
+                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
@@ -527,7 +527,7 @@
                                                                         <div class="col-auto">
                                                                             <div
                                                                                 class="sh-6 sw-6 d-inline-block position-relative">
-                                                                                <img src="homepage_img/woman.png"
+                                                                                <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                     class="img-fluid rounded-xl border border-2 border-foreground profile"
                                                                                     alt="thumb">
                                                                                 <i
@@ -576,7 +576,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -601,7 +601,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -627,7 +627,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -655,7 +655,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -694,7 +694,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -753,7 +753,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -845,7 +845,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -872,7 +872,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -962,7 +962,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -988,7 +988,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -1014,7 +1014,7 @@
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="homepage_img/woman.png"
+                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -1192,7 +1192,7 @@
                                                     <input class="file-input" accept="image/jpeg, image/png" multiple
                                                         type="file">
                                                     <div class="file-input-label w-md-75 w-sm-100">
-                                                        <img class="height_input_img w-100 h-100" src="image.png"
+                                                        <img class="height_input_img w-100 h-100" src="{{ asset('assets/img/image.png') }}"
                                                             alt="image placeholder">
                                                         <p>اسحب الملف هنا</p>
                                                     </div>
