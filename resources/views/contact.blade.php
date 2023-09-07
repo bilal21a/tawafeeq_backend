@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('css')
-
 @endsection
 @section('content')
 <main>
@@ -34,9 +33,7 @@
                                                     <i data-acorn-icon="twitter" class="ms-2" data-acorn-size="24"></i>
                                                     <i data-acorn-icon="instagram" class="ms-2" data-acorn-size="24"></i>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +49,6 @@
                                                     <p class="fw-bolder fs-6 text-black d-flex justify-content-start">المحتوى:*
                                                     </p>
                                                     <textarea class="form-control form-control-sm  input_background" name="content" id="" cols="30" rows="5"></textarea>
-
                                                     <input class="btn color_green_button mt-4" type="submit" value="تسجيل الدخول" style="background-color: #1ED67A;">
                                                 </form>
                                             </div>
@@ -65,7 +61,6 @@
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0"></div>
             </div>
-            <!-- Layout Footer End -->
         </div>
 </main>
 @endsection

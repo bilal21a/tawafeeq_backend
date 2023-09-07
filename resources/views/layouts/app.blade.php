@@ -41,31 +41,23 @@
     <meta name="msapplication-square150x150logo" content="{{ asset('assets/img/favicon/mstile-150x150.png') }}" />
     <meta name="msapplication-wide310x150logo" content="{{ asset('assets/img/favicon/mstile-310x150.png') }}" />
     <meta name="msapplication-square310x310logo" content="{{ asset('assets/img/favicon/mstile-310x310.png') }}" />
-    <!-- Favicon Tags End -->
-    <!-- Font Tags Start -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/CS-Interface/style.css') }}" />
-    <!-- Font Tags End -->
-    <!-- Vendor Styles Start -->
     <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/vendor/OverlayScrollbars.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/vendor/baguetteBox.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/vendor/glide.core.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/vendor/select2.min.css') }}" />
-
     <link rel="stylesheet" href="{{ asset('css/vendor/select2-bootstrap4.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap-datepicker3.standalone.min.css') }}" />
-
     <link rel="stylesheet" href="{{ asset('css/vendor/tagify.css') }}" />
-
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/profile_new.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/tawfeeq.css') }}" />
     <script src="{{ asset('js/base/loader.js') }}"></script>
-
-
-
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap"
         rel="stylesheet" />
     @yield('css')
@@ -88,23 +80,11 @@
         width: 209px;
         height: 35px;
     }
-
-
-
     .margin_top {
         margin-top: 14px !important;
     }
 
-
-    /* .list_style {
-        background-color: #F9F9F9;
-        border-radius: 5px;
-        padding: 3px;
-    } */
-
-
     .footer {
-        /* height: 380px; */
         background-color: #00A3D8;
     }
 
@@ -146,29 +126,18 @@
         @yield('content')
     </div>
     @include('layouts.partials.footer')
-    <!-- Vendor Scripts Start -->
     <script src="{{ asset('js/vendor/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('js/vendor/bootstrap.bundle.min.js') }} "></script>
     <script src="{{ asset('js/vendor/OverlayScrollbars.min.js') }} "></script>
     <script src="{{ asset('js/vendor/autoComplete.min.js') }} "></script>
     <script src="{{ asset('js/vendor/clamp.min.js') }}"></script>
     <script src="{{ asset('js/vendor/glide.min.js') }}"></script>
-
-
     <script src="{{ asset('icon/acorn-icons.js') }}"></script>
     <script src="{{ asset('icon/acorn-icons-interface.js') }}"></script>
-
     <script src="{{ asset('js/cs/scrollspy.js') }}"></script>
-
     <script src="{{ asset('js/vendor/select2.full.min.js') }}"></script>
-
     <script src="{{ asset('js/vendor/datepicker/bootstrap-datepicker.min.js') }}"></script>
-
     <script src="{{ asset('js/vendor/tagify.min.js') }}"></script>
-
-    <!-- Vendor Scripts End -->
-
-    <!-- Template Base Scripts Start -->
     <script src="{{ asset('font/CS-Line/csicons.min.js') }}"></script>
     <script src="{{ asset('js/base/helpers.js') }}"></script>
     <script src="{{ asset('js/base/globals.js') }}"></script>
@@ -176,14 +145,11 @@
     <script src="{{ asset('js/base/search.js') }} "></script>
     <script src="{{ asset('js/base/settings.js') }} "></script>
     <script src="js/base/init.js"></script>
-    <!-- Page Specific Scripts Start -->
     <script src="{{ asset('js/cs/glide.custom.js') }} "></script>
     <script src="{{ asset('js/plugins/carousels.js') }} "></script>
     <script src="{{ asset('js/common.js') }} "></script>
     <script src="{{ asset('js/scripts.js') }} "></script>
-
     <script src="{{ asset('js/forms/layouts.js') }} "></script>
-    <!-- Vendor Scripts End -->
     @yield('js')
 </body>
 

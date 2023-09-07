@@ -1,205 +1,5 @@
 @extends('layouts.app')
 @section('css')
-    <style>
-        .font_family {
-            font-family: Tajawal !important;
-        }
-
-        .no-bullets {
-            list-style: none;
-        }
-
-        .golden-star {
-            color: gold;
-        }
-
-        .white {
-            color: whitesmoke;
-        }
-
-        .star-row {
-            display: inline-flex;
-        }
-
-        .letter_spacing {
-            letter-spacing: -1px;
-        }
-
-        .width_btn {
-            width: 209px;
-            height: 35px;
-        }
-
-        .user-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .user-info-item sepcifyed_width {
-            display: flex;
-            align-items: center;
-        }
-
-        .user-info-label {
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
-        .user-info-value {
-            border: 0px solid #ccc;
-            padding: 5px;
-            padding-right: 10px;
-        }
-
-        .sepcifyed_width {
-            width: 250px;
-        }
-
-        .sepcifyed_width1 {
-            width: 436px;
-        }
-
-        .margin_top {
-            margin-top: 14px !important;
-        }
-
-        .file-input-container {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .file-input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .file-input-label {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 2px dashed #ccc;
-            background-color: #D4D4D4;
-            text-align: center;
-            transition: border 0.3s ease-in-out;
-        }
-
-        .file-input-label img {
-            width: 80px;
-            height: 80px;
-        }
-
-        .file-input-label p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-
-        .file-input-label:hover {
-            border-color: #007bff;
-        }
-
-        .width_100 {
-            width: 100%;
-        }
-
-        .container {
-            width: 100%;
-            color: rgb(78, 78, 78);
-            padding: 0px 20px;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-        }
-
-        td,
-        th {
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-
-        .text_align {
-            text-align: center;
-        }
-
-        .conversations__chats {
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* .list_style {
-                background-color: #F9F9F9;
-                border-radius: 5px;
-                padding: 3px;
-            } */
-
-        .three_dots {
-            margin-top: 5px;
-            align-self: baseline;
-            justify-content: center;
-            display: flex;
-        }
-
-        .img_radius {
-            border-radius: 50%;
-        }
-
-        .backgound_color {
-            width: fit-content;
-            background-color: #F5EDBD;
-        }
-
-        .textcenter {
-            margin: auto;
-            align-self: center;
-        }
-
-        .padding_bottom {
-            padding-bottom: 0px !important;
-        }
-
-        .footer {
-            /* height: 380px; */
-            background-color: #00A3D8;
-        }
-
-        .text_decoration {
-            text-decoration: none;
-        }
-
-        .line_height_footer {
-            line-height: 2;
-        }
-
-        .font_size {
-            font-size: 14px;
-        }
-
-        .blue_background {
-            background-color: #00A3D8;
-            color: whitesmoke;
-        }
-
-        ::placeholder {
-            color: whitesmoke;
-            /* Change the color to your desired color */
-        }
-
-        .blue_background:focus {
-            border: 1px solid whitesmoke;
-            background-color: #00A3D8;
-            outline: none;
-            color: whitesmoke;
-        }
-    </style>
 @endsection
 @section('content')
     <main>
@@ -214,27 +14,23 @@
                                         role="tab" type="button" aria-selected="true">الملف الشخصي</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#second"
-                                        role="tab" type="button" aria-selected="false">الرسائل</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#second" role="tab"
+                                        type="button" aria-selected="false">الرسائل</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#third"
-                                        role="tab" type="button" aria-selected="false">تأكيد الهوية</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#third" role="tab"
+                                        type="button" aria-selected="false">تأكيد الهوية</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fourth"
-                                        role="tab" type="button" aria-selected="false">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fourth" role="tab"
+                                        type="button" aria-selected="false">
                                         إشتراكاتي
                                     </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fifth"
-                                        role="tab" type="button" aria-selected="false">من زار ملفي</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fifth" role="tab"
+                                        type="button" aria-selected="false">من زار ملفي</button>
                                 </li>
-                                <!-- <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#sixth" role="tab" type="button" aria-selected="false">Sixth</button>
-                                    </li> -->
-                                <!-- An empty list to put overflowed links -->
                                 <li class="nav-item dropdown ms-auto pe-0 d-none responsive-tab-dropdown">
                                     <button class="btn btn-icon btn-icon-only btn-foreground mt-2" type="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -247,20 +43,16 @@
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="tab-pane fade active show" id="first" role="tabpanel">
-                                    <!-- This is For Personal Profile -->
                                     <div class="d-grid gap-2 d-md-flex justify-content-between">
                                         <div class="d-grid gap-2 d-flex">
-                                            <button class="btn btn-primary fs-5" type="button"><i
-                                                    data-acorn-icon="pen" class="me-2 ms-3"
-                                                    data-acorn-size="17"></i>تعديل</button>
-                                            <button class="btn btn-primary fs-5" type="button"><i
-                                                    data-acorn-icon="share" class="me-2 ms-3"
-                                                    data-acorn-size="17"></i>تعديل</button>
+                                            <button class="btn btn-primary fs-5" type="button"><i data-acorn-icon="pen"
+                                                    class="me-2 ms-3" data-acorn-size="17"></i>تعديل</button>
+                                            <button class="btn btn-primary fs-5" type="button"><i data-acorn-icon="share"
+                                                    class="me-2 ms-3" data-acorn-size="17"></i>تعديل</button>
                                         </div>
                                         <div>
-                                            <button type="button" class="btn btn-danger mb-1"><i
-                                                    data-acorn-icon="bin" class="me-2 ms-3"
-                                                    data-acorn-size="17"></i>حذف حسابي</button>
+                                            <button type="button" class="btn btn-danger mb-1"><i data-acorn-icon="bin"
+                                                    class="me-2 ms-3" data-acorn-size="17"></i>حذف حسابي</button>
                                         </div>
                                     </div>
                                     <div class="row justify-content-between">
@@ -269,7 +61,8 @@
                                                 <div class="col-md-6">
                                                     <div class="mt-3">
                                                         <img width="176px" height="176px" class="rounded-circle"
-                                                            src="{{asset('assets/img/homepage_img/man.png')}}" alt="" srcset="">
+                                                            src="{{ asset('assets/img/homepage_img/man.png') }}"
+                                                            alt="" srcset="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 align-self-center">
@@ -294,7 +87,6 @@
                                                             </div>
                                                         </li>
                                                     </ul>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -327,7 +119,6 @@
                                             <span class="user-info-label">الحالة الإجتماعية</span>
                                             <span class="user-info-value">مطلق</span>
                                         </div>
-                                        <!-- Add more items here -->
                                     </div>
                                     <div class="user-info margin_top justify-content-lg-evenly">
                                         <div class="user-info-item sepcifyed_width">
@@ -342,7 +133,6 @@
                                             <span class="user-info-label">البشرة</span>
                                             <span class="user-info-value">أبيض</span>
                                         </div>
-                                        <!-- Add more items here -->
                                     </div>
                                     <div class="user-info margin_top justify-content-lg-evenly">
                                         <div class="user-info-item sepcifyed_width">
@@ -358,7 +148,6 @@
                                             <span class="user-info-value">دراسة جامعية
                                             </span>
                                         </div>
-                                        <!-- Add more items here -->
                                     </div>
                                     <div class="user-info margin_top justify-content-lg-evenly">
                                         <div class="user-info-item sepcifyed_width">
@@ -373,7 +162,6 @@
                                             <span class="user-info-label">الالتزام الديني</span>
                                             <span class="user-info-value">متدين</span>
                                         </div>
-                                        <!-- Add more items here -->
                                     </div>
                                     <div class="user-info margin_top justify-content-lg-evenly">
                                         <div class="user-info-item sepcifyed_width">
@@ -388,9 +176,7 @@
                                             <span class="user-info-label">الالتزام الديني</span>
                                             <span class="user-info-value">متدين</span>
                                         </div>
-                                        <!-- Add more items here -->
                                     </div>
-
                                 </div>
                                 <div class="tab-pane fade" id="second" role="tabpanel">
                                     <div class="row">
@@ -404,25 +190,20 @@
                                                                     src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                     alt="User Profile Image">
                                                             </div>
-                                                            <!-- User profile image -->
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
                                                                 الزين
                                                             </p>
                                                         </div>
-
                                                     </div>
-                                                    <!-- Repeat this structure for other user profiles -->
                                                 </div>
-
-
                                                 <div class="list list_style">
                                                     <div class="row g-2 mb-2">
                                                         <div class=" col-4">
-                                                            <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
+                                                                src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
@@ -431,87 +212,64 @@
                                                         </div>
 
                                                     </div>
-                                                    <!-- Repeat this structure for other user profiles -->
                                                 </div>
-
-
                                                 <div class="list list_style">
                                                     <div class="row g-2 mb-2">
                                                         <div class=" col-4">
-                                                            <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
+                                                                src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
                                                                 بنت الدار
                                                             </p>
                                                         </div>
-
                                                     </div>
-                                                    <!-- Repeat this structure for other user profiles -->
                                                 </div>
-
-
                                                 <div class="list list_style">
                                                     <div class="row g-2 mb-2">
                                                         <div class=" col-4">
-                                                            <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
+                                                                src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
                                                                 غالية
                                                             </p>
                                                         </div>
-
                                                     </div>
-                                                    <!-- Repeat this structure for other user profiles -->
                                                 </div>
-
-
                                                 <div class="list list_style">
                                                     <div class="row g-2 mb-2">
                                                         <div class=" col-4">
-                                                            <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
+                                                                src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
                                                                 أم محمد
                                                             </p>
                                                         </div>
-
                                                     </div>
-                                                    <!-- Repeat this structure for other user profiles -->
                                                 </div>
-
-
                                                 <div class="list list_style">
                                                     <div class="row g-2 mb-2">
                                                         <div class=" col-4">
-                                                            <!-- User profile image -->
                                                             <img class="img_radius" width="55px" height="55px"
-                                                                   src="{{ asset('assets/img/homepage_img/woman.png') }}" alt="User Profile Image">
+                                                                src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                alt="User Profile Image">
                                                         </div>
                                                         <div class="col-8">
                                                             <p class="fw-bold">
                                                                 الشيخه
-
                                                             </p>
                                                         </div>
-
                                                     </div>
-                                                    <!-- Repeat this structure for other user profiles -->
                                                 </div>
-
-
                                             </div>
-
-
-
                                         </div>
                                         <div class="col-md-9 col-sm-12 d-flex">
                                             <div class="row d-flex flex-grow-1 overflow-hidden pb-2 h-100">
@@ -527,7 +285,7 @@
                                                                         <div class="col-auto">
                                                                             <div
                                                                                 class="sh-6 sw-6 d-inline-block position-relative">
-                                                                                <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                     class="img-fluid rounded-xl border border-2 border-foreground profile"
                                                                                     alt="thumb">
                                                                                 <i
@@ -546,7 +304,6 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-
                                                                 </div>
                                                                 <div class="separator-light mb-3"></div>
                                                                 <div class="h-100 mb-n2 scroll-out">
@@ -570,13 +327,12 @@
                                                                                 <div class="os-content"
                                                                                     style="padding: 0px 15px; height: 100%; width: 100%;">
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -595,13 +351,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -621,13 +376,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -649,13 +403,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -688,13 +441,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -738,8 +490,7 @@
                                                                                                         gummies
                                                                                                         marzipan
                                                                                                         croissant
-                                                                                                        lemon drops
-                                                                                                        soufflé.</span>
+                                                                                                        lemon dropssoufflé.</span>
                                                                                                     <span
                                                                                                         class="position-absolute text-extra-small text-alternate opacity-75 b-2 e-2 time">17:22</span>
                                                                                                 </div>
@@ -747,13 +498,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -782,13 +532,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end order-1">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{asset('assets/img/homepage_img/man.png')}}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/man.png') }}"
                                                                                                         class="img-fluid rounded-xl"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -812,13 +561,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end order-1">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{asset('assets/img/homepage_img/man.png')}}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/man.png') }}"
                                                                                                         class="img-fluid rounded-xl"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -839,13 +587,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -866,13 +613,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -896,13 +642,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end order-1">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{asset('assets/img/homepage_img/man.png')}}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/man.png') }}"
                                                                                                         class="img-fluid rounded-xl"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -924,13 +669,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end order-1">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{asset('assets/img/homepage_img/man.png')}}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/man.png') }}"
                                                                                                         class="img-fluid rounded-xl"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -956,13 +700,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -982,13 +725,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -1008,13 +750,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div
-                                                                                            class="row g-2  list_style">
+                                                                                        <div class="row g-2  list_style">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img    src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -1071,14 +812,12 @@
                                                                             width="20" height="20"
                                                                             viewBox="0 0 20 20" fill="none"
                                                                             stroke="currentColor" stroke-width="1.5"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round"
+                                                                            stroke-linecap="round" stroke-linejoin="round"
                                                                             class="acorn-icons acorn-icons-chevron-left undefined">
                                                                             <path
                                                                                 d="M13 4L7.35355 9.64645C7.15829 9.84171 7.15829 10.1583 7.35355 10.3536L13 16">
                                                                             </path>
                                                                         </svg>
-
                                                                     </button>
                                                                 </div>
                                                             </div>
@@ -1102,9 +841,8 @@
                                                             <div class="card-body d-flex flex-grow-0">
                                                                 <button
                                                                     class="btn btn-foreground btn-icon btn-icon-only me-2">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                        width="20" height="20"
-                                                                        viewBox="0 0 20 20" fill="none"
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                        height="20" viewBox="0 0 20 20" fill="none"
                                                                         stroke="currentColor" stroke-width="1.5"
                                                                         stroke-linecap="round" stroke-linejoin="round"
                                                                         class="acorn-icons acorn-icons-camera undefined">
@@ -1117,9 +855,8 @@
                                                                 </button>
                                                                 <button
                                                                     class="btn btn-foreground btn-icon btn-icon-only me-2">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                        width="20" height="20"
-                                                                        viewBox="0 0 20 20" fill="none"
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                        height="20" viewBox="0 0 20 20" fill="none"
                                                                         stroke="currentColor" stroke-width="1.5"
                                                                         stroke-linecap="round" stroke-linejoin="round"
                                                                         class="acorn-icons acorn-icons-mic-off undefined">
@@ -1133,9 +870,8 @@
                                                                 </button>
                                                                 <button class="btn btn-foreground btn-icon"
                                                                     id="endCallButton">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                        width="20" height="20"
-                                                                        viewBox="0 0 20 20" fill="none"
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                        height="20" viewBox="0 0 20 20" fill="none"
                                                                         stroke="currentColor" stroke-width="1.5"
                                                                         stroke-linecap="round" stroke-linejoin="round"
                                                                         class="acorn-icons acorn-icons-phone-off undefined">
@@ -1150,28 +886,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- This is for Second Page -->
-
-                                            <!-- <div class="backgound_color textcenter">المعذره لايمكنك مراسلة هذا العضو!!
-                                                        <br><a class="text-dark" href="/pricing" class="text-decoration-none"><strong>انقر هنا للاشتراك في الخدمه</strong></a>
-                                                    </div> -->
                                         </div>
                                     </div>
-
-
-                                    <!-- <h5 class="card-title">Second Title</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
                                 </div>
                                 <div class="tab-pane fade" id="third" role="tabpanel">
                                     <div class="d-grid gap-2 d-md-flex justify-content-between">
                                         <div class="d-grid gap-2 ">
-
                                         </div>
                                     </div>
                                     <div class="row justify-content-between">
                                         <div class="col-md-5 col-sm-12">
-                                            <!-- <div class="row">
-                                                    <div class="col-md-12"> -->
                                             <h4 class="fw-bold letter_spacing pe-4">
                                                 تأكيد الهوية الشخصية
                                             </h4>
@@ -1182,17 +906,15 @@
                                                     class="form-control input_background"
                                                     placeholder="الاسم كاملاً حسب الهوية الشخصية...">
                                             </form>
-                                            <!-- </div>
-                                                </div> -->
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                             <div class="pt-5">
-                                                <!-- <input type="file" name="image" class="form-control" value=""> -->
                                                 <label class="width_100 ">
                                                     <input class="file-input" accept="image/jpeg, image/png" multiple
                                                         type="file">
                                                     <div class="file-input-label w-md-75 w-sm-100">
-                                                        <img class="height_input_img w-100 h-100" src="{{ asset('assets/img/image.png') }}"
+                                                        <img class="height_input_img w-100 h-100"
+                                                            src="{{ asset('assets/img/image.png') }}"
                                                             alt="image placeholder">
                                                         <p>اسحب الملف هنا</p>
                                                     </div>
@@ -1212,7 +934,6 @@
                                             <th>نوع الإشتراك </th>
                                             <th>الرقم</th>
                                         </tr>
-
                                         <tr>
                                             <td></td>
                                             <td colspan="2" class="text_align">لست مشترك بأي باقة
@@ -1239,15 +960,10 @@
                                         </button>
                                     </div>
                                 </div>
-                                <!-- <div class="tab-pane fade" id="sixth" role="tabpanel">
-                                        <h5 class="card-title">Sixth Title</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>

@@ -1,0 +1,56 @@
+<style>input[type="radio"]:checked+label {
+    color: white;
+}
+
+.golden-star {
+    color: gold;
+}
+
+.star-row {
+    display: inline-flex;
+}
+
+.section_align {
+    margin-left: auto;
+    width: 70%;
+    margin-right: auto;
+}
+
+.background_color {
+    background-color: #F9F9F9;
+    box-shadow: 0px 0px 0px !important;
+    direction: rtl;
+}
+
+.card_font_weight {
+    font-weight: 200 !important;
+}
+
+.pill_styling {
+    top: 11.4rem;
+    padding-top: 4px;
+}
+
+.red_dot {
+    background: rgb(241, 92, 92);
+    border: 2px solid rgb(255, 255, 255);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    left: 21px;
+    margin-top: 2px;
+    margin-left: 64px;
+}
+
+.green_dot {
+    background: rgb(30, 214, 122);
+    border: 2px solid rgb(255, 255, 255);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    left: 21px;
+    margin-top: 2px;
+    margin-left: 64px;
+}
+
+</style>

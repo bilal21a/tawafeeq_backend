@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('css')
-
 @endsection
 @section('content')
     <main class="main_class padding_bottom_0 ">
@@ -10,7 +9,6 @@
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
                     <div class="container">
                         <div class="page-title-container">
-
                             <div id="accordionCards">
                                 <div class="mb-n2">
                                     <div class="d-flex mb-2">
@@ -36,7 +34,8 @@
                                             </div>
                                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
                                                 <div>
-                                                    <img class="pt-3" width="77%" src="{{ asset('assets/img/tawfeeq.png') }}" alt="">
+                                                    <img class="pt-3" width="77%"
+                                                        src="{{ asset('assets/img/tawfeeq.png') }}" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -49,8 +48,6 @@
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12"></div>
             </div>
-
-            <!-- Layout Footer End -->
         </div>
     </main>
     <main class="main_class2 padding_bottom_0 padding_top_0">
@@ -60,14 +57,13 @@
                 <div class="col-8">
                     <div class="container">
                         <div class="page-title-container">
-
                             <div id="accordionCards">
                                 <div class="mb-n2">
                                     <div class="d-flex mb-2">
                                         <div class="row">
-
                                             <div class="col-xl-4 col-lg-5 col-md-5 col-sm-12">
-                                                <img class="pt-3" width="100%" src="{{ asset('assets/img/couple.png') }}" alt="">
+                                                <img class="pt-3" width="100%"
+                                                    src="{{ asset('assets/img/couple.png') }}" alt="">
                                             </div>
                                             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                                                 <div id="collapseOneCards" class="collapse show"
@@ -90,7 +86,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -98,8 +93,6 @@
                 </div>
                 <div class="col-2"></div>
             </div>
-
-            <!-- Layout Footer End -->
         </div>
     </main>
     <main class="main_class padding_bottom_0 padding_top_0">
@@ -109,7 +102,6 @@
                 <div class="col-8">
                     <div class="container">
                         <div class="page-title-container">
-
                             <div id="accordionCards">
                                 <div class="mb-n2">
                                     <div class="d-flex mb-2">
@@ -132,12 +124,12 @@
                                             </div>
                                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
                                                 <div>
-                                                    <img class="pt-3" width="77%" src="{{ asset('assets/img/target.png') }}" alt="">
+                                                    <img class="pt-3" width="77%"
+                                                        src="{{ asset('assets/img/target.png') }}" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -145,8 +137,6 @@
                 </div>
                 <div class="col-2"></div>
             </div>
-
-            <!-- Layout Footer End -->
         </div>
     </main>
     <main class="main_class2 padding_top_0">
@@ -156,13 +146,13 @@
                 <div class="col-8">
                     <div class="container">
                         <div class="page-title-container">
-
                             <div id="accordionCards">
                                 <div class="mb-n2">
                                     <div class="d-flex mb-2">
                                         <div class="row p-4">
                                             <div class="col-xl-4 col-lg-5 col-md-5 col-sm-12">
-                                                <img class="pt-3" width="100%" src="{{ asset('assets/img/couple2.png') }}" alt="">
+                                                <img class="pt-3" width="100%"
+                                                    src="{{ asset('assets/img/couple2.png') }}" alt="">
                                             </div>
                                             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                                                 <div id="collapseOneCards" class="collapse show"
@@ -183,7 +173,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -191,8 +180,6 @@
                 </div>
                 <div class="col-2"></div>
             </div>
-
-            <!-- Layout Footer End -->
         </div>
     </main>
     <main class="main_class padding_bottom_0 padding_top_0">
@@ -202,7 +189,6 @@
                 <div class="col-8">
                     <div class="container">
                         <div class="page-title-container">
-
                             <div id="accordionCards">
                                 <div class="mb-n2">
                                     <div class="d-flex mb-2">
@@ -231,13 +217,12 @@
                                             </div>
                                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
                                                 <div>
-                                                    <img class="pt-3" width="77%" src="{{ asset('assets/img/verified.png') }}"
-                                                        alt="">
+                                                    <img class="pt-3" width="77%"
+                                                        src="{{ asset('assets/img/verified.png') }}" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -245,8 +230,6 @@
                 </div>
                 <div class="col-2"></div>
             </div>
-
-            <!-- Layout Footer End -->
         </div>
     </main>
 @endsection

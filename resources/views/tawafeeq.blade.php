@@ -1,29 +1,8 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
-
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-
 @section('css')
     <style>
-        input[type="radio"]:checked+label {
-            color: white;
-        }
-
-        .golden-star {
-            color: gold;
-        }
-
-        .star-row {
-            display: inline-flex;
-        }
-
-        .section_align {
-            margin-left: auto;
-            width: 70%;
-            margin-right: auto;
-        }
-
         .backgound_1 {
             background-image: url('{{ asset('assets/img/tawfeeq_background_1.png') }}');
             background-repeat: round;
@@ -33,46 +12,8 @@
             background-image: url('{{ asset('assets/img/tawfeeq_background_2.png') }}');
             background-repeat: round;
         }
-
-        .background_color {
-            background-color: #F9F9F9;
-            box-shadow: 0px 0px 0px !important;
-            direction: rtl;
-        }
-
-        .card_font_weight {
-            font-weight: 200 !important;
-        }
-
-        .pill_styling {
-            top: 11.4rem;
-            padding-top: 4px;
-        }
-
-        .red_dot {
-            background: rgb(241, 92, 92);
-            border: 2px solid rgb(255, 255, 255);
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            left: 21px;
-            margin-top: 2px;
-            margin-left: 64px;
-        }
-
-        .green_dot {
-            background: rgb(30, 214, 122);
-            border: 2px solid rgb(255, 255, 255);
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            left: 21px;
-            margin-top: 2px;
-            margin-left: 64px;
-        }
     </style>
 @endsection
-
 @section('content')
     <main>
         <div class="row">
@@ -139,12 +80,9 @@
                                                             <button class="btn btn-xl btn-primary mt-3"
                                                                 type="button">تسجيل</button>
                                                         </div>
-
                                                     </div>
                                                 </form>
-
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -160,9 +98,7 @@
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0"></div>
             </div>
-            <!-- Layout Footer End -->
         </div>
-        <!-- Basic Start -->
         <section class="scroll-section" dir="ltr" id="basic">
             <h2 class="" dir="rtl"><span class="fw-bold fs-4">الأعضاء الجدد</span>(عرض الكل)</h2>
             <div class="slide-container swiper">
@@ -185,7 +121,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -225,7 +160,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -265,7 +199,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -305,7 +238,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -345,7 +277,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -425,7 +356,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -465,7 +395,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -505,7 +434,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -545,7 +473,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -585,7 +512,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -625,7 +551,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -650,15 +575,11 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="swiper-button-next swiper-navBtn"></div>
                 <div class="swiper-button-prev swiper-navBtn"></div>
-                <!-- <div class="swiper-pagination"></div> -->
             </div>
-
             <h2 class="" dir="rtl"><span class="fw-bold fs-4">الأعضاء المتواجدون حاليًا</span>(عرض
                 الكل)</h2>
-            <!-- Second Slider -->
             <div class="slide-container swiper">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper " style="height: unset">
@@ -679,7 +600,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -719,7 +639,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -759,7 +678,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -839,7 +757,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -879,7 +796,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -919,7 +835,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -1039,7 +954,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -1079,7 +993,6 @@
                                             class="card-img-top" alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -1119,7 +1032,6 @@
                                             alt="card image" />
                                     </div>
                                     <div class="card-body pb-2">
-
                                         <h5 class="card-title fw-bold">بومحمد _44</h5>
                                         <div class="star-row">
                                             <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
@@ -1144,12 +1056,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="swiper-button-next swiper-navBtn"></div>
                 <div class="swiper-button-prev swiper-navBtn"></div>
-                <!-- <div class="swiper-pagination"></div> -->
             </div>
-            <!-- Second Slider End -->
             <h2 class="" dir="rtl"><span class="fw-bold fs-4">خدماتنا</span>(عرض الكل)</h2>
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -1193,8 +1102,6 @@
         </section>
     </main>
 @endsection
-
-
 @section('js')
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
