@@ -41,3 +41,7 @@ Route::get('tawafeeq', function () {
     return view('tawafeeq');
 })->name("tawafeeq");
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
