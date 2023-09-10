@@ -61,62 +61,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap"
         rel="stylesheet" />
     @yield('css')
-<style>
-    .font_family {
-        font-family: Tajawal!important;
-    }
+    <style>
+        .global_errors {
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: .875em;
+            color: #dc3545;
+        }
 
-    .white {
-        color: whitesmoke;
-    }
+        .font_family {
+            font-family: Tajawal !important;
+        }
+
+        .white {
+            color: whitesmoke;
+        }
 
 
 
-    .letter_spacing {
-        letter-spacing: -1px;
-    }
+        .letter_spacing {
+            letter-spacing: -1px;
+        }
 
-    .width_btn {
-        width: 209px;
-        height: 35px;
-    }
-    .margin_top {
-        margin-top: 14px !important;
-    }
+        .width_btn {
+            width: 209px;
+            height: 35px;
+        }
 
-    .footer {
-        background-color: #00A3D8;
-    }
+        .margin_top {
+            margin-top: 14px !important;
+        }
 
-    .text_decoration {
-        text-decoration: none;
-    }
+        .footer {
+            background-color: #00A3D8;
+        }
 
-    .line_height_footer {
-        line-height: 2;
-    }
+        .text_decoration {
+            text-decoration: none;
+        }
 
-    .font_size {
-        font-size: 14px;
-    }
+        .line_height_footer {
+            line-height: 2;
+        }
 
-    .blue_background {
-        background-color: #00A3D8;
-        color: whitesmoke;
-    }
+        .font_size {
+            font-size: 14px;
+        }
 
-     ::placeholder {
-        color: whitesmoke;
-        /* Change the color to your desired color */
-    }
+        .blue_background {
+            background-color: #00A3D8;
+            color: whitesmoke;
+        }
 
-    .blue_background:focus {
-        border: 1px solid whitesmoke;
-        background-color: #00A3D8;
-        outline: none;
-        color: whitesmoke;
-    }
-</style>
+        ::placeholder {
+            color: whitesmoke;
+            /* Change the color to your desired color */
+        }
+
+        .blue_background:focus {
+            border: 1px solid whitesmoke;
+            background-color: #00A3D8;
+            outline: none;
+            color: whitesmoke;
+        }
+    </style>
 </head>
 
 <body
