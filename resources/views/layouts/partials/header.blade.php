@@ -43,9 +43,11 @@
                         <li class="ps-3">
                             <i class="white" data-acorn-icon="message" data-acorn-size="15"></i>
                         </li>
+                        <a href="{{ route('logout') }}">
                         <li class="ps-3">
                             <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
                         </li>
+                    </a>
                     </div>
 
                 </ul>

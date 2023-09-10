@@ -27,6 +27,11 @@ class CreateProfilesTable extends Migration
             $table->string('physique')->nullable();
             $table->string('job')->nullable();
             $table->string('qulification')->nullable();
+            $table->string('financial_condition')->nullable();
+            $table->string('health_status')->nullable();
+            $table->string('religious_commitment')->nullable();
+            $table->string('about')->nullable();
+            $table->string('specification_of_partner')->nullable();
             $table->timestamps();
         });
     }

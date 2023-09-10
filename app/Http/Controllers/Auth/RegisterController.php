@@ -49,11 +49,33 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'name' => ['required'],
+            'email' => ['required'],
+            'password' => ['required'],
+            'gender' => ['required'],
+            'nationality' => ['required'],
+            'country_of_residence' => ['required'],
+            'city' => ['required'],
+            'type_of_marraige' => ['required'],
+            'matarial_status' => ['required'],
+            'age' => ['required'],
+            'no_of_childs' => ['required'],
+            'phone' => ['required'],
+            'weight' => ['required'],
+            'height' => ['required'],
+            'skin_color' => ['required'],
+            'physique' => ['required'],
+            'job' => ['required'],
+            'qulification' => ['required'],
+            'financial_condition' => ['required'],
+            'health_status' => ['required'],
+            'religious_commitment' => ['required'],
+            'about' => ['required'],
+            'specification_of_partner' => ['required'],
         ]);
+        dd($data);
     }
 
     /**
@@ -64,10 +86,35 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // dd($data);
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'gender' => $data['gender'],
+            'nationality' => $data['nationality'],
+            'country_of_residence' => $data['country_of_residence'],
+            'city' => $data['city'],
         ]);
+        $user->profile()->create([
+            'type_of_marraige' => $data['type_of_marriage'],
+            'matarial_status' => $data['marital_status'],
+            'age' => $data['age'],
+            'no_of_childs' => $data['no_of_childs'],
+            'phone' => $data['phone'],
+            'weight' => $data['weight'],
+            'height' => $data['height'],
+            'skin_color' => $data['skin_color'],
+            'physique' => $data['physique'],
+            'job' => $data['job'],
+            'qulification' => $data['qulification'],
+            'financial_condition' => $data['financial_condition'],
+            'health_status' => $data['health_status'],
+            'religious_commitment' => $data['religious_commitment'],
+            'about' => $data['about'],
+            'specification_of_partner' => $data['specification_of_partner'],
+        ]);
+    // dd($user);
+        return $user;
     }
 }
