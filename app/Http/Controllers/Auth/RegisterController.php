@@ -75,7 +75,6 @@ class RegisterController extends Controller
             'about' => ['required'],
             'specification_of_partner' => ['required'],
         ]);
-        dd($data);
     }
 
     /**
