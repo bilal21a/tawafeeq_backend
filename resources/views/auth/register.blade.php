@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    {{-- @dd($errors) --}}
     <main>
         <section class="scroll-section" id="helpText">
             <form method="POST" action="{{ route('register') }}">
@@ -23,8 +24,8 @@
                                                 autocomplete="name" autofocus>
                                             @error('name')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -35,8 +36,8 @@
                                                 autocomplete="email" autofocus>
                                             @error('email')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -45,11 +46,11 @@
                                                     data-acorn-icon="eye"></i></p>
                                             <input type="password" name="password" id="password"
                                                 class="form-control input_background" value="{{ old('password') }}"
-                                                autocomplete="password" autofocus >
+                                                autocomplete="password" autofocus>
                                             @error('password')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -65,8 +66,8 @@
                                             </select>
                                             @error('gender')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -99,7 +100,8 @@
                                                 <option value="أوكرانيا"
                                                     {{ old('nationality') === 'أوكرانيا' ? 'selected' : '' }}>أوكرانيا
                                                 </option>
-                                                <option value="اخر" {{ old('nationality') === 'اخر' ? 'selected' : '' }}>
+                                                <option value="اخر"
+                                                    {{ old('nationality') === 'اخر' ? 'selected' : '' }}>
                                                     اخر</option>
                                                 <option value="الاردن"
                                                     {{ old('nationality') === 'الاردن' ? 'selected' : '' }}>الاردن</option>
@@ -163,8 +165,8 @@
                                             </select>
                                             @error('nationality')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -213,8 +215,8 @@
                                             </select>
                                             @error('country_of_residence')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -292,8 +294,8 @@
 
                                             </select> @error('city')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -320,15 +322,17 @@
                                             <select class="form-control input_background" name="type_of_marriage"
                                                 id="type_of_marriage">
                                                 <option value="" selected disabled>اختر...</option>
-                                                <option value="male" {{ old('type_of_marriage') === 'male' ? 'selected' : '' }}>ذكر
+                                                <option value="male"
+                                                    {{ old('type_of_marriage') === 'male' ? 'selected' : '' }}>ذكر
                                                 </option>
-                                                <option value="female" {{ old('type_of_marriage') === 'female' ? 'selected' : '' }}>
+                                                <option value="female"
+                                                    {{ old('type_of_marriage') === 'female' ? 'selected' : '' }}>
                                                     انثى</option>
                                             </select>
                                             @error('type_of_marriage')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -337,15 +341,17 @@
                                             <select class="form-control input_background" name="marital_status"
                                                 id="marital_status">
                                                 <option value="" selected disabled>اختر...</option>
-                                                <option value="male" {{ old('marital_status') === 'male' ? 'selected' : '' }}>ذكر
+                                                <option value="male"
+                                                    {{ old('marital_status') === 'male' ? 'selected' : '' }}>ذكر
                                                 </option>
-                                                <option value="female" {{ old('marital_status') === 'female' ? 'selected' : '' }}>
+                                                <option value="female"
+                                                    {{ old('marital_status') === 'female' ? 'selected' : '' }}>
                                                     انثى</option>
                                             </select>
                                             @error('marital_statuss')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -356,21 +362,20 @@
                                                 autocomplete="age" autofocus>
                                             @error('age')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">عدد الاطفال</p>
                                             <input type="text" name="no_of_childs" id="no_of_childs"
-                                                class="form-control input_background"
-                                                value="{{ old('no_of_childs') }}"
+                                                class="form-control input_background" value="{{ old('no_of_childs') }}"
                                                 autocomplete="no_of_childs" autofocus>
                                             @error('no_of_childs')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -398,86 +403,80 @@
                                                 autocomplete="phone" autofocus>
                                             @error('phone')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الوزن (كجم)</p>
                                             <input type="number" name="weight" id="weight"
-                                                class="form-control input_background"
-                                                value="{{ old('weight') }}"
+                                                class="form-control input_background" value="{{ old('weight') }}"
                                                 autocomplete="weight" autofocus>
                                             @error('weight')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الطول (سم)</p>
                                             <input type="number" name="height" id="height"
-                                                class="form-control input_background"
-                                                value="{{ old('height') }}"
+                                                class="form-control input_background" value="{{ old('height') }}"
                                                 autocomplete="height" autofocus>
                                             @error('height')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">لون البشرة</p>
                                             <input type="text" name="skin_color" id="skin_color"
-                                                class="form-control input_background"
-                                                value="{{ old('skin_color') }}"
+                                                class="form-control input_background" value="{{ old('skin_color') }}"
                                                 autocomplete="skin_color" autofocus>
                                             @error('skin_color')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">بنية الجسم</p>
                                             <input type="text" name="physique" id="physique"
-                                                class="form-control input_background"
-                                                value="{{ old('physique') }}"
+                                                class="form-control input_background" value="{{ old('physique') }}"
                                                 autocomplete="physique" autofocus>
                                             @error('physique')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">العمل</p>
                                             <input type="text" name="job" id="job"
-                                                class="form-control input_background"
-                                                value="{{ old('job') }}"
+                                                class="form-control input_background" value="{{ old('job') }}"
                                                 autocomplete="job" autofocus>
                                             @error('job')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الموهل العلمي</p>
                                             <input type="text" name="qulification" id="qulification"
-                                                class="form-control input_background"
-                                                value="{{ old('qulification') }}"
+                                                class="form-control input_background" value="{{ old('qulification') }}"
                                                 autocomplete="qulification" autofocus>
                                             @error('qulification')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -489,21 +488,20 @@
                                                 autocomplete="financial_condition" autofocus>
                                             @error('financial_condition')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الحالة الصحية</p>
                                             <input type="text" name="health_status" id="helth_status"
-                                                class="form-control input_background"
-                                                value="{{ old('health_status') }}"
+                                                class="form-control input_background" value="{{ old('health_status') }}"
                                                 autocomplete="health_status" autofocus>
                                             @error('health_status')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -515,8 +513,8 @@
                                                 autocomplete="religious_commitment" autofocus>
                                             @error('religious_commitment')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -525,8 +523,8 @@
                                             <textarea class="form-control input_background" name="about" id="" cols="30" rows="10">{{ old('about') }}</textarea>
                                             @error('about')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -537,8 +535,8 @@
                                                 rows="10">{{ old('specification_of_partner') }}</textarea>
                                             @error('specification_of_partner')
                                                 <span>
-                                                    <strong class="global_errors d-flex justify-content-start">حقل
-                                                        مطلوب</strong>
+                                                    <strong
+                                                        class="global_errors d-flex justify-content-start">{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -554,14 +552,12 @@
                     <div class="col-sm-12 col-md-8">
                         <div class="card">
                             <div class="card-body p-0">
-                                {{-- <div class="container"> --}}
-                                    <div class=" p-4 fw-bold fs-6" dir="rtl">
-                                        شروط وقوانين موقع تَوَافِيْق لجمع راسين بالحلال<br> <input type="checkbox"
-                                            id="myCheckbox" name="myCheckbox"> لقد قرأت <span class="text-primary"> شروط
-                                            الموقع و قوانينه </span> وأوافق على كل ما
-                                        جاء فيه
-                                    </div>
-                                {{-- </div> --}}
+                                <div class=" p-4 fw-bold fs-6" dir="rtl">
+                                    شروط وقوانين موقع تَوَافِيْق لجمع راسين بالحلال<br> <input type="checkbox"
+                                        id="myCheckbox" name="myCheckbox"> لقد قرأت <span class="text-primary"> شروط
+                                        الموقع و قوانينه </span> وأوافق على كل ما
+                                    جاء فيه
+                                </div>
                             </div>
                         </div>
                     </div>

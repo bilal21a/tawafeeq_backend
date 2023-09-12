@@ -49,6 +49,31 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $customMessages = [
+            'name.required' => 'حقل مطلوب',
+            'email.required' => 'حقل مطلوب',
+            'password.required' => 'حقل مطلوب',
+            'gender.required' => 'حقل مطلوب',
+            'nationality.required' => 'حقل مطلوب',
+            'country_of_residence.required' => 'حقل مطلوب',
+            'city.required' => 'حقل مطلوب',
+            'type_of_marriage.required' => 'حقل مطلوب',
+            'marital_status.required' => 'حقل مطلوب',
+            'age.required' => 'حقل مطلوب',
+            'no_of_childs.required' => 'v',
+            'phone.required' => 'حقل مطلوب',
+            'weight.required' => 'حقل مطلوب',
+            'height.required' => 'حقل مطلوب',
+            'skin_color.required' => 'حقل مطلوب',
+            'physique.required' => 'حقل مطلوب',
+            'job.required' => 'حقل مطلوب',
+            'qulification.required' => 'حقل مطلوب',
+            'financial_condition.required' => 'حقل مطلوب',
+            'health_status.required' => 'حقل مطلوب',
+            'religious_commitment.required' => 'حقل مطلوب',
+            'about.required' => 'حقل مطلوب',
+            'specification_of_partner.required' => 'حقل مطلوب',
+        ];
 
         return Validator::make($data, [
             'name' => ['required'],
@@ -58,8 +83,8 @@ class RegisterController extends Controller
             'nationality' => ['required'],
             'country_of_residence' => ['required'],
             'city' => ['required'],
-            'type_of_marraige' => ['required'],
-            'matarial_status' => ['required'],
+            'type_of_marriage' => ['required'],
+            'marital_status' => ['required'],
             'age' => ['required'],
             'no_of_childs' => ['required'],
             'phone' => ['required'],
@@ -74,7 +99,7 @@ class RegisterController extends Controller
             'religious_commitment' => ['required'],
             'about' => ['required'],
             'specification_of_partner' => ['required'],
-        ]);
+        ], $customMessages);
     }
 
     /**
@@ -113,7 +138,6 @@ class RegisterController extends Controller
             'about' => $data['about'],
             'specification_of_partner' => $data['specification_of_partner'],
         ]);
-    // dd($user);
         return $user;
     }
 }
