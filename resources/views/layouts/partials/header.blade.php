@@ -14,7 +14,8 @@
 
         <!-- Language Switch Start -->
         <div class="language-switch-container d-none">
-            <button class="btn btn-empty language-button dropdown-toggle d-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EN</button>
+            <button class="btn btn-empty language-button dropdown-toggle d-none" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">EN</button>
             <div class="dropdown-menu d-none">
                 <a href="#" class="dropdown-item">DE</a>
                 <a href="#" class="dropdown-item active">EN</a>
@@ -24,8 +25,9 @@
         <!-- Language Switch End -->
 
         <!-- User Menu Start -->
-        <div class="user-container d-flex ms-md-7 ms-0">
-            <a href="#" class="d-flex user position-relative ps-md-7 ps-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="user-container d-flex ms-md-7 ms-0 flex-md-row-reverse">
+            <div class="d-flex user position-relative ps-md-7 ps-0" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <img class="profile" alt="profile" src="{{ asset('assets/img/homepage_img/man.png') }}" />
                 <ul class="text-decoration-none d-md-flex ps-0 pe-1 flex-column" style="list-style-type: none;">
                     <li>
@@ -45,14 +47,13 @@
                         </li>
                         <a href="{{ route('logout') }}">
                         <li class="ps-3">
-                            <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
-                        </li>
-                    </a>
+                                <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
+                            </li>
+                        </a>
                     </div>
-
                 </ul>
 
-            </a>
+            </div>
             <div class="dropdown-menu dropdown-menu-end user-menu wide">
                 <div class="row mb-3 ms-0 me-0">
                     <div class="col-12 ps-1 mb-2">
@@ -154,7 +155,7 @@
 
             <li class="list-inline-item">
                 <a href="#" id="colorButton">
-                    <span class="fs-6" style="padding-left: 15px;">   الوضع النهاري</span>
+                    <span class="fs-6" style="padding-left: 15px;"> الوضع النهاري</span>
                     <i data-acorn-icon="moon" class="light" data-acorn-size="18"></i>
                     <i data-acorn-icon="sun" class="dark" data-acorn-size="18"></i>
                 </a>
