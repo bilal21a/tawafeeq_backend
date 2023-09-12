@@ -40,6 +40,9 @@ Route::get('register', function () {
 Route::get('tawafeeq', function () {
     return view('tawafeeq');
 })->name("tawafeeq");
+Route::get('members', function () {
+    return view('members_list');
+})->name("tawafeeq");
 
 
 Auth::routes();
