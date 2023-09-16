@@ -46,9 +46,9 @@ Route::get('tawafeeq', function () {
 })->name("tawafeeq");
 
 
-Route::get('advance_search', function () {
-    return view('advance_search');
-})->name("advance_search");
+// Route::get('advance_search', function () {
+//     return view('advance_search');
+// })->name("advance_search");
 
 
 Auth::routes();
@@ -56,6 +56,7 @@ Auth::routes();
 Route::match(['GET','POST'], '/members', [UserController::class, 'index'])->name('members');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/advance_search', [HomeController::class, 'advance_search'])->name('advance_search');
 
 Route::get('/plans', [PlanController::class, 'plans'])->name('plans');
 Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');

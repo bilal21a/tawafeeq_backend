@@ -8,25 +8,26 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8" style="box-shadow: 0 3px 6px var(--theme-ui-colors-textTransparent,#00000029);">
                         <div class="p-4">
-                            <form>
+                            <form method="POST" action="{{ route('members') }}">
+                                @csrf
                                 <h4 class="fw-light letter_spacing">ابحث عن شريك حياتك المسلم</h4>
                                 <div class="row gy-2 gx-3 align-items-center mb-md-5">
                                     <div class="col-sm-12 col-md ">
                                         <label class="d-flex" for="name">الاسم</label>
-                                        <input type="text" class="form-control width_input input_background"
+                                        <input type="text" name="name" class="form-control width_input input_background"
                                             id="name" placeholder="الاسم">
                                     </div>
                                     <div class="col-sm-12 col-md ">
-                                        <label class="d-flex" for="marital_status">أبحث عن</label>
-                                        <select class="form-select width_input input_background" id="autoSizingSelect">
+                                        <label class="d-flex" for="look_for">أبحث عن</label>
+                                        <select class="form-select width_input input_background" name="look_for" id="look_for">
                                             <option selected="selected" disabled>أبحث عن</option>
-                                            <option value="زوج">زوج</option>
-                                            <option value="زوجة">زوجة</option>
+                                            <option value="ذكر">ذكر</option>
+                                            <option value="انثى">انثى</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-12 col-md ">
                                         <label class="d-flex" for="nationality">الجنسية</label>
-                                        <select class="form-select width_input input_background" id="nationality">
+                                        <select class="form-select width_input input_background" name="nationality" id="nationality">
                                             <option selected="selected" disabled>الجنسية</option>
                                             <option value="أوكرانيا">أوكرانيا</option>
                                             <option value="اخر">اخر</option>
@@ -55,7 +56,7 @@
                                     <div class="col-sm-12 col-md ">
                                         <label class="d-flex" for="place_of_residence">مكان الاقامة
                                         </label>
-                                        <select class="form-select width_input input_background" id="place_of_residence">
+                                        <select class="form-select width_input input_background" name="place_of_residence" id="place_of_residence">
                                             <option selected="selected" disabled>مكان الاقامة</option>
                                             <option value="أوكرانيا">أوكرانيا</option>
                                             <option value="اخر">اخر</option>
@@ -83,7 +84,7 @@
                                     </div>
                                     <div class="col-sm-12 col-md ">
                                         <label class="d-flex" for="city">المدينة</label>
-                                        <select class="form-select width_input input_background" id="city">
+                                        <select class="form-select width_input input_background" name="city" id="city">
                                             <option selected="selected" disabled>المدينة</option>
                                             <option value="أوكرانيا">أوكرانيا</option>
                                             <option value="اخر">اخر</option>
@@ -115,7 +116,7 @@
                                     <div class="col-sm-12 col-md ">
                                         <label class="d-flex" for="age_from">العمر من</label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control width_input input_background"
+                                            <input type="number" name="age_from" class="form-control width_input input_background"
                                                 id="age_from" placeholder="العمر من">
                                         </div>
                                     </div>
@@ -123,13 +124,13 @@
                                         <label class="d-flex" for="age_to">العمر الى
                                         </label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control width_input input_background"
+                                            <input type="number" name="age_to" class="form-control width_input input_background"
                                                 id="age_to" placeholder="العمر الى">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md ">
-                                        <label class="d-flex" for="marital_status">نوع الزواج</label>
-                                        <select class="form-select width_input input_background" id="marital_status">
+                                        <label class="d-flex" for="type_of_marriage">نوع الزواج</label>
+                                        <select class="form-select width_input input_background" name="type_of_marriage" id="type_of_marriage">
                                             <option selected="selected" disabled>نوع الزواج</option>
                                             <option value="الزواج الأول">الزواج الأول</option>
                                             <option value="الزواج الثاني">الزواج الثاني</option>
@@ -140,43 +141,43 @@
                                     <div class="col-sm-12 col-md ">
                                         <label class="d-flex" for="marital_status">الحالة الاجتماعية
                                         </label>
-                                        <select class="form-select width_input input_background" id="marital_status">
+                                        <select class="form-select width_input input_background" name="marital_status" id="marital_status">
                                             <option selected="selected" disabled>الحالة الاجتماعية</option>
-                                            <option value="1">أعزب</option>
-                                            <option value="2">متزوج</option>
-                                            <option value="3">مطلق</option>
-                                            <option value="4">أرمل</option>
-                                            <option value="5">مطلقة</option>
-                                            <option value="6">أرملة</option>
-                                            <option value="7">عزباء</option>
+                                            <option value="أعزب">أعزب</option>
+                                            <option value="متزوج">متزوج</option>
+                                            <option value="مطلق">مطلق</option>
+                                            <option value="أرمل">أرمل</option>
+                                            <option value="مطلقة">مطلقة</option>
+                                            <option value="أرملة">أرملة</option>
+                                            <option value="عزباء">عزباء</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row gy-2 gx-3 align-items-center mb-md-5">
                                     <div class="col-sm-12 col-md ">
                                         <label class="d-flex" for="weight_from">الوزن من</label>
-                                        <input type="number" class="form-control width_input input_background"
+                                        <input type="number" name="weight_from" class="form-control width_input input_background"
                                             id="name" placeholder="الوزن من">
                                     </div>
                                     <div class="col-sm-12 col-md ">
-                                        <label class="d-flex" for="Weight_to">الوزن إلى</label>
-                                        <input type="number" class="form-control width_input input_background"
-                                            id="Weight_to" placeholder="الوزن إلى">
+                                        <label class="d-flex" for="weight_to">الوزن إلى</label>
+                                        <input type="number" name="weight_to" class="form-control width_input input_background"
+                                            id="weight_to" placeholder="الوزن إلى">
                                     </div>
                                     <div class="col-sm-12 col-md ">
-                                        <label class="d-flex" for="length_from">أبحث عن</label>
-                                        <input type="number" class="form-control width_input input_background"
-                                            id="length_from" placeholder="أبحث عن">
+                                        <label class="d-flex" for="length_from">الطول من</label>
+                                        <input type="number" name="length_from" class="form-control width_input input_background"
+                                            id="length_from" placeholder="الطول من">
                                     </div>
                                     <div class="col-sm-12 col-md ">
                                         <label class="d-flex" for="length_to">الطول الى</label>
-                                        <input type="number" class="form-control width_input input_background"
+                                        <input type="number" name="length_to" class="form-control width_input input_background"
                                             id="length_to" placeholder="الطول الى">
                                     </div>
 
                                     <div class="col-sm-12 col-md ">
                                         <label class="d-flex" for="qualification">المؤهل العلمي</label>
-                                        <select class="form-select width_input input_background" id="qualification">
+                                        <select class="form-select width_input input_background" name="qualification" id="qualification">
                                             <option selected="selected" disabled>المؤهل العلمي</option>
                                             <option value="دراسة متوسطة">دراسة متوسطة</option>
                                             <option value="التعليم الثانوي">التعليم الثانوي</option>

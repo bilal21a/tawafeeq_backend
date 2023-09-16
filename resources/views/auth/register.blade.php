@@ -57,11 +57,12 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الجنس
                                             </p>
-                                            <select class="form-control input_background" name="gender" id="gender">
+                                            <select class="form-select width_input input_background" name="gender"
+                                                id="gender">
                                                 <option value="" selected disabled>اختر...</option>
-                                                <option value="male" {{ old('gender') === 'male' ? 'selected' : '' }}>ذكر
+                                                <option value="ذكر" {{ old('gender') === 'ذكر' ? 'selected' : '' }}>ذكر
                                                 </option>
-                                                <option value="female" {{ old('gender') === 'female' ? 'selected' : '' }}>
+                                                <option value="انثى" {{ old('gender') === 'انثى' ? 'selected' : '' }}>
                                                     انثى</option>
                                             </select>
                                             @error('gender')
@@ -92,7 +93,7 @@
                                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الجنسية
                                             </p>
-                                            <select class="form-control input_background" name="nationality"
+                                            <select class="form-select width_input input_background" name="nationality"
                                                 id="nationality">
                                                 <option value="" disabled
                                                     {{ old('nationality') === null ? 'selected' : '' }}>اختر البلد...
@@ -173,8 +174,8 @@
                                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">بلد الإقامة
                                             </p>
-                                            <select class="form-control input_background" name="country_of_residence"
-                                                id="country_of_residence">
+                                            <select class="form-select width_input input_background"
+                                                name="country_of_residence" id="country_of_residence">
                                                 <option value="" disabled
                                                     {{ old('country_of_residence') === null ? 'selected' : '' }}
                                                     {{ old('country_of_residence') === null ? 'autocomplete="country_of_residence" autofocus' : '' }}>
@@ -223,7 +224,8 @@
                                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">المدينة
                                             </p>
-                                            <select class="form-control input_background" name="city" id="city">
+                                            <select class="form-select width_input input_background" name="city"
+                                                id="city">
                                                 <option selected disabled>اختر...</option>
                                                 <option value="أوبوك" {{ old('city') === 'أوبوك' ? 'selected' : '' }}>
                                                     أوبوك</option>
@@ -319,15 +321,19 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <!-- <i data-acorn-icon="user"></i> -->
                                             <p class="fw-bolder d-flex justify-content-start">نوع الزواج</p>
-                                            <select class="form-control input_background" name="type_of_marriage"
-                                                id="type_of_marriage">
-                                                <option value="" selected disabled>اختر...</option>
-                                                <option value="male"
-                                                    {{ old('type_of_marriage') === 'male' ? 'selected' : '' }}>ذكر
-                                                </option>
-                                                <option value="female"
-                                                    {{ old('type_of_marriage') === 'female' ? 'selected' : '' }}>
-                                                    انثى</option>
+
+
+
+                                            {{-- <label class="d-flex" for="type_of_marriage">نوع الزواج</label> --}}
+                                            <select class="form-select width_input input_background"
+                                                name="type_of_marriage" id="type_of_marriage">
+                                                <option selected="selected" disabled>اختر...</option>
+                                                <option value="الزواج الأول">الزواج الأول</option>
+                                                <option value="الزواج الثاني">الزواج الثاني</option>
+                                                <option value="الزواج الثالث">الزواج الثالث</option>
+                                                <option value="الزواج الرابع">الزواج الرابع</option>
+                                                <option value="زوجة واحدة">زوجة واحدة</option>
+                                                <option value="لا أمانع تعدد الزوجات">لا أمانع تعدد الزوجات </option>
                                             </select>
                                             @error('type_of_marriage')
                                                 <span>
@@ -338,17 +344,19 @@
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الحالة الاجتماعية</p>
-                                            <select class="form-control input_background" name="marital_status"
+
+                                            <select class="form-select width_input input_background" name="marital_status"
                                                 id="marital_status">
-                                                <option value="" selected disabled>اختر...</option>
-                                                <option value="male"
-                                                    {{ old('marital_status') === 'male' ? 'selected' : '' }}>ذكر
-                                                </option>
-                                                <option value="female"
-                                                    {{ old('marital_status') === 'female' ? 'selected' : '' }}>
-                                                    انثى</option>
+                                                <option selected="selected" disabled>اختر...</option>
+                                                <option value="أرمل">أرمل</option>
+                                                <option value="بكالوريوس">بكالوريوس</option>
+                                                <option value="متزوج">متزوج</option>
+                                                <option value="مطلق">مطلق</option>
+                                                <option value="أرملة">أرملة</option>
+                                                <option value="أعزب">أعزب </option>
+                                                <option value="مُطلّق">مُطلّق </option>
                                             </select>
-                                            @error('marital_statuss')
+                                            @error('marital_status')
                                                 <span>
                                                     <strong
                                                         class="global_errors d-flex justify-content-start">{{ $message }}</strong>
@@ -357,7 +365,7 @@
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">العمر</p>
-                                            <input type="text" name="age" id="age"
+                                            <input type="number" name="age" id="age"
                                                 class="form-control input_background" value="{{ old('age') }}"
                                                 autocomplete="age" autofocus>
                                             @error('age')
@@ -434,9 +442,16 @@
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">لون البشرة</p>
-                                            <input type="text" name="skin_color" id="skin_color"
-                                                class="form-control input_background" value="{{ old('skin_color') }}"
-                                                autocomplete="skin_color" autofocus>
+                                            <select class="form-select width_input input_background" name="skin_color"
+                                                id="skin_color">
+                                                <option selected="selected" disabled>اختر...</option>
+                                                <option value="القمح الأبيض">القمح الأبيض</option>
+                                                <option value="حنطي">حنطي</option>
+                                                <option value="أبيض">أبيض</option>
+                                                <option value="القمح البني">القمح البني</option>
+                                                <option value="البني الفاتح">البني الفاتح</option>
+                                                <option value="بني غامق">بني غامق </option>
+                                            </select>
                                             @error('skin_color')
                                                 <span>
                                                     <strong
@@ -470,10 +485,17 @@
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الموهل العلمي</p>
-                                            <input type="text" name="qulification" id="qulification"
-                                                class="form-control input_background" value="{{ old('qulification') }}"
-                                                autocomplete="qulification" autofocus>
-                                            @error('qulification')
+
+                                            <select class="form-select width_input input_background" name="qualification" id="qualification">
+                                                <option selected="selected" disabled>اختر...</option>
+                                                <option value="دراسة متوسطة">دراسة متوسطة</option>
+                                                <option value="تعليم ثانوي">تعليم ثانوي</option>
+                                                <option value="دراسة جامعية">دراسة جامعية</option>
+                                                <option value="دكتوراه">دكتوراه</option>
+                                                <option value="السيرة الذاتية">السيرة الذاتية</option>
+                                                <option value="التعليم الابتدائي">التعليم الابتدائي</option>
+                                            </select>
+                                            @error('qualification')
                                                 <span>
                                                     <strong
                                                         class="global_errors d-flex justify-content-start">{{ $message }}</strong>
@@ -482,10 +504,16 @@
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الحاله المادية</p>
-                                            <input type="text" name="financial_condition" id="financial_condition"
-                                                class="form-control input_background"
-                                                value="{{ old('financial_condition') }}"
-                                                autocomplete="financial_condition" autofocus>
+                                            <select class="form-select width_input input_background" name="financial_condition" id="financial_condition">
+                                                <option selected="selected" disabled>اختر...</option>
+                                                <option value="دخل محدود">دخل محدود</option>
+                                                <option value="أقل من المتوسط">أقل من المتوسط</option>
+                                                <option value="متوسط">متوسط</option>
+                                                <option value="أكثر من المتوسط">أكثر من المتوسط</option>
+                                                <option value="جيد">جيد</option>
+                                                <option value="ميسور">ميسور</option>
+                                                <option value="غني">غني</option>
+                                            </select>
                                             @error('financial_condition')
                                                 <span>
                                                     <strong

@@ -11,36 +11,16 @@
                         @csrf
                         <div class="col">
                             <label class="d-flex" for="name">الاسم</label>
-                            <input type="text" class="form-control width_input input_background" id="name"
-                                placeholder="الاسم">
+                            <input type="text" class="form-control width_input input_background" name="name" id="name"
+                            value="{{ isset($name_search) ? $name_search: ''; }}"   placeholder="الاسم">
                         </div>
                         <div class="col">
                             <label class="d-flex" for="nationality">الجنسية</label>
-
                             <select class="form-select width_input input_background" name="nationality">
                                 <option selected="selected" disabled>الجنسية</option>
-                                <option value="أوكرانيا">أوكرانيا</option>
-                                <option value="اخر">اخر</option>
-                                <option value="الاردن">الاردن</option>
-                                <option value="الامارات">الامارات</option>
-                                <option value="البحرين">البحرين</option>
-                                <option value="الجزائر">الجزائر</option>
-                                <option value="السعودية">السعودية</option>
-                                <option value="السودان">السودان</option>
-                                <option value="الصومال">الصومال</option>
-                                <option value="العراق">العراق</option>
-                                <option value="الكويت">الكويت</option>
-                                <option value="المغرب">المغرب</option>
-                                <option value="اليمن">اليمن</option>
-                                <option value="ايران">ايران</option>
-                                <option value="باكستان">باكستان</option>
-                                <option value="تونس">تونس</option>
-                                <option value="جزر القمر">جزر القمر</option>
-                                <option value="جيبوتي">جيبوتي</option>
-                                <option value="دول غربية">دول غربية</option>
-                                <option value="سوريا">سوريا</option>
-                                <option value="عُمان">عُمان</option>
-                                <option value="فلسطين">فلسطين</option>
+                                @foreach ($countryNames as$countryName )
+                                <option value="{{ $countryName }}" {{ $nationality_search ==$countryName ? 'selected' :''; }}>{{ $countryName }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col">
@@ -48,43 +28,23 @@
                             </label>
                             <select class="form-select width_input input_background" name="country_of_residence">
                                 <option selected="selected" disabled>مكان الاقامة</option>
-                                <option value="أوكرانيا">أوكرانيا</option>
-                                <option value="اخر">اخر</option>
-                                <option value="الاردن">الاردن</option>
-                                <option value="الامارات">الامارات</option>
-                                <option value="البحرين">البحرين</option>
-                                <option value="الجزائر">الجزائر</option>
-                                <option value="السعودية">السعودية</option>
-                                <option value="السودان">السودان</option>
-                                <option value="الصومال">الصومال</option>
-                                <option value="العراق">العراق</option>
-                                <option value="الكويت">الكويت</option>
-                                <option value="المغرب">المغرب</option>
-                                <option value="اليمن">اليمن</option>
-                                <option value="ايران">ايران</option>
-                                <option value="باكستان">باكستان</option>
-                                <option value="تونس">تونس</option>
-                                <option value="جزر القمر">جزر القمر</option>
-                                <option value="جيبوتي">جيبوتي</option>
-                                <option value="دول غربية">دول غربية</option>
-                                <option value="سوريا">سوريا</option>
-                                <option value="عُمان">عُمان</option>
-                                <option value="فلسطين">فلسطين</option>
+                                @foreach ($countryNames as$countryName )
+                                <option value="{{ $countryName }}" {{ $country_of_residence_search ==$countryName ? 'selected' :''; }}>{{ $countryName }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col">
-                            <label class="d-flex" for="autoSizingInputGroup">العمر من</label>
+                            <label class="d-flex" for="age_from">العمر من</label>
                             <div class="input-group">
-                                <input type="number" class="form-control width_input input_background"
-                                    name="age_from" placeholder="العمر من">
+                                <input type="number" class="form-control width_input input_background" value="{{ $age_from_search != null ? $age_from_search :''; }}" name="age_from" placeholder="العمر من">
                             </div>
                         </div>
                         <div class="col">
-                            <label class="d-flex" for="autoSizingInputGroup">العمر الى
+                            <label class="d-flex" for="age_to">العمر الى
                             </label>
                             <div class="input-group">
                                 <input type="number" class="form-control width_input input_background"
-                                    name="age_to" placeholder="العمر الى">
+                                value="{{ $age_to_search != null ? $age_to_search :''; }}"  name="age_to" placeholder="العمر الى">
                             </div>
                         </div>
                         <div class="col">
@@ -92,17 +52,16 @@
                             </label>
                             <select class="form-select width_input input_background" name="marital_status">
                                 <option selected="selected" disabled>الحالة الاجتماعية</option>
-                                <option value="1">أعزب</option>
-                                <option value="2">متزوج</option>
-                                <option value="3">مطلق</option>
-                                <option value="4">أرمل</option>
-                                <option value="5">مطلقة</option>
-                                <option value="6">أرملة</option>
-                                <option value="7">عزباء</option>
+                               @foreach ($maritalStatusNames as$maritalStatusName )
+                               <option value="{{ $maritalStatusName }}" {{ $marital_status_search ==$maritalStatusName ? 'selected' :''; }}>{{ $maritalStatusName }}</option>
+                               @endforeach
                             </select>
                         </div>
                         <div class="col d-flex">
                             <button type="submit" class="btn btn-primary mt-3">بحث</button>
+                            @if (request()->isMethod('post') )
+                            <a href="{{ route('members') }}" class="btn btn-danger mt-3 me-1">Clear</a>
+                            @endif
                         </div>
                     </form>
                 </div>
@@ -114,6 +73,7 @@
                     </div>
                 @endforeach
             </div>
+            {{  $users->links()  }}
         </section>
     </div>
 @endsection

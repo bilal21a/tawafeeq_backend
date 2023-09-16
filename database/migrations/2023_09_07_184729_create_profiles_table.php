@@ -16,7 +16,7 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->string('user_id')->nullable();
-            $table->string('type_of_marraige')->nullable();
+            $table->string('type_of_marriage')->nullable();
             $table->string('marital_status')->nullable();
             $table->string('age')->nullable();
             $table->string('no_of_childs')->nullable();
@@ -26,7 +26,7 @@ class CreateProfilesTable extends Migration
             $table->string('skin_color')->nullable();
             $table->string('physique')->nullable();
             $table->string('job')->nullable();
-            $table->string('qulification')->nullable();
+            $table->string('qualification')->nullable();
             $table->string('financial_condition')->nullable();
             $table->string('health_status')->nullable();
             $table->string('religious_commitment')->nullable();

@@ -2,6 +2,12 @@
 @section('css')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<style>
+    form h5 {
+    display: flex;
+    justify-content: start;
+}
+</style>
 @endsection
 @section('content')
     <main>
@@ -26,18 +32,18 @@
                                         <div class="card-body pt-3 pb-7">
 
                                             <div class="ps-4 pb-5">
-                                                <h4 class="fw-semibold mb-0">اعثر على شريك حياتك </h4><br>
+                                                <h4 class="fw-semibold mb-0 d-flex">اعثر على شريك حياتك </h4><br>
                                                 <form action="">
                                                     <h5 class="fw-semibold mb-1">الاسم</h5>
                                                     <input type="text" name="topic" id="topic"
                                                         class="form-control input_background" placeholder="الاسم">
                                                     <div class="row mt-3">
-                                                        <div class="col-6 ps-0">
+                                                        <div class="col-md-6 ps-0">
                                                             <h5 class="fw-semibold mb-1">الجنسية</h5>
                                                             <input type="text" name="topic" id="topic"
                                                                 class="form-control input_background" placeholder="الجنسية">
                                                         </div>
-                                                        <div class="col-6">
+                                                        <div class="col-md-6">
                                                             <h5 class="fw-semibold mb-1">مكان الاقامة</h5>
                                                             <input type="text" name="topic" id="topic"
                                                                 class="form-control input_background"
@@ -45,19 +51,19 @@
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3">
-                                                        <div class="col-4 ps-0">
+                                                        <div class="col-md-4 ps-0">
                                                             <h5 class="fw-semibold mb-1">العمر من </h5>
                                                             <input type="text" name="topic" id="topic"
                                                                 class="form-control input_background"
                                                                 placeholder="العمر من">
                                                         </div>
-                                                        <div class="col-4 ps-0">
+                                                        <div class="col-md-4 ps-0">
                                                             <h5 class="fw-semibold mb-1">العمر الى</h5>
                                                             <input type="text" name="topic" id="topic"
                                                                 class="form-control input_background"
                                                                 placeholder="العمر الى">
                                                         </div>
-                                                        <div class="col-4">
+                                                        <div class="col-md-4">
                                                             <h5 class="fw-semibold mb-1"> الحالة الاجتماعية</h5>
                                                             <input type="text" name="topic" id="topic"
                                                                 class="form-control input_background"
@@ -65,7 +71,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-3">
+                                                        <div class="col-3 d-flex">
+                                                            <button class="btn btn-xl btn-primary mt-3 ms-1"
+                                                                type="button">تسجيل</button>
                                                             <button class="btn btn-xl btn-primary mt-3"
                                                                 type="button">تسجيل</button>
                                                         </div>
@@ -92,7 +100,7 @@
             <h2 class="" dir="rtl"><span class="fw-bold fs-4">الأعضاء الجدد</span>(عرض الكل)</h2>
             <div class="slide-container swiper">
                 <div class="slide-content">
-                    <div class="card-wrapper swiper-wrapper" style="height: unset">
+                    {{-- <div class="card-wrapper swiper-wrapper" style="height: unset">
                         <div class="card swiper-slide" style="width: unset !important;">
                             @include('common.card')
                         </div>
@@ -126,7 +134,7 @@
                         <div class="card swiper-slide" style="width: unset !important;">
                             @include('common.card')
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="swiper-button-next swiper-navBtn"></div>
                 <div class="swiper-button-prev swiper-navBtn"></div>
@@ -135,7 +143,7 @@
                 الكل)</h2>
                 <div class="slide-container swiper">
                     <div class="slide-content">
-                        <div class="card-wrapper swiper-wrapper" style="height: unset">
+                        {{-- <div class="card-wrapper swiper-wrapper" style="height: unset">
                             <div class="card swiper-slide" style="width: unset !important;">
                                 @include('common.card')
                             </div>
@@ -169,7 +177,7 @@
                             <div class="card swiper-slide" style="width: unset !important;">
                                 @include('common.card')
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="swiper-button-next swiper-navBtn"></div>
                     <div class="swiper-button-prev swiper-navBtn"></div>
