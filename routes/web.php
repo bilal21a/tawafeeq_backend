@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,8 @@ Route::match(['GET','POST'], '/members', [UserController::class, 'index'])->name
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::get('/plans', [PlanController::class, 'plans'])->name('plans');
 Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
-Route::post('/charge', [PaymentController::class, 'processPayment'])->name('payment.process');
-Route::post('/create-checkout-session', [PaymentController::class, 'createCheckoutSession'])->name('createCheckoutSession');
+Route::post('/create-checkout-session/{plan_id}', [PaymentController::class, 'createCheckoutSession'])->name('createCheckoutSession');
+Route::get('/success', [PaymentController::class, 'success'])->name('payment.success');
+Route::get('/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');

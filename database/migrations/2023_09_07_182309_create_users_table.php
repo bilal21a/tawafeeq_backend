@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('nationality')->nullable();
             $table->string('country_of_residence')->nullable();
             $table->string('city')->nullable();
+            $table->dateTime('exipred_at')->nullable();
             $table->timestamps();
         });
     }

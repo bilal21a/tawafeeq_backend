@@ -15,8 +15,8 @@ class CreatePlansTable extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
-            $table->string('plan_name')->nullable();
-            $table->string('plan_type')->nullable();
+            $table->string('name')->nullable();
+            $table->string('days')->nullable();
             $table->string('amount')->nullable();
             $table->timestamps();
         });
