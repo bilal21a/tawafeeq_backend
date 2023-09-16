@@ -46,6 +46,10 @@ Route::get('tawafeeq', function () {
 })->name("tawafeeq");
 
 
+Route::get('advance_search', function () {
+    return view('advance_search');
+})->name("advance_search");
+
 
 Auth::routes();
 

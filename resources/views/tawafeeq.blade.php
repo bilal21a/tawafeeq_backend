@@ -1,8 +1,7 @@
 @extends('layouts.app')
+@section('css')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-@section('css')
-
 @endsection
 @section('content')
     <main>
