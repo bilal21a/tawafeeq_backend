@@ -1,6 +1,5 @@
-<div class=" p-0 width_silder ">
-    {{-- @dd($users) --}}
-    <div class="card" dir="rtl">
+<div class="p-0 width_silder">
+    <div class="card " dir="rtl">
         <div>
             <span
                 class="badge rounded-pill bg-light position-absolute s-2 pill_styling z-index-1 fw-bolder"
