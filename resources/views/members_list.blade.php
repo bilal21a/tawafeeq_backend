@@ -1,13 +1,4 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-@section('css')
-    <style>
-        /* .width_input {
-                width: 140px !important;
-            } */
-    </style>
-@endsection
 @section('content')
     <div class="container pt-5" style="margin-top:70px">
         <section class="scroll-section" dir="ltr" id="basic">
@@ -16,7 +7,8 @@
             </h2>
             <div class="card mb-5" dir="rtl">
                 <div class="p-4">
-                    <form class="row gy-2 gx-3 align-items-center">
+                    <form class="row gy-2 gx-3 align-items-center" method="POST" action="{{ route('members') }}">
+                        @csrf
                         <div class="col">
                             <label class="d-flex" for="name">الاسم</label>
                             <input type="text" class="form-control width_input input_background" id="name"
@@ -25,7 +17,7 @@
                         <div class="col">
                             <label class="d-flex" for="nationality">الجنسية</label>
 
-                            <select class="form-select width_input input_background" id="nationality">
+                            <select class="form-select width_input input_background" name="nationality">
                                 <option selected="selected" disabled>الجنسية</option>
                                 <option value="أوكرانيا">أوكرانيا</option>
                                 <option value="اخر">اخر</option>
@@ -54,7 +46,7 @@
                         <div class="col">
                             <label class="d-flex" for="place_of_residence">مكان الاقامة
                             </label>
-                            <select class="form-select width_input input_background" id="place_of_residence">
+                            <select class="form-select width_input input_background" name="country_of_residence">
                                 <option selected="selected" disabled>مكان الاقامة</option>
                                 <option value="أوكرانيا">أوكرانيا</option>
                                 <option value="اخر">اخر</option>
@@ -84,7 +76,7 @@
                             <label class="d-flex" for="autoSizingInputGroup">العمر من</label>
                             <div class="input-group">
                                 <input type="number" class="form-control width_input input_background"
-                                    id="autoSizingInputGroup" placeholder="العمر من">
+                                    name="age_from" placeholder="العمر من">
                             </div>
                         </div>
                         <div class="col">
@@ -92,13 +84,13 @@
                             </label>
                             <div class="input-group">
                                 <input type="number" class="form-control width_input input_background"
-                                    id="autoSizingInputGroup" placeholder="العمر الى">
+                                    name="age_to" placeholder="العمر الى">
                             </div>
                         </div>
                         <div class="col">
                             <label class="d-flex" for="autoSizingSelect">الحالة الاجتماعية
                             </label>
-                            <select class="form-select width_input input_background" id="autoSizingSelect">
+                            <select class="form-select width_input input_background" name="marital_status">
                                 <option selected="selected" disabled>الحالة الاجتماعية</option>
                                 <option value="1">أعزب</option>
                                 <option value="2">متزوج</option>
@@ -125,38 +117,4 @@
         </section>
     </div>
 @endsection
-@section('js')
-    <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
-    <script>
-        var swiper = new Swiper(".slide-content", {
-            slidesPerView: 5,
-            spaceBetween: 25,
-            loop: true,
-            centerSlide: 'true',
-            fade: 'true',
-            grabCursor: 'true',
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
 
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                },
-                520: {
-                    slidesPerView: 2,
-                },
-                950: {
-                    slidesPerView: 3,
-                },
-            },
-        });
-    </script>
-@endsection

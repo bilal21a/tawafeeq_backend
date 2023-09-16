@@ -22,7 +22,7 @@
                 <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
                 <i class="golden-star" data-acorn-icon="star" data-acorn-size="15"></i>
             </div>
-            <p class="card-text mb-1" style="font-size: 13px;">{{ $user->nationality }},{{ $user->city }}</p>
+            <p class="card-text mb-1" style="font-size: 13px;">{{ $user->nationality }}</p>
             <p class="mb-0"> {{ $user->profile->specification_of_partner }} </p>
         </div>
         <div class="d-flex justify-content-between ps-4 pb-3">

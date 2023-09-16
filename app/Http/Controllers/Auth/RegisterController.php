@@ -122,7 +122,7 @@ class RegisterController extends Controller
         ]);
         $user->profile()->create([
             'type_of_marraige' => $data['type_of_marriage'],
-            'matarial_status' => $data['marital_status'],
+            'marital_status' => $data['marital_status'],
             'age' => $data['age'],
             'no_of_childs' => $data['no_of_childs'],
             'phone' => $data['phone'],

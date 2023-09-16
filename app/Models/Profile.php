@@ -15,7 +15,7 @@ class Profile extends Model implements Authenticatable
     use AuthenticableTrait;
     protected $fillable = [
         'type_of_marraige',
-        'matarial_status',
+        'marital_status',
         'age',
         'no_of_childs',
         'phone',

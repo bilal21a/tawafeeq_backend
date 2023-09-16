@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->string('user_id')->nullable();
             $table->string('type_of_marraige')->nullable();
-            $table->string('matarial_status')->nullable();
+            $table->string('marital_status')->nullable();
             $table->string('age')->nullable();
             $table->string('no_of_childs')->nullable();
             $table->string('phone')->nullable();

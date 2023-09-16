@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -43,15 +44,13 @@ Route::get('tawafeeq', function () {
     return view('tawafeeq');
 })->name("tawafeeq");
 
-Route::get('members', function () {
-    return view('members_list');
-})->name("members");
 
 
 Auth::routes();
 
-Route::get('users', [UserController::class, 'index']);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::match(['GET','POST'], '/members', [UserController::class, 'index'])->name('members');
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
 Route::post('/charge', [PaymentController::class, 'processPayment'])->name('payment.process');
