@@ -181,9 +181,11 @@
                                 <div class="tab-pane fade" id="second" role="tabpanel">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-12">
-                                            <div class="scroll-out mb-2 chat_heads" style="height: 600px; overflow-x: hidden;">
+                                            <div class="scroll-out mb-2 chat_heads"
+                                                style="height: 600px; overflow-x: hidden;">
 
                                             </div>
+
                                         </div>
                                         <div class="col-md-9 col-sm-12 d-flex">
                                             <div class="row d-flex flex-grow-1 overflow-hidden pb-2 h-100">
@@ -191,26 +193,28 @@
                                                     <div class="flex-column h-100 w-100 d-flex" id="chatMode">
                                                         <div class="card h-100 mb-2">
                                                             <div
-                                                                class="card-body d-flex flex-column h-100 w-100 position-relative ">
-                                                                <div class="d-flex flex-row align-items-center mb-3"
-                                                                    style="height: 15px;">
+                                                                class="card-body d-flex flex-column h-100 w-100 position-relative">
+                                                                <div class="d-flex flex-row align-items-center mb-3">
                                                                     <div class="row g-0 sh-6 align-self-start"
                                                                         id="contactTitle">
                                                                         <div class="col-auto">
                                                                             <div
-                                                                                class="sh-6 sw-6 d-inline-block position-relative">
-                                                                                <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
-                                                                                    class="img-fluid rounded-xl border border-2 border-foreground profile"
-                                                                                    alt="thumb">
-                                                                                <i
-                                                                                    class="p-1 border border-1 border-foreground bg-primary position-absolute rounded-xl e-0 t-0 status"></i>
+                                                                                class="sh-6 sw-6 d-inline-block position-relative ">
+                                                                                <img src="" id="active_chat_img"
+                                                                                    class="img_radius" width="50px"
+                                                                                    height="50px">
                                                                             </div>
                                                                         </div>
+                                                                        <input type="hidden" id="internet_conn"
+                                                                            value="">
                                                                         <div class="col">
                                                                             <div
                                                                                 class="card-body d-flex flex-row pt-0 pb-0 pe-0 pe-0 ps-2 h-100 align-items-center justify-content-between">
-                                                                                <div class="d-flex flex-column">
-                                                                                    <div class="name">الزين</div>
+                                                                                <div class="d-flex flex-column"
+                                                                                    style="margin-right: 2em;">
+                                                                                    <div class="name active_chat_name">hi
+                                                                                        oo Cottrell
+                                                                                    </div>
                                                                                     <div
                                                                                         class="text-small text-muted last">
                                                                                         Today 10:40</div>
@@ -218,6 +222,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+
                                                                 </div>
                                                                 <div class="separator-light mb-3"></div>
                                                                 <div class="h-100 mb-n2 scroll-out">
@@ -225,28 +230,27 @@
                                                                         id="chatContentContainer">
                                                                         <div class="os-resize-observer-host observed">
                                                                             <div class="os-resize-observer"
-                                                                                style="left: 0px; right: auto;">
-                                                                            </div>
+                                                                                style="left: 0px; right: auto;"></div>
                                                                         </div>
                                                                         <div class="os-size-auto-observer observed"
                                                                             style="height: calc(100% + 1px); float: left;">
                                                                             <div class="os-resize-observer"></div>
                                                                         </div>
                                                                         <div class="os-content-glue"
-                                                                            style="margin: 0px -15px; width: 1251px; height: 235px;">
+                                                                            style="margin: 0px -15px; width: 1251px; height: 19px;">
                                                                         </div>
                                                                         <div class="os-padding">
                                                                             <div class="os-viewport os-viewport-native-scrollbars-invisible"
                                                                                 style="overflow-y: scroll;">
-                                                                                <div class="os-content"
+                                                                                <div class="os-content messages_container"
                                                                                     style="padding: 0px 15px; height: 100%; width: 100%;">
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -254,7 +258,7 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">Hello
                                                                                                         there!</span>
@@ -265,12 +269,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -278,11 +282,10 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">How
-                                                                                                        is it
-                                                                                                        going?</span>
+                                                                                                        is it going?</span>
                                                                                                     <span
                                                                                                         class="position-absolute text-extra-small text-alternate opacity-75 b-2 e-2 time">17:20</span>
                                                                                                 </div>
@@ -290,12 +293,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -303,11 +306,10 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">Here
-                                                                                                        is the
-                                                                                                        images you
+                                                                                                        is the images you
                                                                                                         have asked
                                                                                                         for.</span>
                                                                                                     <span
@@ -317,12 +319,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -330,7 +332,7 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class="d-inline-block sh-11 me-2 position-relative pb-4 rounded-md  text-alternate">
+                                                                                                    class="d-inline-block sh-11 me-2 position-relative pb-4 rounded-md bg-separator-light text-alternate">
                                                                                                     <a href="img/product/large/product-1.webp"
                                                                                                         data-caption="cupcake.webp"
                                                                                                         class="lightbox h-100 attachment">
@@ -341,7 +343,7 @@
                                                                                                         class="position-absolute text-extra-small text-alternate opacity-75 b-2 e-2 time">17:20</span>
                                                                                                 </div>
                                                                                                 <div
-                                                                                                    class="d-inline-block sh-11 me-2 position-relative pb-4 rounded-md  text-alternate">
+                                                                                                    class="d-inline-block sh-11 me-2 position-relative pb-4 rounded-md bg-separator-light text-alternate">
                                                                                                     <a href="img/product/large/product-2.webp"
                                                                                                         data-caption="cupcake.webp"
                                                                                                         class="lightbox h-100 attachment">
@@ -355,12 +357,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -368,44 +370,29 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">Carrot
-                                                                                                        cake pie
-                                                                                                        sweet roll
-                                                                                                        cake. Danish
-                                                                                                        apple pie
-                                                                                                        danish
-                                                                                                        muffin
-                                                                                                        marzipan
-                                                                                                        carrot cake.
-                                                                                                        Danish
-                                                                                                        pastry wafer
-                                                                                                        halvah
-                                                                                                        brownie
-                                                                                                        muffin
-                                                                                                        cookie
-                                                                                                        cookie.
-                                                                                                        Dessert
-                                                                                                        sweet
-                                                                                                        chocolate
-                                                                                                        fruitcake.
-                                                                                                        Toffee candy
-                                                                                                        cake. Pie
-                                                                                                        gummies
-                                                                                                        dessert oat
-                                                                                                        cake sweet
-                                                                                                        roll powder
-                                                                                                        jelly pastry
-                                                                                                        chocolate
-                                                                                                        cake. Gummi
-                                                                                                        bears cake
-                                                                                                        icing
-                                                                                                        gummies
-                                                                                                        marzipan
-                                                                                                        croissant
-                                                                                                        lemon
-                                                                                                        dropssoufflé.</span>
+                                                                                                        cake pie sweet roll
+                                                                                                        cake. Danish apple
+                                                                                                        pie danish muffin
+                                                                                                        marzipan carrot
+                                                                                                        cake. Danish pastry
+                                                                                                        wafer halvah brownie
+                                                                                                        muffin cookie
+                                                                                                        cookie. Dessert
+                                                                                                        sweet chocolate
+                                                                                                        fruitcake. Toffee
+                                                                                                        candy cake. Pie
+                                                                                                        gummies dessert oat
+                                                                                                        cake sweet roll
+                                                                                                        powder jelly pastry
+                                                                                                        chocolate cake.
+                                                                                                        Gummi bears cake
+                                                                                                        icing gummies
+                                                                                                        marzipan croissant
+                                                                                                        lemon drops
+                                                                                                        soufflé.</span>
                                                                                                     <span
                                                                                                         class="position-absolute text-extra-small text-alternate opacity-75 b-2 e-2 time">17:22</span>
                                                                                                 </div>
@@ -413,12 +400,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -426,19 +413,15 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">Fruitcake
                                                                                                         chupa chups
-                                                                                                        gingerbread
-                                                                                                        sweet roll
-                                                                                                        pie. Tootsie
-                                                                                                        roll sweet
-                                                                                                        roll
-                                                                                                        pudding.
-                                                                                                        Pastry
-                                                                                                        liquorice
-                                                                                                        wafer
+                                                                                                        gingerbread sweet
+                                                                                                        roll pie. Tootsie
+                                                                                                        roll sweet roll
+                                                                                                        pudding. Pastry
+                                                                                                        liquorice wafer
                                                                                                         sweet.</span>
                                                                                                     <span
                                                                                                         class="position-absolute text-extra-small text-alternate opacity-75 b-2 e-2 time">17:23</span>
@@ -447,12 +430,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end order-1">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/man.png') }}"
+                                                                                                    <img src="img/profile/profile-2.webp"
                                                                                                         class="img-fluid rounded-xl"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -463,10 +446,8 @@
                                                                                                     class="bg-gradient-light d-inline-block rounded-md py-3 px-3 ps-7 text-white position-relative">
                                                                                                     <span
                                                                                                         class="text">Toffee
-                                                                                                        croissant
-                                                                                                        icing
-                                                                                                        toffee.
-                                                                                                        Sweet roll
+                                                                                                        croissant icing
+                                                                                                        toffee. Sweet roll
                                                                                                         chupa chups
                                                                                                         marshmallow.</span>
                                                                                                     <span
@@ -476,12 +457,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end order-1">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/man.png') }}"
+                                                                                                    <img src="img/profile/profile-2.webp"
                                                                                                         class="img-fluid rounded-xl"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -492,8 +473,7 @@
                                                                                                     class="bg-gradient-light d-inline-block rounded-md py-3 px-3 ps-7 text-white position-relative">
                                                                                                     <span
                                                                                                         class="text">Chocolate
-                                                                                                        cake
-                                                                                                        lollipop
+                                                                                                        cake lollipop
                                                                                                         dessert.</span>
                                                                                                     <span
                                                                                                         class="position-absolute text-extra-small text-white opacity-75 b-2 s-2 time">19:11</span>
@@ -502,12 +482,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -515,11 +495,10 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">Tootsie
-                                                                                                        roll sweet
-                                                                                                        roll
+                                                                                                        roll sweet roll
                                                                                                         pudding.</span>
                                                                                                     <span
                                                                                                         class="position-absolute text-extra-small text-alternate opacity-75 b-2 e-2 time">19:13</span>
@@ -528,12 +507,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -541,13 +520,11 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">Danish
-                                                                                                        pastry wafer
-                                                                                                        halvah
-                                                                                                        brownie
-                                                                                                        muffin
+                                                                                                        pastry wafer halvah
+                                                                                                        brownie muffin
                                                                                                         cookie
                                                                                                         cookie.</span>
                                                                                                     <span
@@ -557,12 +534,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end order-1">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/man.png') }}"
+                                                                                                    <img src="img/profile/profile-2.webp"
                                                                                                         class="img-fluid rounded-xl"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -584,12 +561,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end order-1">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/man.png') }}"
+                                                                                                    <img src="img/profile/profile-2.webp"
                                                                                                         class="img-fluid rounded-xl"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -601,13 +578,10 @@
                                                                                                     <span
                                                                                                         class="text">Oat
                                                                                                         cake gummies
-                                                                                                        cheesecake
-                                                                                                        cake biscuit
-                                                                                                        jelly beans.
-                                                                                                        Muffin
-                                                                                                        cheesecake
-                                                                                                        sesame
-                                                                                                        snaps.</span>
+                                                                                                        cheesecake cake
+                                                                                                        biscuit jelly beans.
+                                                                                                        Muffin cheesecake
+                                                                                                        sesame snaps.</span>
                                                                                                     <span
                                                                                                         class="position-absolute text-extra-small text-white opacity-75 b-2 s-2 time">19:35</span>
                                                                                                 </div>
@@ -615,12 +589,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -628,11 +602,10 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">Thanks
-                                                                                                        for the
-                                                                                                        help!</span>
+                                                                                                        for the help!</span>
                                                                                                     <span
                                                                                                         class="position-absolute text-extra-small text-alternate opacity-75 b-2 e-2 time">21:22</span>
                                                                                                 </div>
@@ -640,12 +613,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -653,7 +626,7 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">And
                                                                                                         I see you
@@ -665,12 +638,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="mb-2 card-content">
-                                                                                        <div class="row g-2  list_style">
+                                                                                        <div class="row g-2">
                                                                                             <div
                                                                                                 class="col-auto d-flex align-items-end">
                                                                                                 <div
                                                                                                     class="sw-5 sh-5 mb-1 d-inline-block position-relative">
-                                                                                                    <img src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                                                                                                    <img src="img/profile/profile-4.webp"
                                                                                                         class="img-fluid rounded-xl chat-profile"
                                                                                                         alt="thumb">
                                                                                                 </div>
@@ -678,7 +651,7 @@
                                                                                             <div
                                                                                                 class="col d-flex align-items-end content-container">
                                                                                                 <div
-                                                                                                    class=" d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate bg-separator-light">
+                                                                                                    class="bg-separator-light d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
                                                                                                     <span
                                                                                                         class="text">Bye</span>
                                                                                                     <span
@@ -704,7 +677,7 @@
                                                                             <div
                                                                                 class="os-scrollbar-track os-scrollbar-track-off">
                                                                                 <div class="os-scrollbar-handle"
-                                                                                    style="height: 15.6035%; transform: translate(0px, 0px);">
+                                                                                    style="height: 1.94742%; transform: translate(0px, 0px);">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -722,7 +695,8 @@
 
                                                                     <button
                                                                         class="btn btn-icon btn-icon-only btn-primary mb-1 rounded-xl ms-1"
-                                                                        id="chatSendButton" type="button">
+                                                                        id="chatSendButton" type="button"
+                                                                        onclick="ChatSend()">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                                             width="20" height="20"
                                                                             viewBox="0 0 20 20" fill="none"
@@ -885,6 +859,22 @@
 @endsection
 
 @section('js')
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCglXM6RATdwKebapefwd9k4LLgbq3hCRc",
+            authDomain: "tawafeeqclone-b14fd.firebaseapp.com",
+            databaseURL: "https://tawafeeqclone-b14fd-default-rtdb.firebaseio.com",
+            projectId: "tawafeeqclone-b14fd",
+            storageBucket: "tawafeeqclone-b14fd.appspot.com",
+            messagingSenderId: "773303799890",
+            appId: "1:773303799890:web:b99bc4b1ed55c66bb50f8b"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
     <script>
         $('.chat_nav_item').on('click', function(event) {
             getChatHeads()
@@ -893,11 +883,131 @@
         function getChatHeads() {
             $('.chat_heads').addClass('overlay-spinner')
             axios.get("{{ route('chat.chats_heads') }}")
-            .then((response) => {
-                $('.chat_heads').html(response.data)
-                $('.chat_heads').removeClass('overlay-spinner')
-                    console.log('Data:', response.data);
+                .then((response) => {
+                    $('.chat_heads').html(response.data)
+                    $('.chat_heads').removeClass('overlay-spinner')
                 });
+        }
+
+        function openChat(partner_id) {
+            chat_id = getChatId(partner_id);
+            set_chat_attributes(partner_id, chat_id)
+            get_chat(chat_id, partner_id)
+        }
+
+        function ChatSend() {
+            var message = $('#chatInput').val()
+            console.log('message: ', message);
+            const url = "{{ route('chat.send_message') }}";
+            const data = {
+                internet_conn: $('#internet_conn').val(),
+                message: message
+            };
+
+            axios.post(url, data)
+                .then(response => {
+                    console.log('Response:', response.data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function getChatId(partner_id) {
+            $('.chat_heads').addClass('overlay-spinner')
+            var url = '{{ route('chat.chat_id', ':id') }}';
+            url = url.replace(':id', partner_id);
+            var chat;
+            $.ajax({
+                type: 'GET',
+                async: false,
+                url,
+                success: function(data) {
+                    console.log('response: ', data);
+                    chat = data;
+                },
+            });
+            return chat;
+        }
+
+
+
+        function openChatWindow(chat_id) {
+
+        }
+
+
+        function get_chat(chat_id, partner_id) {
+            var itemsRef = firebase
+                .database()
+                .ref('messages').orderByChild('chat_id').equalTo(Number.parseInt(chat_id));
+            console.log('itemsRef: ', itemsRef);
+            itemsRef.on("value", snapshot => {
+                console.log(snapshot.val())
+                let data = snapshot.val();
+                let messages = [];
+                if (data) {
+                    Object.keys(data).forEach(key => {
+                        // simply replacing all \n with a br tag...
+                        data[key].message ?
+                            (data[key].message = data[key].message.replace(
+                                /(\n)/g,
+                                `<br />`
+                            )) :
+                            "";
+                        messages.push({
+                            ...data[key]
+                        });
+                    });
+                }
+                setMessages(messages,partner_id)
+                // setLoading(false);
+            });
+        }
+
+        function setMessages(messages, partner_id) {
+            console.log('partner_id: ', partner_id);
+            sender_id = "{{ auth()->id() }}";
+            sender_img = "{{ asset('assets/img/homepage_img/woman.png') }}"
+            reciver_img = $('#contactImg_' + partner_id).attr('src')
+            console.log('reciver_img: ', reciver_img);
+
+
+            const messeges_html = messages.map(message => `
+            <div class="mb-2 card-content">
+                <div class="row g-2">
+                    <div
+                        class="col-auto d-flex align-items-end ${message.sender_id==sender_id?'':'order-1'}">
+                        <div
+                            class="sw-5 sh-5 mb-1 d-inline-block position-relative">
+                            <img src="${message.sender_id==sender_id?sender_img:reciver_img}"
+                            class="img_radius" width="35px" height="35px">
+                        </div>
+                    </div>
+
+                    <div
+                        class="col d-flex ${message.sender_id==sender_id?'':'justify-content-end'} align-items-end content-container">
+                        <div
+                            class="bg-${message.sender_id==sender_id?'separator-light':'gradient-light text-white'} d-inline-block rounded-md py-3 px-3 pe-7 position-relative text-alternate">
+                            <span
+                                class="text">${message.body}</span>
+                            <span
+                                class="position-absolute text-extra-small text-${message.sender_id==sender_id?'alternate':'white'} opacity-75 b-2 e-2 time">17:20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>`);
+
+            $('.messages_container').html(`<ul>${messeges_html.join('')}</ul>`);
+        }
+
+        function set_chat_attributes(partner_id, internet_conn) {
+            var contactName = $('#contactName_' + partner_id).text();
+            $('.active_chat_name').html(contactName);
+            var contactImg = $('#contactImg_' + partner_id).attr('src');
+            console.log('contactImg: ', contactImg);
+            $('#active_chat_img').attr('src', contactImg);
+            $('#internet_conn').val(internet_conn);
         }
     </script>
 @endsection

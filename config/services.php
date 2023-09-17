@@ -29,5 +29,12 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'firebase' => [
+        'api_key' => 'AIzaSyCglXM6RATdwKebapefwd9k4LLgbq3hCRc', // Only used for JS integration
+        'auth_domain' => 'tawafeeqclone-b14fd.firebaseapp.com', // Only used for JS integration
+        'database_url' => 'https://tawafeeqclone-b14fd-default-rtdb.firebaseio.com',
+        'secret' => 'kLh4raTkhjW1fX65qc5Grmk052PV3ASFbGuokDeM',
+        'storage_bucket' => 'tawafeeqclone-b14fd.appspot.com', // Only used for JS integration
+    ],
 
 ];

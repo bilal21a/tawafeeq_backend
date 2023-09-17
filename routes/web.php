@@ -57,3 +57,5 @@ Route::get('/cancel', [PaymentController::class, 'cancel'])->name('payment.cance
 
 Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
 Route::get('/get_chats_heads', [ChatController::class, 'get_chats_heads'])->name('chat.chats_heads');
+Route::get('/get_chat_id/{partner_id}', [ChatController::class, 'get_chat_id'])->name('chat.chat_id');
+Route::post('/send_message', [ChatController::class, 'send_message'])->name('chat.send_message');
