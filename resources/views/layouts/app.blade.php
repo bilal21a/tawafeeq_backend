@@ -159,6 +159,8 @@
     <script src="{{ asset('js/scripts.js') }} "></script>
     <script src="{{ asset('js/forms/layouts.js') }} "></script>
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     @yield('js')
 </body>
 

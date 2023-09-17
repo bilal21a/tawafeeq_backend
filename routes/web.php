@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlanController;
@@ -63,3 +64,6 @@ Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('pay
 Route::post('/create-checkout-session/{plan_id}', [PaymentController::class, 'createCheckoutSession'])->name('createCheckoutSession');
 Route::get('/success', [PaymentController::class, 'success'])->name('payment.success');
 Route::get('/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
+
+Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+Route::get('/get_chats_heads', [ChatController::class, 'get_chats_heads'])->name('chat.chats_heads');
