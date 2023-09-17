@@ -11,6 +11,7 @@
 @endsection
 @section('content')
     <main>
+        {{-- @dd($users) --}}
         <div class="row">
             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0"></div>
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 me-md-7">
@@ -18,7 +19,6 @@
                     <div class="page-title-container">
                         <div class="mb-5 mt-5">
                             <div class="row custom-row">
-
                                 <div class="col-xl-6 col-lg-5 col-md-5 col-sm-12 pb-3 p-sm-0">
                                     <div class="switch-field mb-0">
                                         <input type="radio" id="radio-one" name="switch-one" value="yes" checked />
@@ -30,52 +30,61 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-body pt-3 pb-7">
-
                                             <div class="ps-4 pb-5">
                                                 <h4 class="fw-semibold mb-0 d-flex">اعثر على شريك حياتك </h4><br>
-                                                <form action="">
-                                                    <h5 class="fw-semibold mb-1">الاسم</h5>
-                                                    <input type="text" name="topic" id="topic"
-                                                        class="form-control input_background" placeholder="الاسم">
+                                                <form method="POST" action="{{ route('members') }}">
+                                                    @csrf
+                                                <h5 class="fw-semibold mb-1">الاسم</h5>
+                                                    <input type="text" name="name" id="name" value="{{ isset($name_search) ? $name_search: ''; }}"
+                                                    class="form-control input_background" placeholder="الاسم">
                                                     <div class="row mt-3">
                                                         <div class="col-md-6 ps-0">
                                                             <h5 class="fw-semibold mb-1">الجنسية</h5>
-                                                            <input type="text" name="topic" id="topic"
-                                                                class="form-control input_background" placeholder="الجنسية">
+                                                            <select class="form-select width_input input_background" name="nationality">
+                                                                <option selected="selected" disabled>الجنسية</option>
+                                                                @foreach ($countryNames as$countryName )
+                                                                <option value="{{ $countryName }}">{{ $countryName }}</option>
+                                                                @endforeach
+                                                            </select>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <h5 class="fw-semibold mb-1">مكان الاقامة</h5>
-                                                            <input type="text" name="topic" id="topic"
-                                                                class="form-control input_background"
-                                                                placeholder="مكان الاقامة">
+                                                            <select class="form-select width_input input_background" name="country_of_residence">
+                                                                <option selected="selected" disabled>مكان الاقامة</option>
+                                                                @foreach ($countryNames as$countryName )
+                                                                <option value="{{ $countryName }}">{{ $countryName }}</option>
+                                                                @endforeach
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3">
                                                         <div class="col-md-4 ps-0">
                                                             <h5 class="fw-semibold mb-1">العمر من </h5>
-                                                            <input type="text" name="topic" id="topic"
+                                                            <input type="number" name="age_from" id="age_from"
                                                                 class="form-control input_background"
                                                                 placeholder="العمر من">
                                                         </div>
                                                         <div class="col-md-4 ps-0">
                                                             <h5 class="fw-semibold mb-1">العمر الى</h5>
-                                                            <input type="text" name="topic" id="topic"
+                                                            <input type="number" name="age_to" id="age_to"
                                                                 class="form-control input_background"
                                                                 placeholder="العمر الى">
                                                         </div>
                                                         <div class="col-md-4">
                                                             <h5 class="fw-semibold mb-1"> الحالة الاجتماعية</h5>
-                                                            <input type="text" name="topic" id="topic"
-                                                                class="form-control input_background"
-                                                                placeholder="الحالة الاجتماعية">
+                                                            <select class="form-select width_input input_background" name="marital_status">
+                                                                <option selected="selected" disabled>الحالة الاجتماعية</option>
+                                                               @foreach ($maritalStatusNames as$maritalStatusName )
+                                                               <option value="{{ $maritalStatusName }}">{{ $maritalStatusName }}</option>
+                                                               @endforeach
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-3 d-flex">
-                                                            <button class="btn btn-xl btn-primary mt-3 ms-1"
-                                                                type="button">تسجيل</button>
-                                                            <button class="btn btn-xl btn-primary mt-3"
-                                                                type="button">تسجيل</button>
+                                                                <button type="submit" class="btn btn-primary mt-3">ابدأ البحث</button>
+                                                            <a href="{{ route('advance_search') }}" class="btn btn-light mt-3 me-2"
+                                                                type="button">بحث متقدم</a>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -100,14 +109,16 @@
             <h2 class="" dir="rtl"><span class="fw-bold fs-4">الأعضاء الجدد</span>(عرض الكل)</h2>
             <div class="slide-container swiper">
                 <div class="slide-content">
-                    {{-- <div class="card-wrapper swiper-wrapper" style="height: unset">
-                        <div class="card swiper-slide" style="width: unset !important;">
-                            @include('common.card')
-                        </div>
-                        <div class="card swiper-slide" style="width: unset !important;">
+                    <div class="card-wrapper swiper-wrapper" style="height: unset">
+               {{-- @foreach ($users as $user )
+               <div class="card swiper-slide" style="width: unset !important;">
+                   @include('common.card')
+               </div>
+               @endforeach --}}
+                        {{-- <div class="card swiper-slide" style="width: unset !important;">
                            @include('common.card')
-                        </div>
-                        <div class="card swiper-slide" style="width: unset !important;">
+                        </div> --}}
+                        {{-- <div class="card swiper-slide" style="width: unset !important;">
                             @include('common.card')
                         </div>
                         <div class="card swiper-slide" style="width: unset !important;">
@@ -133,8 +144,8 @@
                         </div>
                         <div class="card swiper-slide" style="width: unset !important;">
                             @include('common.card')
-                        </div>
-                    </div> --}}
+                        </div> --}}
+                    </div>
                 </div>
                 <div class="swiper-button-next swiper-navBtn"></div>
                 <div class="swiper-button-prev swiper-navBtn"></div>

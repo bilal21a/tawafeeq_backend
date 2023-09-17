@@ -15,7 +15,8 @@ class User extends Model implements Authenticatable
             'email' ,
             'gender' ,
             'nationality' ,
-            'country_of_residence' ,
+            'country_of_residence',
+            'city',
             'password',
     ];
     use HasFactory;
