@@ -17,13 +17,14 @@
                 <div class="col-md-6">
                     <div class="mt-3">
                         <img width="176px" height="176px" class="rounded-circle"
-                            src="{{ asset('assets/img/homepage_img/woman.png') }}"
+                            src="{{ $user->img_url }}"
                             alt="" srcset="">
                     </div>
                 </div>
                 <div class="col-md-6 align-self-center">
                     <ul class="no-bullets">
-                        <li>{{ $user->name }}<img width="30px" src="verified.png" alt=""
+                        <li>{{ $user->name }}
+                            <img width="30px" src="verified.png" alt=""
                                 srcset=""> </li>
                         <li>{{ $user->country_of_residence }}-{{ $user->city }}</li>
                         <li> {{ $user->profile->age }}سنة</li>

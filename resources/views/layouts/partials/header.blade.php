@@ -178,7 +178,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('pricing') }}">
+                    <a href="{{ route('plans') }}">
                         <span class="label">الباقات</span>
                     </a>
 

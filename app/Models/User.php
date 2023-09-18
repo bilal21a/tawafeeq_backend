@@ -9,6 +9,16 @@ use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 
 class User extends Model implements Authenticatable
 {
+    protected $appends = ['img_url'];
+    public function getImgUrlAttribute()
+    {
+        if ($this->gender == 'ذكر') {
+            $img= asset('assets/img/homepage_img/man.png');
+        }else{
+            $img= asset('assets/img/homepage_img/woman.png');
+        }
+        return $img;
+    }
     use AuthenticableTrait;
     protected $fillable=[
         'name' ,

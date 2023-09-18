@@ -61,4 +61,23 @@ class UserController extends Controller
 
         return view('members_list', compact('maritalStatusNames','countryNames','users', 'name_search', 'nationality_search', 'country_of_residence_search', 'age_from_search', 'age_to_search', 'marital_status_search'));
     }
+
+    public function tawafeeq()
+    {
+        $countryNames = [
+            "أوكرانيا", "اخر", "الاردن", "الامارات", "البحرين", "الجزائر", "السعودية", "السودان", "الصومال", "العراق",
+            "الكويت", "المغرب", "اليمن", "ايران", "باكستان", "تونس", "جزر القمر", "جيبوتي", "دول غربية", "سوريا", "عُمان", "فلسطين"
+        ];
+        $maritalStatusNames = [
+            'أعزب',
+            'متزوج',
+            'مطلق',
+            'أرمل',
+            'مطلقة',
+            'أرملة',
+            'عزباء',
+        ];
+        $users = User::with('profile')->get();
+        return view('tawafeeq', compact('countryNames', 'maritalStatusNames', 'users'));
+    }
 }

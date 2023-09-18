@@ -29,22 +29,5 @@ class HomeController extends Controller
     {
         return view('advance_search');
     }
-    public function tawafeeq()
-    {
-        $countryNames = [
-            "أوكرانيا", "اخر", "الاردن", "الامارات", "البحرين", "الجزائر", "السعودية", "السودان", "الصومال", "العراق",
-            "الكويت", "المغرب", "اليمن", "ايران", "باكستان", "تونس", "جزر القمر", "جيبوتي", "دول غربية", "سوريا", "عُمان", "فلسطين"
-        ];
-        $maritalStatusNames = [
-            'أعزب',
-            'متزوج',
-            'مطلق',
-            'أرمل',
-            'مطلقة',
-            'أرملة',
-            'عزباء',
-        ];
-        $users = User::with('profile')->get();
-        return view('tawafeeq', compact('countryNames', 'maritalStatusNames', 'users'));
-    }
+
 }

@@ -10,10 +10,8 @@ class ProfileController extends Controller
 {
     public function profile() {
         $user_id = Auth::id();
-        // dd($user_id);
         $user = User::where('id',$user_id)
         ->first();
-        // dd($user);
         return view('profile_new',compact('user'));
     }
     public function members_profile($id) {
