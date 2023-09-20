@@ -58,10 +58,28 @@
     <link rel="stylesheet" href="{{ asset('css/profile_new.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/tawfeeq.css') }}" />
     <script src="{{ asset('js/base/loader.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap"
         rel="stylesheet" />
     @yield('css')
     <style>
+        .font_star{
+            font-size: 60px;
+        }
+        .modal_title {
+            position: relative;
+            max-width: 100%;
+            margin: 0;
+            padding: 0.8em 1em 0;
+            color: inherit;
+            font-size: 1.575em;
+            font-weight: 600;
+            text-align: center;
+            text-transform: none;
+            word-wrap: break-word;
+        }
+
         .global_errors {
             width: 100%;
             margin-top: 0.25rem;
