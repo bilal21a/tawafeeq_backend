@@ -47,10 +47,7 @@ Route::post('/create-checkout-session/{plan_id}', [PaymentController::class, 'cr
 Route::get('/success', [PaymentController::class, 'success'])->name('payment.success');
 Route::get('/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
 
-<<<<<<< HEAD
 Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
 Route::get('/get_chats_heads', [ChatController::class, 'get_chats_heads'])->name('chat.chats_heads');
 Route::get('/get_chat_id/{partner_id}', [ChatController::class, 'get_chat_id'])->name('chat.chat_id');
 Route::post('/send_message', [ChatController::class, 'send_message'])->name('chat.send_message');
-=======
->>>>>>> 9351b1b (route clean)
