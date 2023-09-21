@@ -189,7 +189,7 @@
                     </a>
                 </li>
                 <li class="mega">
-                    <a href="{{ route('login_page') }}">
+                    <a href="{{ route('login') }}">
                         <span class="label">تسجيل الدخول </span>
                     </a>
                 </li>

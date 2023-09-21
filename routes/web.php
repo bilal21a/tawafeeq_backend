@@ -26,6 +26,8 @@ Route::get('register', function () {
 Auth::routes();
 Route::middleware(['auth'])->group(function () {
 Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+Route::get('edit_profile/{id}', [ProfileController::class, 'edit_profile'])->name('edit_profile');
+Route::post('update_profile/{id}', [ProfileController::class, 'update_profile'])->name('update_profile');
 Route::get('members_profile/{id}', [ProfileController::class, 'members_profile'])->name('members_profile');
 });
 // Before Login
