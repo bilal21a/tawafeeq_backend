@@ -77,6 +77,11 @@
             color: whitesmoke;
         }
 
+        .custom_chat_loader {
+            padding-left: 27px !important;
+            padding-right: 5px !important;
+        }
+
 
 
         .letter_spacing {
