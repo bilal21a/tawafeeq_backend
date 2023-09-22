@@ -1,14 +1,16 @@
 <div class="tab-pane fade active show" id="first" role="tabpanel">
     <div class="d-grid gap-2 d-md-flex justify-content-between">
         <div class="d-grid gap-2 d-flex">
-            <button class="btn btn-primary fs-5" type="button"><i data-acorn-icon="pen"
-                    class="me-2 ms-3" data-acorn-size="17"></i>تعديل</button>
-            <button class="btn btn-primary fs-5" type="button"><i data-acorn-icon="share"
-                    class="me-2 ms-3" data-acorn-size="17"></i>تعديل</button>
+            @if ($user_id == $user->id)
+                <a href="{{ route('edit_profile', $user->id) }}" class="btn btn-primary fs-5" type="button"><i
+                        data-acorn-icon="pen" class="me-2 ms-3" data-acorn-size="17"></i>amendment</a>
+            @endif
+            <button class="btn btn-primary fs-5" type="button"><i data-acorn-icon="share" class="me-2 ms-3"
+                    data-acorn-size="17"></i>تعديل</button>
         </div>
         <div>
-            <button type="button" class="btn btn-danger mb-1"><i data-acorn-icon="bin"
-                    class="me-2 ms-3" data-acorn-size="17"></i>حذف حسابي</button>
+            <button type="button" class="btn btn-danger mb-1"><i data-acorn-icon="bin" class="me-2 ms-3"
+                    data-acorn-size="17"></i>حذف حسابي</button>
         </div>
     </div>
     <div class="row justify-content-between">
@@ -16,31 +18,25 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="mt-3">
-                        <img width="176px" height="176px" class="rounded-circle"
-                            src="{{ $user->img_url }}"
+                        <img width="176px" height="176px" class="rounded-circle" src="{{ $user->img_url }}"
                             alt="" srcset="">
                     </div>
                 </div>
                 <div class="col-md-6 align-self-center">
                     <ul class="no-bullets">
                         <li>{{ $user->name }}
-                            <img width="30px" src="verified.png" alt=""
-                                srcset=""> </li>
+                            <img width="30px" src="verified.png" alt="" srcset="">
+                        </li>
                         <li>{{ $user->country_of_residence }}-{{ $user->city }}</li>
                         <li> {{ $user->profile->age }}سنة</li>
                         <li>
                             <div class="star-row">
                                 <span class="fw-bold"> 2.6</span>
-                                <i class="golden-star" data-acorn-icon="star"
-                                    data-acorn-size="20"></i>
-                                <i class="golden-star" data-acorn-icon="star"
-                                    data-acorn-size="20"></i>
-                                <i class="golden-star" data-acorn-icon="star"
-                                    data-acorn-size="20"></i>
-                                <i class="golden-star" data-acorn-icon="star"
-                                    data-acorn-size="20"></i>
-                                <i class="golden-star" data-acorn-icon="star"
-                                    data-acorn-size="20"></i>
+                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
+                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
+                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
+                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
+                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
                             </div>
                         </li>
                     </ul>
@@ -59,13 +55,18 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-primary fs-5 width_btn mt-md-4" type="button"><i
-            data-acorn-icon="pen" class="me-2 ms-3"
-            data-acorn-size="17"></i>تعديل</button>
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-primary fs-5 width_btn mt-md-4" type="button"><i data-acorn-icon="pen" class="me-2 ms-3"
+                data-acorn-size="17"></i>تعديل</button>
+        <div class="ms-7 ps-7">
+            <button type="button" class="btn btn-outline-primary ms-6" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">تقييم العضو</button>
+        </div>
+    </div>
     <div class="user-info margin_top justify-content-lg-evenly">
         <div class="user-info-item  sepcifyed_width">
             <span class="user-info-label">الجنسية</span>
-            <span class="user-info-value">{{  $user->nationality }}</span>
+            <span class="user-info-value">{{ $user->nationality }}</span>
         </div>
         <div class="user-info-item sepcifyed_width">
             <span class="user-info-label">نوع الزواج</span>
@@ -101,7 +102,7 @@
         </div>
         <div class="user-info-item sepcifyed_width">
             <span class="user-info-label">المؤهل التعليمي</span>
-            <span class="user-info-value">{{  $user->profile->qualification }}
+            <span class="user-info-value">{{ $user->profile->qualification }}
             </span>
         </div>
     </div>
@@ -131,31 +132,44 @@
             <p class="user-info-value">{{ $user->profile->about }}</p>
         </div>
     </div>
-    <section class="scroll-section" id="default">
-        <h2 class="small-title">Default</h2>
-        <div class="card mb-5">
-          <div class="card-body">
-            <!-- Button Trigger -->
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelDefault" aria-hidden="true">
-              <div class="modal-dialog">
+    {{-- <section class="scroll-section" id="default"> --}}
+    {{-- <h2 class="small-title">Default</h2> --}}
+
+    {{-- </section> --}}
+</div>
+<div class="">
+    <div class="card-body">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabelDefault" aria-hidden="true">
+            <div class="modal-dialog">
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabelDefault">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                      <!-- <i data-cs-icon="close"></i> -->
-                    </button>
-                  </div>
-                  <div class="modal-body">...</div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
+                    <div class=" modal-header d-flex justify-content-center modal_title"
+                        style="border-bottom: 0px solid !important">
+                        <h1>تقييم العضو</h1>
+                    </div>
+                    <form action="#">
+                        <div class="d-flex justify-content-center mt-3 fs-5">
+                            <p>كم نجمة تعطي سماريهAD</p>
+                        </div>
+                        <div class=" d-flex justify-content-center" style="border-bottom: 0px solid !important">
+                            <div class="star-row">
+                                <i class="golden-star bi bi-star-fill font_star"></i>
+                                <i class="golden-star bi bi-star-fill font_star"></i>
+                                <i class="golden-star bi bi-star font_star"></i>
+                                <i class="golden-star bi bi-star font_star"></i>
+                                <i class="golden-star bi bi-star font_star"></i>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center"
+                            style="border-top: 0px solid !important;">
+                            <button type="button" class="btn btn-primary">تقييم</button>
+                            <button type="submit" class="text-danger btn btn-light"
+                                data-bs-dismiss="modal">ألغاء</button>
+                        </div>
+                    </form>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </div>
 </div>

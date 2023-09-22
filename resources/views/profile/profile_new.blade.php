@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-sm-12">
             <div class="card mb-5">
-                <div class="card mb-3">
+                <div class="card ">
                     <div class="card-header border-0 pb-0">
                         <ul class="nav nav-tabs nav-tabs-line card-header-tabs responsive-tabs" role="tablist">
                             <li class="nav-item" role="presentation">
