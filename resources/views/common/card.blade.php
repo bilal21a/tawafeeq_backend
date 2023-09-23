@@ -10,7 +10,7 @@
                 style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
                 30 دقيقة</span>
             <a href="{{ route('members_profile', $user->id) }}">
-                <img src="{{ asset('assets/img/homepage_img/man.png') }}" class="card-img-top" alt="card image" />
+                <img src="{{ $user->img_url }}" class="card-img-top" alt="card image" />
             </a>
         </div>
         <div class="card-body pb-2">

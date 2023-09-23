@@ -2,11 +2,9 @@
     <div class="d-grid gap-2 d-md-flex justify-content-between">
         <div class="d-grid gap-2 d-flex">
             @if ($user_id == $user->id)
-                <a href="{{ route('edit_profile', $user->id) }}" class="btn btn-primary fs-5" type="button"><i
-                        data-acorn-icon="pen" class="me-2 ms-3" data-acorn-size="17"></i>amendment</a>
+                <a href="{{ route('edit_profile', $user->id) }}" class="btn btn-primary fs-5" style="padding-top: 12px;" type="button"><i
+                        data-acorn-icon="pen" class="me-2 ms-3" data-acorn-size="17"></i>تعديل</a>
             @endif
-<button class="btn btn-primary fs-5" type="button"><i data-acorn-icon="share" class="me-2 ms-3"
-                    data-acorn-size="17"></i>تعديل</button>
         </div>
         <div>
             <button type="button" class="btn btn-danger mb-1"><i data-acorn-icon="bin" class="me-2 ms-3"

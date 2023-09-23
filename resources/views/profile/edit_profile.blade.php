@@ -467,7 +467,7 @@
         </section>
     </main>
 @endsection
-@section('js')
+{{-- @section('js')
     <script>
         // Get a reference to the form element
         const form = document.getElementById('your-form-id'); // Replace 'your-form-id' with the actual form's ID
@@ -494,4 +494,4 @@
             // }, 3000); // Redirect after 3 seconds (adjust the delay as needed)
         });
     </script>
-@endsection
+@endsection --}}

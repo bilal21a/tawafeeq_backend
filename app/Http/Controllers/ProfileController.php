@@ -140,6 +140,7 @@ class ProfileController extends Controller
     }
     public function update_profile(Request $request)
     {
+        // dd($request->all());
         $user_id =Auth::id();
         $user = User::find($user_id);
         $user->name = $request->name;

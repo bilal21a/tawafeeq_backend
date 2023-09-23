@@ -4,7 +4,7 @@
         <div class="logo position-relative">
             <a href="Dashboards.Default.html">
                 <!-- Logo can be added directly -->
-                 <img src="{{ asset('assets/img/hudhood logo.svg') }}" alt="logo" />
+                <img src="{{ asset('assets/img/hudhood logo.svg') }}" alt="logo" />
 
                 <!-- Or added via css to provide different ones for different color themes --> </a>
         </div>
@@ -24,33 +24,20 @@
 
         <!-- User Menu Start -->
         <div class="user-container d-flex ms-md-7 ms-0 flex-md-row-reverse">
-            <div class="d-flex user position-relative ps-md-7 ps-0" data-bs-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <img class="profile" alt="profile" src="{{ asset('assets/img/homepage_img/man.png') }}" />
-                <ul class="text-decoration-none d-md-flex ps-0 pe-1 flex-column" style="list-style-type: none;">
-                    <li>
-                    </li>
-                    <li class="ps-3 mb-2">
-                        <div class="name fs-6">خالد.</div>
-                    </li>
-                    <div class="d-flex flex-md-row-reverse me-3">
-                        <li class="ps-3">
-                            <i class="white" data-acorn-icon="star" data-acorn-size="15"></i>
-                        </li>
-                        <li class="ps-3">
-                            <i class="white" data-acorn-icon="bell" data-acorn-size="15"></i>
-                        </li>
-                        <li class="ps-3">
-                            <i class="white" data-acorn-icon="message" data-acorn-size="15"></i>
-                        </li>
-                        <a href="{{ route('logout') }}">
-                            <li class="ps-3">
-                                <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
-                            </li>
-                        </a>
-                    </div>
-                </ul>
+            <div class="d-flex flex-column">
+                <div class="d-flex user position-relative ps-md-7 ps-0">
+                    <img class="profile" alt="profile" src="{{ $user->img_url }}" />
+                    @php
+                        $user_data = Auth::user();
+                    @endphp
+                    <div class="name fs-6">{{ $user_data->name }}</div>
 
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="{{ route('logout') }}">
+                        <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
+                    </a>
+                </div>
             </div>
             <div class="dropdown-menu dropdown-menu-end user-menu wide">
                 <div class="row mb-3 ms-0 me-0">
