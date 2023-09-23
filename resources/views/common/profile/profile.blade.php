@@ -121,12 +121,12 @@
         </div>
     </div>
     <div class="user-info margin_top justify-content-lg-start ps-7">
-        <div class="user-info-item sepcifyed_width pe-md-7 me-md-7">
+        <div class="user-info-item sepcifyed_width me-md-7">
             <span class="user-info-label">تاريخ التسجيل</span>
             <span class="user-info-value">{{ $user->profile->created_at->format('d/m/Y') }}</span>
         </div>
     </div>
-    <div class="user-info margin_top justify-content-lg-start pe-md-7 me-md-7">
+    <div class="user-info margin_top justify-content-lg-start me-md-7">
         <div class="user-info-item sepcifyed_width">
             <span class="user-info-label" style="color: var(--tawafeeq);">عن نفسي</span>
             <p class="user-info-value">{{ $user->profile->about }}</p>

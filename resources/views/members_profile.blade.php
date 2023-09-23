@@ -9,7 +9,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <div class="tab-content">
-                            @include('common.members')
+                            @include('common.profile.profile')
                         </div>
                     </div>
                 </div>

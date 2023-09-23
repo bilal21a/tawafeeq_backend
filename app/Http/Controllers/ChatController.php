@@ -11,12 +11,12 @@ class ChatController extends Controller
 {
     public function index()
     {
-        return view('chat.index');
+        return view('profile.index');
     }
     public function get_chats_heads()
     {
         $users = User::where('id', '!=', auth()->id())->get();
-        return view('chat.chat_heads', compact('users'));
+        return view('profile.chat_heads', compact('users'));
     }
     public function get_chat_id($partner_id)
     {
