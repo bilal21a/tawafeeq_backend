@@ -5,7 +5,7 @@
     <main>
         {{-- @dd($user) --}}
         <section class="scroll-section" id="helpText">
-            <form method="POST" action="{{ route('update_profile', $id) }}">
+            <form method="POST" action="{{ route('update_profile') }}">
                 @csrf
                 <div class="row mb-5">
                     <div class="col-sm-0 col-md-2"></div>

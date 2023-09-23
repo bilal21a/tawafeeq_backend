@@ -15,10 +15,9 @@ class ProfileController extends Controller
             ->first();
         return view('profile.index', compact('user', 'user_id'));
     }
-    public function edit_profile($id)
+    public function edit_profile()
     {
-        $user = User::where('id', $id)
-            ->first();
+        $user = auth()->user();
         $nationality = [
             'أوكرانيا',
             'اخر',
@@ -93,11 +92,11 @@ class ProfileController extends Controller
             'أعزب',
             'مُطلّق',
         ];
-        return view('profile.edit_profile', compact('user', 'id', 'nationality','cities','type_of_marriages','maritalStatusNames'));
+        return view('profile.edit_profile', compact('user', 'nationality','cities','type_of_marriages','maritalStatusNames'));
     }
-    public function update_profile(Request $request, $id)
+    public function update_profile(Request $request)
     {
-        dd($id);
+        dd($request->all());
     }
     public function members_profile($id)
     {
