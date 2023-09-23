@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UpdateProfileRequest;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
@@ -19,9 +17,6 @@ class ProfileController extends Controller
             ->first();
         return view('profile.index', compact('user', 'user_id'));
     }
-<<<<<<< HEAD
-    public function edit_profile()
-=======
 
     public function members_profile($id)
     {
@@ -30,8 +25,7 @@ class ProfileController extends Controller
             ->first();
         return view('members_profile', compact('user', 'user_id'));
     }
-    public function edit_profile($id)
->>>>>>> 2ed4324 (edit)
+    public function edit_profile()
     {
         $user = auth()->user();
         $nationality = [
@@ -142,12 +136,12 @@ class ProfileController extends Controller
             "متدين",
         ];
 
-        return view('profile.edit_profile', compact('user', 'id', 'nationality', 'cities', 'type_of_marriages', 'maritalStatusNames', 'sikinColors', 'qualifications', 'financial_conditions', 'religiousOptions'));
+        return view('profile.edit_profile', compact('user', 'nationality', 'cities', 'type_of_marriages', 'maritalStatusNames', 'sikinColors', 'qualifications', 'financial_conditions', 'religiousOptions'));
     }
     public function update_profile(Request $request)
     {
         $user_id =Auth::id();
-        $user = User::find($id);
+        $user = User::find($user_id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
