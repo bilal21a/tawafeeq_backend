@@ -78,11 +78,11 @@
     <div class="user-info margin_top justify-content-lg-evenly">
         <div class="user-info-item sepcifyed_width">
             <span class="user-info-label">الوزن</span>
-            <span class="user-info-value">{{ $user->profile->weight }}</span>
+            <span class="user-info-value">{{ $user->profile->weight }}kg</span>
         </div>
         <div class="user-info-item sepcifyed_width">
             <span class="user-info-label">الطول</span>
-            <span class="user-info-value"> {{ $user->profile->height }}</span>
+            <span class="user-info-value"> {{ $user->profile->height }}cm</span>
         </div>
         <div class="user-info-item sepcifyed_width">
             <span class="user-info-label">البشرة</span>

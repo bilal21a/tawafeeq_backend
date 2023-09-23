@@ -2,7 +2,7 @@
     <div class="nav-content d-flex">
         <!-- Logo Start -->
         <div class="logo position-relative">
-            <a href="Dashboards.Default.html">
+            <a href="{{ route('home') }}">
                 <!-- Logo can be added directly -->
                 <img src="{{ asset('assets/img/hudhood logo.svg') }}" alt="logo" />
 
@@ -24,21 +24,37 @@
 
         <!-- User Menu Start -->
         <div class="user-container d-flex ms-md-7 ms-0 flex-md-row-reverse">
-            <div class="d-flex flex-column">
-                <div class="d-flex user position-relative ps-md-7 ps-0">
-                    <img class="profile" alt="profile" src="{{ $user->img_url }}" />
-                    @php
-                        $user_data = Auth::user();
-                    @endphp
-                    <div class="name fs-6">{{ $user_data->name }}</div>
+            @php
+                $user_data = Auth::user();
+
+            @endphp
+            @if ($user_data != null)
+                <div class="d-flex flex-column">
+                        <div class="d-flex user position-relative ps-md-2 ps-0">
+                            <img class="profile" id="goto_profile" alt="profile" src="{{ $user_data->img_url }}" />
+                            <div class="name fs-6">{{ $user_data->name }}</div>
+                        </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="{{ route('logout') }}">
+                            <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
+                        </a>
+                    </div>
+                </div>
+            @else
+                <div class="d-flex flex-row">
+                    <div class="d-flex pb-3 ps-2">
+                        <div class="name fs-6"><a href="{{ route('login') }}" type="button"
+                                class="btn btn-light mb-1 mt-4">تسجيل الدخول</a></div>
+                    </div>
+                    <div class="d-flex pb-3 ps-0">
+                        <div class="name fs-6">
+                            <a href="{{ route('register') }}" type="button"
+                                class="btn btn-outline-light mb-1 mt-4">تسجيل</a>
+                        </div>
+                    </div>
 
                 </div>
-                <div class="d-flex justify-content-center">
-                    <a href="{{ route('logout') }}">
-                        <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
-                    </a>
-                </div>
-            </div>
+            @endif
             <div class="dropdown-menu dropdown-menu-end user-menu wide">
                 <div class="row mb-3 ms-0 me-0">
                     <div class="col-12 ps-1 mb-2">
@@ -173,17 +189,6 @@
                         <span class="label">تواصل معنا</span>
                     </a>
                 </li>
-                <li class="mega">
-                    <a href="{{ route('login') }}">
-                        <span class="label">تسجيل الدخول </span>
-                    </a>
-                </li>
-                <li class="mega">
-                    <a href="{{ route('register') }}">
-                        <span class="label"> تسجيل</span>
-                    </a>
-                </li>
-
             </ul>
         </div>
         <!-- Menu End -->

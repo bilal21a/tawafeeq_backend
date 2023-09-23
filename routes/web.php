@@ -24,6 +24,10 @@ Route::get('register', function () {
 })->name("register");
 
 Auth::routes();
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect()->route('login');
+})->name('logout');
 Route::middleware(['auth'])->group(function () {
 Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
 Route::get('profile/edit', [ProfileController::class, 'edit_profile'])->name('edit_profile');
