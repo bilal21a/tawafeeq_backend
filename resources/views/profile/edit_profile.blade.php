@@ -5,7 +5,7 @@
     <main>
         {{-- @dd($user) --}}
         <section class="scroll-section" id="helpText">
-            <form method="POST" action="{{ route('update_profile') }}">
+            <form method="POST" action="{{ route('update_profile', $id) }}" id="your-form-id">
                 @csrf
                 <div class="row mb-5">
                     <div class="col-sm-0 col-md-2"></div>
@@ -196,10 +196,10 @@
                                                 id="marital_status">
                                                 <option selected="selected" disabled>اختر...</option>
                                                 @foreach ($maritalStatusNames as $maritalStatusName)
-                                                <option value="{{ $maritalStatusName }}"
-                                                    {{ $user->profile->marital_status == $maritalStatusName ? 'selected' : '' }}>
-                                                    {{ $maritalStatusName }}</option>
-                                            @endforeach
+                                                    <option value="{{ $maritalStatusName }}"
+                                                        {{ $user->profile->marital_status == $maritalStatusName ? 'selected' : '' }}>
+                                                        {{ $maritalStatusName }}</option>
+                                                @endforeach
                                             </select>
                                             @error('marital_status')
                                                 <span>
@@ -211,7 +211,8 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">العمر</p>
                                             <input type="number" name="age" id="age"
-                                                class="form-control input_background" value="{{ isset($user) ? $user->profile->age : old('age')  }}"
+                                                class="form-control input_background"
+                                                value="{{ isset($user) ? $user->profile->age : old('age') }}"
                                                 autocomplete="age" autofocus>
                                             @error('age')
                                                 <span>
@@ -223,7 +224,8 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">عدد الاطفال</p>
                                             <input type="text" name="no_of_childs" id="no_of_childs"
-                                                class="form-control input_background" value=" {{ isset($user) ? $user->profile->no_of_childs : old('no_of_childs')}}"
+                                                class="form-control input_background"
+                                                value=" {{ isset($user) ? $user->profile->no_of_childs : old('no_of_childs') }}"
                                                 autocomplete="no_of_childs" autofocus>
                                             @error('no_of_childs')
                                                 <span>
@@ -252,7 +254,8 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">رقم الهاتف</p>
                                             <input type="text" name="phone" id="phone"
-                                                class="form-control input_background" value="{{ isset($user) ? $user->profile->phone : old('phone')}}"
+                                                class="form-control input_background"
+                                                value="{{ isset($user) ? $user->profile->phone : old('phone') }}"
                                                 autocomplete="phone" autofocus>
                                             @error('phone')
                                                 <span>
@@ -264,7 +267,8 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الوزن (كجم)</p>
                                             <input type="number" name="weight" id="weight"
-                                                class="form-control input_background" value="{{ isset($user) ? $user->profile->weight : old('weight')}}"
+                                                class="form-control input_background"
+                                                value="{{ isset($user) ? $user->profile->weight : old('weight') }}"
                                                 autocomplete="weight" autofocus>
                                             @error('weight')
                                                 <span>
@@ -276,7 +280,8 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الطول (سم)</p>
                                             <input type="number" name="height" id="height"
-                                                class="form-control input_background" value="{{ isset($user) ? $user->profile->weight : old('height')}}"
+                                                class="form-control input_background"
+                                                value="{{ isset($user) ? $user->profile->weight : old('height') }}"
                                                 autocomplete="height" autofocus>
                                             @error('height')
                                                 <span>
@@ -290,12 +295,11 @@
                                             <select class="form-select width_input input_background" name="skin_color"
                                                 id="skin_color">
                                                 <option selected="selected" disabled>اختر...</option>
-                                                <option value="القمح الأبيض">القمح الأبيض</option>
-                                                <option value="حنطي">حنطي</option>
-                                                <option value="أبيض">أبيض</option>
-                                                <option value="القمح البني">القمح البني</option>
-                                                <option value="البني الفاتح">البني الفاتح</option>
-                                                <option value="بني غامق">بني غامق </option>
+                                                @foreach ($sikinColors as $sikinColor)
+                                                    <option value="{{ $sikinColor }}"
+                                                        {{ $user->profile->skin_color == $sikinColor ? 'selected' : '' }}>
+                                                        {{ $sikinColor }}</option>
+                                                @endforeach
                                             </select>
                                             @error('skin_color')
                                                 <span>
@@ -307,7 +311,8 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">بنية الجسم</p>
                                             <input type="text" name="physique" id="physique"
-                                                class="form-control input_background" value="{{ old('physique') }}"
+                                                class="form-control input_background"
+                                                value="{{ isset($user) ? $user->profile->physique : old('physique') }}"
                                                 autocomplete="physique" autofocus>
                                             @error('physique')
                                                 <span>
@@ -319,7 +324,8 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">العمل</p>
                                             <input type="text" name="job" id="job"
-                                                class="form-control input_background" value="{{ old('job') }}"
+                                                class="form-control input_background"
+                                                value="{{ isset($user) ? $user->profile->job : old('job') }}"
                                                 autocomplete="job" autofocus>
                                             @error('job')
                                                 <span>
@@ -334,12 +340,11 @@
                                             <select class="form-select width_input input_background" name="qualification"
                                                 id="qualification">
                                                 <option selected="selected" disabled>اختر...</option>
-                                                <option value="دراسة متوسطة">دراسة متوسطة</option>
-                                                <option value="تعليم ثانوي">تعليم ثانوي</option>
-                                                <option value="دراسة جامعية">دراسة جامعية</option>
-                                                <option value="دكتوراه">دكتوراه</option>
-                                                <option value="السيرة الذاتية">السيرة الذاتية</option>
-                                                <option value="التعليم الابتدائي">التعليم الابتدائي</option>
+                                                @foreach ($qualifications as $qualification)
+                                                    <option value="{{ $maritalStatusName }}"
+                                                        {{ $user->profile->qualification == $qualification ? 'selected' : '' }}>
+                                                        {{ $qualification }}</option>
+                                                @endforeach
                                             </select>
                                             @error('qualification')
                                                 <span>
@@ -353,13 +358,11 @@
                                             <select class="form-select width_input input_background"
                                                 name="financial_condition" id="financial_condition">
                                                 <option selected="selected" disabled>اختر...</option>
-                                                <option value="دخل محدود">دخل محدود</option>
-                                                <option value="أقل من المتوسط">أقل من المتوسط</option>
-                                                <option value="متوسط">متوسط</option>
-                                                <option value="أكثر من المتوسط">أكثر من المتوسط</option>
-                                                <option value="جيد">جيد</option>
-                                                <option value="ميسور">ميسور</option>
-                                                <option value="غني">غني</option>
+                                                @foreach ($financial_conditions as $financial_condition)
+                                                    <option value="{{ $financial_condition }}"
+                                                        {{ $user->profile->financial_condition == $financial_condition ? 'selected' : '' }}>
+                                                        {{ $financial_condition }}</option>
+                                                @endforeach
                                             </select>
                                             @error('financial_condition')
                                                 <span>
@@ -371,7 +374,8 @@
                                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الحالة الصحية</p>
                                             <input type="text" name="health_status" id="helth_status"
-                                                class="form-control input_background" value="{{ old('health_status') }}"
+                                                class="form-control input_background"
+                                                value="{{ isset($user) ? $user->profile->health_status : old('health_status') }}"
                                                 autocomplete="health_status" autofocus>
                                             @error('health_status')
                                                 <span>
@@ -382,10 +386,15 @@
                                         </div>
                                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الالتزام الديني</p>
-                                            <input type="text" name="religious_commitment" id="religious_commitment"
-                                                class="form-control input_background"
-                                                value="{{ old('religious_commitment') }}"
-                                                autocomplete="religious_commitment" autofocus>
+                                            <select class="form-select width_input input_background"
+                                                name="religious_commitment" id="religious_commitment">
+                                                <option selected="selected" disabled>اختر...</option>
+                                                @foreach ($religiousOptions as $religiousOption)
+                                                    <option value="{{ $religiousOption }}"
+                                                        {{ $user->profile->religious_commitment == $religiousOption ? 'selected' : '' }}>
+                                                        {{ $religiousOption }}</option>
+                                                @endforeach
+                                            </select>
                                             @error('religious_commitment')
                                                 <span>
                                                     <strong
@@ -395,7 +404,7 @@
                                         </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">عن نفسي</p>
-                                            <textarea class="form-control input_background" name="about" id="" cols="30" rows="10">{{ old('about') }}</textarea>
+                                            <textarea class="form-control input_background" name="about" id="" cols="30" rows="10">{{ isset($user) ? $user->profile->about : old('about') }}</textarea>
                                             @error('about')
                                                 <span>
                                                     <strong
@@ -407,7 +416,7 @@
                                             <p class="fw-bolder d-flex justify-content-start">مواصفات الشريك الذي
                                                 أرغب الإرتباط به</p>
                                             <textarea class="form-control input_background" name="specification_of_partner" id="" cols="30"
-                                                rows="10">{{ old('specification_of_partner') }}</textarea>
+                                                rows="10">{{ isset($user) ? $user->profile->specification_of_partner : old('specification_of_partner') }} </textarea>
                                             @error('specification_of_partner')
                                                 <span>
                                                     <strong
@@ -449,7 +458,40 @@
                     </div>
                     <div class="col-sm-0 col-md-2"></div>
                 </div>
+                <div class="row justify-content-center mt-3">
+                    <div class="alert alert-success col-md-8" role="alert" id="success-alert" style="display: none;">
+                        تم تحديث البروفايل بنجاح
+                    </div>
+                </div>
             </form>
         </section>
     </main>
+@endsection
+@section('js')
+    <script>
+        // Get a reference to the form element
+        const form = document.getElementById('your-form-id'); // Replace 'your-form-id' with the actual form's ID
+
+        // Get a reference to the success alert element
+        const successAlert = document.getElementById('success-alert');
+
+        // Add a submit event listener to the form
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Perform your form submission logic here (e.g., using AJAX)
+
+            // Once the form is successfully submitted:
+            // 1. Show the success alert
+            successAlert.style.display = 'block';
+
+            // 2. Optionally, reset the form or redirect the user
+            // form.reset(); // To reset the form fields
+
+            // You can redirect the user to another page after a delay if needed
+            // setTimeout(() => {
+            //   window.location.href = '/success-page';
+            // }, 3000); // Redirect after 3 seconds (adjust the delay as needed)
+        });
+    </script>
 @endsection

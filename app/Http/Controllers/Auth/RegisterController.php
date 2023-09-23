@@ -60,7 +60,7 @@ class RegisterController extends Controller
             'type_of_marriage.required' => 'حقل مطلوب',
             'marital_status.required' => 'حقل مطلوب',
             'age.required' => 'حقل مطلوب',
-            'no_of_childs.required' => 'v',
+            'no_of_childs.required' =>'حقل مطلوب',
             'phone.required' => 'حقل مطلوب',
             'weight.required' => 'حقل مطلوب',
             'height.required' => 'حقل مطلوب',

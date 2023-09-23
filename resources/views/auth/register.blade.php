@@ -534,10 +534,15 @@
                                         </div>
                                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">الالتزام الديني</p>
-                                            <input type="text" name="religious_commitment" id="religious_commitment"
-                                                class="form-control input_background"
-                                                value="{{ old('religious_commitment') }}"
-                                                autocomplete="religious_commitment" autofocus>
+                                            <select class="form-select width_input input_background" name="religious_commitment"
+                                                id="religious_commitment">
+                                                <option selected="selected" disabled>اختر...</option>
+                                                <option value="أفضل عدم الإفصاح">أفضل عدم الإفصاح</option>
+                                                <option value="متدين جداً">متدين جداً</option>
+                                                <option value="متدين قليلاً">متدين قليلاً</option>
+                                                <option value="لست متدينًا">لست متدينًا</option>
+                                                <option value="متدين">متدين</option>
+                                            </select>
                                             @error('religious_commitment')
                                                 <span>
                                                     <strong
