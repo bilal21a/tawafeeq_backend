@@ -1,14 +1,12 @@
 <div id="nav" class="nav-container d-flex">
     <div class="nav-content d-flex">
         <!-- Logo Start -->
-        <div class="logo position-relative d-none">
+        <div class="logo position-relative">
             <a href="Dashboards.Default.html">
                 <!-- Logo can be added directly -->
-                <!-- <img src="img/logo/logo-white.svg" alt="logo" /> -->
+                 <img src="{{ asset('assets/img/hudhood logo.svg') }}" alt="logo" />
 
-                <!-- Or added via css to provide different ones for different color themes -->
-                <div class="img"></div>
-            </a>
+                <!-- Or added via css to provide different ones for different color themes --> </a>
         </div>
         <!-- Logo End -->
 
@@ -26,8 +24,8 @@
 
         <!-- User Menu Start -->
         <div class="user-container d-flex ms-md-7 ms-0 flex-md-row-reverse">
-            <div class="d-flex user position-relative ps-md-7 ps-0" data-bs-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <div class="d-flex user position-relative ps-md-7 ps-0" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <img class="profile" alt="profile" src="{{ asset('assets/img/homepage_img/man.png') }}" />
                 <ul class="text-decoration-none d-md-flex ps-0 pe-1 flex-column" style="list-style-type: none;">
                     <li>
@@ -46,7 +44,7 @@
                             <i class="white" data-acorn-icon="message" data-acorn-size="15"></i>
                         </li>
                         <a href="{{ route('logout') }}">
-                        <li class="ps-3">
+                            <li class="ps-3">
                                 <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
                             </li>
                         </a>
@@ -218,7 +216,7 @@
             <!-- Scrollspy Mobile Dropdown End -->
 
             <!-- Menu Button Start -->
-            <a href="#" id="mobileMenuButton" class="menu-button">
+            <a href="#" id="mobileMenuButton" class="menu-button" style="margin-right: 200px !important;">
                 <i data-acorn-icon="menu"></i>
             </a>
             <!-- Menu Button End -->

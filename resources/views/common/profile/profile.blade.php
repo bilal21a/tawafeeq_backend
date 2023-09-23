@@ -5,7 +5,7 @@
                 <a href="{{ route('edit_profile', $user->id) }}" class="btn btn-primary fs-5" type="button"><i
                         data-acorn-icon="pen" class="me-2 ms-3" data-acorn-size="17"></i>amendment</a>
             @endif
-            <button class="btn btn-primary fs-5" type="button"><i data-acorn-icon="share" class="me-2 ms-3"
+<button class="btn btn-primary fs-5" type="button"><i data-acorn-icon="share" class="me-2 ms-3"
                     data-acorn-size="17"></i>تعديل</button>
         </div>
         <div>
@@ -55,8 +55,8 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-between">
-        <button class="btn btn-primary fs-5 width_btn mt-md-4" type="button"><i data-acorn-icon="pen" class="me-2 ms-3"
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-primary fs-5 width_btn mt-md-4 d-none" type="button"><i data-acorn-icon="pen" class="me-2 ms-3"
                 data-acorn-size="17"></i>تعديل</button>
         <div class="ms-7 ps-7">
             <button type="button" class="btn btn-outline-primary ms-6" data-bs-toggle="modal"
