@@ -128,7 +128,7 @@
     </div>
     <div class="user-info margin_top justify-content-lg-start me-md-7">
         <div class="user-info-item sepcifyed_width">
-            <span class="user-info-label" style="color: var(--tawafeeq);">عن نفسي</span>
+            <span class="user-info-label" style="color: var(--hudhood);">عن نفسي</span>
             <p class="user-info-value">{{ $user->profile->about }}</p>
         </div>
     </div>

@@ -20,7 +20,7 @@
                                                     <p>+971 55 505 5911</p>
                                                 </div>
                                                 <div class="d-flex"> <i data-acorn-icon="email" class="ms-2" data-acorn-size="17"></i>
-                                                    <p>info@tawafeeq.com</p>
+                                                    <p>info@hudhood.com</p>
                                                 </div>
                                                 <div class="d-flex"> <i data-acorn-icon="pin" class="ms-2" data-acorn-size="17"></i>
                                                     <p>الامارات - دبي</p>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TawafeeqController extends Controller
+class ContentController extends Controller
 {
     public function about()
     {

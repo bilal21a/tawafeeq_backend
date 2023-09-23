@@ -3420,7 +3420,7 @@ html[data-radius=flat] {
 
 html[data-color=dark-blue] {
     --primary: #d65d7c;
-    --tawafeeq: #d65d7c;
+    --hudhood: #d65d7c;
     --secondary: #e69790;
     --tertiary: #df4459;
     --quaternary: #e25b5b;
@@ -4045,7 +4045,7 @@ html[data-color=dark-sky] {
 
 html[data-color=light-blue] {
     --primary: #ed6789;
-    --tawafeeq: #d65d7c;
+    --hudhood: #d65d7c;
     --secondary: #ffa7a0;
     --tertiary: #f74b63;
     --quaternary: #fb6565;
@@ -9387,7 +9387,7 @@ input[type=file]::file-selector-button {
 .nav-tabs-line>li>.nav-link.active,
 .nav-tabs-line>div>.nav-link:hover,
 .nav-tabs-line>div>.nav-link.active {
-    color: var(--tawafeeq);
+    color: var(--hudhood);
 }
 
 .nav-tabs-line>li>.nav-link.active,
@@ -9398,7 +9398,7 @@ input[type=file]::file-selector-button {
 .nav-tabs-line>li>.nav-link.active::before,
 .nav-tabs-line>div>.nav-link.active::before {
     content: " ";
-    background: var(--tawafeeq);
+    background: var(--hudhood);
     color: var(--foreground);
     border-radius: 10px;
     position: absolute;

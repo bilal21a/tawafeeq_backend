@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TawafeeqController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,13 +31,12 @@ Route::post('update_profile/{id}', [ProfileController::class, 'update_profile'])
 Route::get('members_profile/{id}', [ProfileController::class, 'members_profile'])->name('members_profile');
 });
 // Before Login
-Route::get('about', [TawafeeqController::class, 'about'])->name('about');
-Route::get('contact', [TawafeeqController::class, 'contact'])->name('contact');
-Route::get('login_page', [TawafeeqController::class, 'login_page'])->name('login_page');
+Route::get('about', [ContentController::class, 'about'])->name('about');
+Route::get('contact', [ContentController::class, 'contact'])->name('contact');
+Route::get('login_page', [ContentController::class, 'login_page'])->name('login_page');
 
 // Home page
-Route::get('tawafeeq', [UserController::class, 'tawafeeq'])->name('tawafeeq');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('home', [UserController::class, 'home'])->name('home');
 // Members
 Route::match(['GET','POST'], '/members', [UserController::class, 'index'])->name('members');
 // advance Search

@@ -1,4 +1,28 @@
-<style>.font_family {
+.font_star {
+    font-size: 60px;
+}
+
+.modal_title {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.8em 1em 0;
+    color: inherit;
+    font-size: 1.575em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word;
+}
+
+.global_errors {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: .875em;
+    color: #dc3545;
+}
+
+.font_family {
     font-family: Tajawal !important;
 }
 

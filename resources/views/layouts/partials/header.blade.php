@@ -168,7 +168,7 @@
         <div class="menu-container flex-grow-1">
             <ul id="menu" class="menu">
                 <li class="">
-                    <a href="{{ route('tawafeeq') }}">
+                    <a href="{{ route('home') }}">
                         <span>الصفحة الرئيسية</span>
                     </a>
                 </li>

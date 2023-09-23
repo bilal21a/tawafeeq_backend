@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Acorn Admin Template | Form Layouts</title>
+    <title>HUDHOOD</title>
     <meta name="description" content="Examples and usage guidelines for form control styles and layout options." />
     <meta name="description"
         content="Glidejs is a dependency-free JavaScript ES6 slider and carousel. It’s lightweight, flexible and fast. Designed to slide. No less, no more." />
@@ -66,89 +66,6 @@
     <style>
         *{
             font-family: 'Tajawal', sans-serif !important;
-        }
-        .font_star{
-            font-size: 60px;
-        }
-        .modal_title {
-            position: relative;
-            max-width: 100%;
-            margin: 0;
-            padding: 0.8em 1em 0;
-            color: inherit;
-            font-size: 1.575em;
-            font-weight: 600;
-            text-align: center;
-            text-transform: none;
-            word-wrap: break-word;
-        }
-
-        .global_errors {
-            width: 100%;
-            margin-top: 0.25rem;
-            font-size: .875em;
-            color: #dc3545;
-        }
-
-        .font_family {
-            font-family: Tajawal !important;
-        }
-
-        .white {
-            color: whitesmoke;
-        }
-
-        .custom_chat_loader {
-            padding-left: 27px !important;
-            padding-right: 5px !important;
-        }
-
-
-
-        .letter_spacing {
-            letter-spacing: -1px;
-        }
-
-        .width_btn {
-            width: 209px;
-            height: 35px;
-        }
-
-        .margin_top {
-            margin-top: 14px !important;
-        }
-
-        .footer {
-            background-color: #00A3D8;
-        }
-
-        .text_decoration {
-            text-decoration: none;
-        }
-
-        .line_height_footer {
-            line-height: 2;
-        }
-
-        .font_size {
-            font-size: 14px;
-        }
-
-        .blue_background {
-            background-color: #00A3D8;
-            color: whitesmoke;
-        }
-
-        ::placeholder {
-            color: whitesmoke;
-            /* Change the color to your desired color */
-        }
-
-        .blue_background:focus {
-            border: 1px solid whitesmoke;
-            background-color: #00A3D8;
-            outline: none;
-            color: whitesmoke;
         }
     </style>
 </head>
