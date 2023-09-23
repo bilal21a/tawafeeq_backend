@@ -196,11 +196,7 @@
                         <span class="label"> تسجيل</span>
                     </a>
                 </li>
-                <li class="mega">
-                    <a href="{{ route('profile') }}">
-                        <span class="label"> After Login</span>
-                    </a>
-                </li>
+
             </ul>
         </div>
         <!-- Menu End -->
@@ -216,7 +212,7 @@
             <!-- Scrollspy Mobile Dropdown End -->
 
             <!-- Menu Button Start -->
-            <a href="#" id="mobileMenuButton" class="menu-button" style="margin-right: 200px !important;">
+            <a href="#" id="mobileMenuButton" class="menu-button" style="   margin-right: 200px !important;">
                 <i data-acorn-icon="menu"></i>
             </a>
             <!-- Menu Button End -->
