@@ -32,7 +32,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 line_height_footer">
             <h4 class="white fw-bold mb-6"> أعطنا رأيك</h4>
             <textarea class="form-control blue_background" name="" id="" cols="25" rows="10" placeholder=" ما رأيك في موقع تَوَافِيْق " style="color:#fff;"></textarea>
-            <button type="button" class="btn btn-primary mb-1 mt-4">Primary</button>
+            <button type="button" class="btn btn-light mb-1 mt-4">أرسل</button>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 line_height_footer">
             <h4 class="white fw-bold mb-6">تواصل معنا</h4>

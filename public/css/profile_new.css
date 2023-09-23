@@ -159,7 +159,7 @@ tr:nth-child(even) {
 
 .footer {
     /* height: 380px; */
-    background-color: #00A3D8;
+    background-color: var(--primary) !important;
 }
 
 .text_decoration {
@@ -175,7 +175,7 @@ tr:nth-child(even) {
 }
 
 .blue_background {
-    background-color: #00A3D8;
+    background-color: transparent !important;
     color: whitesmoke;
 }
 
@@ -186,9 +186,7 @@ tr:nth-child(even) {
 
 .blue_background:focus {
     border: 1px solid whitesmoke;
-    background-color: #00A3D8;
+    background-color: transparent !important;
     outline: none;
     color: whitesmoke;
 }
-
-</style>
