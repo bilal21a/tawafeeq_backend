@@ -1,6 +1,7 @@
 <div class="p-0 width_silder">
     <div class="card " dir="rtl">
         <div>
+
             {{-- @dd($user->profile->specification_of_partner) --}}
             <span class="badge rounded-pill bg-light position-absolute s-2 pill_styling z-index-1 fw-bolder"
                 style=" font-size: 9px;">منذ دقيقة</span>

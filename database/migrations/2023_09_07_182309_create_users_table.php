@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('nationality')->nullable();
             $table->string('country_of_residence')->nullable();
             $table->string('city')->nullable();
+            $table->string('rating')->default('0.0')->nullable();
+            $table->string('rated_by')->default(0)->nullable();
             $table->dateTime('exipred_at')->nullable();
             $table->timestamps();
         });

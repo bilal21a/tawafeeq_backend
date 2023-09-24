@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
+use App\Models\Rating;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,8 +23,7 @@ class ProfileController extends Controller
     public function members_profile($id)
     {
         $user_id = Auth::id();
-        $user = User::where('id', $id)
-            ->first();
+        $user = User::where('id', $id)->first();
         return view('members_profile', compact('user', 'user_id'));
     }
     public function edit_profile()
@@ -222,6 +222,26 @@ class ProfileController extends Controller
         $profile->about = $request->about;
         $profile->specification_of_partner = $request->specification_of_partner;
         $profile->save();
-        return redirect()->back()->with('success','hi');
+        return redirect()->back()->with('success', 'hi');
+    }
+
+    public function save_rating(Request $request)
+    {
+        $rating_to = Rating::where('rated_to_id', $request->profile_id)->get();
+        $sum = $rating_to->sum('ratings');
+        $count = $rating_to->count();
+
+        $new_rating = ($sum + $request->stars) / ($count + 1);
+
+        $rating = new Rating();
+        $rating->rated_to_id = $request->profile_id;
+        $rating->rater_id = auth()->id();
+        $rating->ratings = $request->stars;
+        $rating->save();
+
+        $user=User::find($request->profile_id);
+        $user->rating=$new_rating;
+        $user->save();
+        return "success";
     }
 }

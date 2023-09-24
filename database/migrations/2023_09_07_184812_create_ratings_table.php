@@ -15,7 +15,7 @@ class CreateRatingsTable extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->string('recipient_id')->nullable();
+            $table->string('rated_to_id')->nullable();
             $table->string('rater_id')->nullable();
             $table->string('ratings')->nullable();
             $table->timestamps();

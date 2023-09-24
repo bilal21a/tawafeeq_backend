@@ -78,7 +78,7 @@ class UserController extends Controller
             'أرملة',
             'عزباء',
         ];
-        $users = User::with('profile')->get();
+        $users = User::with('profile')->latest()->take(10)->get();
         return view('home', compact('countryNames', 'maritalStatusNames', 'users'));
     }
 }
