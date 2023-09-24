@@ -15,7 +15,8 @@ class UserController extends Controller
         $age_from_search = $request->age_from;
         $age_to_search = $request->age_to;
         $marital_status_search = $request->marital_status;
-        $users = User::when(request('nationality'), function ($q) {
+        $users = User::where('name','LIKE',"%{$request->name}%")
+        ->when(request('nationality'), function ($q) {
             return $q->where('nationality', request('nationality'));
         })
             ->when(request('country_of_residence'), function ($q) {
