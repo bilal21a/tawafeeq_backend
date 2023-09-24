@@ -149,6 +149,8 @@
         $('#chat_active_' + partner_id).addClass('active');
         var contactName = $('#contactName_' + partner_id).text();
         $('.active_chat_name').html(contactName);
+        var contactsubHeading = $('#contactsubHeading_' + partner_id).text();
+        $('.active_chat_subHeading').html(contactsubHeading);
         var contactImg = $('#contactImg_' + partner_id).attr('src');
 
         $('#active_chat_img').attr('src', contactImg);

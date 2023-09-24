@@ -2,14 +2,13 @@
     <div class="card " dir="rtl">
         <div>
 
-            {{-- @dd($user->profile->specification_of_partner) --}}
-            <span class="badge rounded-pill bg-light position-absolute s-2 pill_styling z-index-1 fw-bolder"
+            {{-- <span class="badge rounded-pill bg-light position-absolute s-2 pill_styling z-index-1 fw-bolder"
                 style=" font-size: 9px;">منذ دقيقة</span>
             <div class=" red_dot me-1 position-absolute s-2 pill_styling z-index-1">
             </div>
             <span class="badge rounded-pill bg-primary me-1 position-absolute s-2 pill_styling z-index-1 fw-bolder"
                 style="left: 21px;margin-left:105px; font-size: 9px;margin-left: 85px;">منذ
-                30 دقيقة</span>
+                30 دقيقة</span> --}}
             <a href="{{ route('members_profile', $user->id) }}">
                 <img src="{{ $user->img_url }}" class="card-img-top" alt="card image" />
             </a>

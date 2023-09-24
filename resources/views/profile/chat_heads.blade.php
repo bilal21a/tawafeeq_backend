@@ -7,7 +7,7 @@
 
         <div class="user-chat-text">
             <p class="mt-0 mb-0"><strong id="contactName_{{ $user->id }}">{{ $user->name }}</strong></p>
-            <small>Hi, how are you?</small>
+            <small id="contactsubHeading_{{ $user->id }}">{{ $user->nationality }} - {{ $user->city }}</small>
         </div>
     </div>
 @endforeach

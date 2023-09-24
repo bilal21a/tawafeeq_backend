@@ -15,9 +15,10 @@
             <div class="message-user-profile">
                 <p class="mt-0 mb-0 text-white"><strong class="active_chat_name"></strong>
                 </p>
-                {{-- <small class="text-white">
-                    <p class="offline  mt-0 mb-0"></p>Offline
-                </small> --}}
+                <small class="text-white active_chat_subHeading">
+                    {{-- <p class="offline  mt-0 mb-0"></p> --}}
+                    Offline
+                </small>
             </div>
         </div>
         <div class="body-chat-message-user messages_container" dir="ltr">
