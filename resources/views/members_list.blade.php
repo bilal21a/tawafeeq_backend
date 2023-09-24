@@ -60,7 +60,7 @@
                         <div class="col-sm-12 col-md d-flex">
                             <button type="submit" class="btn btn-primary mt-3">بحث</button>
                             @if (request()->isMethod('post') )
-                            <a href="{{ route('members') }}" class="btn btn-danger mt-3 me-1">Clear</a>
+                            <a href="{{ route('members') }}" class="btn btn-outline-primary mt-3 me-1">مسح البحث</a>
                             @endif
                         </div>
                     </form>

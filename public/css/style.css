@@ -120,12 +120,12 @@
 }
 
 .swiper-navBtn {
-    color: #6E93f7;
+    color: var(--primary);
     transition: color 0.3s ease;
 }
 
 .swiper-navBtn:hover {
-    color: #4070F4;
+    color: var(--danger);
 }
 
 .swiper-navBtn::before,

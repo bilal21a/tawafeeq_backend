@@ -15,10 +15,13 @@ class UserController extends Controller
         $age_from_search = $request->age_from;
         $age_to_search = $request->age_to;
         $marital_status_search = $request->marital_status;
-        $users = User::where('name','LIKE',"%{$request->name}%")
-        ->when(request('nationality'), function ($q) {
-            return $q->where('nationality', request('nationality'));
-        })
+        $users = User::
+            when(request('name'), function ($q) use($request) {
+                return $q->where('name', 'LIKE', "%{$request->name}%");
+            })
+            ->when(request('nationality'), function ($q) {
+                return $q->where('nationality', request('nationality'));
+            })
             ->when(request('country_of_residence'), function ($q) {
                 return $q->where('country_of_residence', request('country_of_residence'));
             })
@@ -48,8 +51,10 @@ class UserController extends Controller
                         return $q->whereBetween('age', request(['age_from', 'age_to']));
                     });
             })->paginate(16);
-        $countryNames = ["أوكرانيا","اخر","الاردن","الامارات","البحرين","الجزائر","السعودية","السودان","الصومال","العراق",
-            "الكويت","المغرب","اليمن","ايران","باكستان","تونس","جزر القمر","جيبوتي","دول غربية","سوريا","عُمان","فلسطين"];
+        $countryNames = [
+            "أوكرانيا", "اخر", "الاردن", "الامارات", "البحرين", "الجزائر", "السعودية", "السودان", "الصومال", "العراق",
+            "الكويت", "المغرب", "اليمن", "ايران", "باكستان", "تونس", "جزر القمر", "جيبوتي", "دول غربية", "سوريا", "عُمان", "فلسطين"
+        ];
         $maritalStatusNames = [
             'أعزب',
             'متزوج',
@@ -60,7 +65,7 @@ class UserController extends Controller
             'عزباء',
         ];
 
-        return view('members_list', compact('maritalStatusNames','countryNames','users', 'name_search', 'nationality_search', 'country_of_residence_search', 'age_from_search', 'age_to_search', 'marital_status_search'));
+        return view('members_list', compact('maritalStatusNames', 'countryNames', 'users', 'name_search', 'nationality_search', 'country_of_residence_search', 'age_from_search', 'age_to_search', 'marital_status_search'));
     }
 
     public function home()

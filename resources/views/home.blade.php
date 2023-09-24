@@ -21,10 +21,10 @@
                                 <div class="col-xl-6 col-lg-5 col-md-5 col-sm-12 pb-3 p-sm-0">
                                     <div class="switch-field mb-0">
                                         <input type="radio" id="radio-one" name="switch-one" value="yes" checked />
-                                        <label class="rounded-0 radius_top_right p-3 fw-bold" for="radio-one"
+                                        <label class="rounded-0 radius_top_right p-3 fw-bold male_head" for="radio-one"
                                             style="width: 50%;">ابحث عن زوج</label>
                                         <input type="radio" id="radio-two" name="switch-one" value="no" />
-                                        <label class="rounded-0 radius_top_left p-3 fw-bold" for="radio-two"
+                                        <label class="rounded-0 radius_top_left p-3 fw-bold female_head" for="radio-two"
                                             style="width: 50%;">ابحث عن زوجة</label>
                                     </div>
                                     <div class="card">
@@ -34,6 +34,7 @@
                                                 <form method="POST" action="{{ route('members') }}">
                                                     @csrf
                                                     <h5 class="fw-semibold mb-1">الاسم</h5>
+                                                    <input type="hidden" name="look_for" id="look_for_gender" value="ذكر">
                                                     <input type="text" name="name" id="name"
                                                         value="{{ isset($name_search) ? $name_search : '' }}"
                                                         class="form-control input_background" placeholder="الاسم">
@@ -205,6 +206,12 @@
                     slidesPerView: 3,
                 },
             },
+        });
+        $('.male_head').on('click', function() {
+            $('#look_for_gender').val('ذكر')
+        });
+        $('.female_head').on('click', function() {
+            $('#look_for_gender').val('انثى')
         });
     </script>
 @endsection
