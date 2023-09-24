@@ -26,14 +26,14 @@
         let selectedStars = 1;
         var stars = 1;
 
-        $('.star-row i').on('click', function() {
+        $('.rating_star_assign i').on('click', function() {
             const index = $(this).index() + 1;
 
             if (index === selectedStars) {
                 $(this).removeClass('bi-star-fill').addClass('bi-star');
                 selectedStars--;
             } else {
-                $('.star-row i').removeClass('bi-star-fill').addClass('bi-star');
+                $('.rating_star_assign i').removeClass('bi-star-fill').addClass('bi-star');
                 $(this).prevAll().addBack().removeClass('bi-star').addClass('bi-star-fill');
                 selectedStars = index;
             }
@@ -52,6 +52,9 @@
             axios.post(url, data)
                 .then(response => {
                     console.log('Response:', response.data);
+                    $('#ratingModal').modal('hide')
+                    $('#ratingDoneModal').modal('show')
+                    $('.rating_modal_btn').hide()
                 })
                 .catch(error => {
                     console.error('Error:', error);

@@ -14,28 +14,43 @@
     <div class="row justify-content-between">
         <div class="col-md-5">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="mt-3">
                         <img width="176px" height="176px" class="rounded-circle" src="{{ $user->img_url }}"
                             alt="" srcset="">
                     </div>
                 </div>
-                <div class="col-md-6 align-self-center">
+                <div class="col-md-8 align-self-center">
                     <ul class="no-bullets">
                         <li>{{ $user->name }}
                             <img width="30px" src="verified.png" alt="" srcset="">
                         </li>
                         <li>{{ $user->country_of_residence }}-{{ $user->city }}</li>
                         <li> {{ $user->profile->age }}سنة</li>
+
                         <li>
-                            <div class="star-row">
+                            @php
+                                $rating = $user->rating;
+                                $filledStars = floor($rating);
+                                $halfStar = $rating - $filledStars >= 0.5;
+                                $unfilledStars = 5 - ceil($rating);
+                            @endphp
+
+                            <div class="star-rating" dir="ltr">
+                                @for ($i = 0; $i < $filledStars; $i++)
+                                <i class="golden-star bi bi-star-fill"></i>
+                                @endfor
+
+                                @if ($halfStar)
+                                <i class="golden-star bi bi-star-half"></i>
+                                @endif
+
+                                @for ($i = 0; $i < $unfilledStars; $i++)
+                                <i class="golden-star bi bi-star"></i>
+                                @endfor
                                 <span class="fw-bold">{{ $user->rating }}</span>
-                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
-                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
-                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
-                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
-                                <i class="golden-star" data-acorn-icon="star" data-acorn-size="20"></i>
                             </div>
+
                         </li>
                     </ul>
                 </div>
@@ -58,8 +73,8 @@
                 class="me-2 ms-3" data-acorn-size="17"></i>تعديل</button>
         @if ($user_id != $user->id && $user->check_rating($user->id, auth()->id()))
             <div class="ms-7 ps-7">
-                <button type="button" class="btn btn-outline-primary ms-6" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">تقييم العضو</button>
+                <button type="button" class="btn btn-outline-primary ms-6 rating_modal_btn" data-bs-toggle="modal"
+                    data-bs-target="#ratingModal">تقييم العضو</button>
             </div>
         @endif
     </div>
@@ -135,7 +150,7 @@
 </div>
 <div class="">
     <div class="card-body">
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+        <div class="modal fade" id="ratingModal" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabelDefault" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -145,10 +160,10 @@
                     </div>
                     <form action="#">
                         <div class="d-flex justify-content-center mt-3 fs-5">
-                            <p>كم نجمة تعطي سماريهAD</p>
+                            <p>ملاحظاتك قيمة</p>
                         </div>
                         <div class=" d-flex justify-content-center" style="border-bottom: 0px solid !important">
-                            <div class="star-row">
+                            <div class="star-row rating_star_assign">
                                 <i class="golden-star bi bi-star-fill font_star"></i>
                                 <i class="golden-star bi bi-star font_star"></i>
                                 <i class="golden-star bi bi-star font_star"></i>
@@ -165,6 +180,18 @@
                                 data-bs-dismiss="modal">ألغاء</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ratingDoneModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabelDefault" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class=" modal-header d-flex justify-content-center modal_title"
+                        style="border-bottom: 0px solid !important">
+                        <h1>تقييم العضو</h1>
+                    </div>
+                    <img src="{{ asset('assets/img/rating_done.png') }}" width="100%" alt="">
                 </div>
             </div>
         </div>

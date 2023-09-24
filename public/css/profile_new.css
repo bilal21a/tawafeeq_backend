@@ -214,3 +214,7 @@ tr:nth-child(even) {
     outline: none;
     color: whitesmoke;
 }
+
+.blue_background::placeholder {
+    color: whitesmoke;
+}
