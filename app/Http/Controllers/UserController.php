@@ -15,6 +15,7 @@ class UserController extends Controller
         $age_from_search = $request->age_from;
         $age_to_search = $request->age_to;
         $marital_status_search = $request->marital_status;
+        $look_for = $request->look_for;
         $users = User::
             when(request('name'), function ($q) use($request) {
                 return $q->where('name', 'LIKE', "%{$request->name}%");
@@ -65,7 +66,7 @@ class UserController extends Controller
             'عزباء',
         ];
 
-        return view('members_list', compact('maritalStatusNames', 'countryNames', 'users', 'name_search', 'nationality_search', 'country_of_residence_search', 'age_from_search', 'age_to_search', 'marital_status_search'));
+        return view('members_list', compact('maritalStatusNames','look_for', 'countryNames', 'users', 'name_search', 'nationality_search', 'country_of_residence_search', 'age_from_search', 'age_to_search', 'marital_status_search'));
     }
 
     public function home()

@@ -30,10 +30,10 @@
             @endphp
             @if ($user_data != null)
                 <div class="d-flex flex-column">
-                        <div class="d-flex user position-relative ps-md-2 ps-0">
-                            <img class="profile" id="goto_profile" alt="profile" src="{{ $user_data->img_url }}" />
-                            <div class="name fs-6">{{ $user_data->name }}</div>
-                        </div>
+                    <div class="d-flex user position-relative ps-md-2 ps-0">
+                        <img class="profile" id="goto_profile" alt="profile" src="{{ $user_data->img_url }}" />
+                        <div class="name fs-6">{{ $user_data->name }}</div>
+                    </div>
                     <div class="d-flex justify-content-center">
                         <a href="{{ route('logout') }}">
                             <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
@@ -168,27 +168,35 @@
         <!-- Menu Start -->
         <div class="menu-container flex-grow-1">
             <ul id="menu" class="menu">
-                <li class="">
-                    <a href="{{ route('home') }}">
+                <li>
+                    <a href="{{ route('home') }}" class="{{ request()->is('/') ? 'active' : '' }}">
                         <span>الصفحة الرئيسية</span>
                     </a>
                 </li>
+                @if (auth()->user())
                 <li>
-                    <a href="{{ route('about') }}">
+                    <a href="{{ route('profile') }}" class="{{ request()->is('profile*') ? 'active' : '' }}">
+                        <span>الملف الشخصي</span>
+                    </a>
+                </li>
+                @endif
+                <li>
+                    <a href="{{ route('about') }}" class="{{ request()->is('about') ? 'active' : '' }}">
                         <span class="label">من نحن</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('plans') }}">
+                    <a href="{{ route('plans') }}" class="{{ request()->is('plans') ? 'active' : '' }}">
                         <span class="label">الباقات</span>
                     </a>
 
                 </li>
-                <li class="mega">
-                    <a href="{{ route('contact') }}">
+                <li>
+                    <a href="{{ route('contact') }}" class="{{ request()->is('contact') ? 'active' : '' }}">
                         <span class="label">تواصل معنا</span>
                     </a>
                 </li>
+
             </ul>
         </div>
         <!-- Menu End -->
