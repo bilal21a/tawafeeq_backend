@@ -58,7 +58,7 @@
         @include('layouts.partials.header')
         @yield('content')
     </div>
-    <a href="https://wa.me/923014750383?text=hello" target=”_blank” class="whatsapp-btn">
+    <a href="https://wa.me/923117926966?text=hello" target=”_blank” class="whatsapp-btn">
         <i class="bi bi-whatsapp"></i>
     </a>
 
