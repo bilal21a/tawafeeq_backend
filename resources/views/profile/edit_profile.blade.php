@@ -3,13 +3,22 @@
 @endsection
 @section('content')
     <main>
-        {{-- @dd($user) --}}
         <section class="scroll-section" id="helpText">
             <form method="POST" action="{{ route('update_profile') }}" id="your-form-id">
                 @csrf
                 <div class="row mb-5">
                     <div class="col-sm-0 col-md-2"></div>
                     <div class="col-sm-12 col-md-8">
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                <h4 class="alert-heading">تحديث الملف الشخصي!</h4>
+                                <p>
+                                    التفاصيل الخاصة بك الآن محدثة.
+                                </p>
+                                <hr>
+                                <p class="mb-0">اكتشف التطابقات المحتملة وانطلق في رحلة جميلة نحو السعادة الزوجية.</p>
+                            </div>
+                        @endif
                         <div class="card">
                             <div class="card-body p-0">
                                 <div class="container mt-5">
@@ -33,10 +42,9 @@
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                             <p class="fw-bolder d-flex justify-content-start">البريد الالكتروني</p>
-                                            <input type="email" name="email" id="email"
-                                                class="form-control input_background"
+                                            <input type="email" id="email" class="form-control input_background"
                                                 value=" {{ isset($user) ? $user->email : old('email') }}"
-                                                autocomplete="email" autofocus>
+                                                autocomplete="email" autofocus disabled>
                                             @error('email')
                                                 <span>
                                                     <strong
@@ -170,10 +178,9 @@
                                         <div class="col-12 d-flex">
                                             <p class="fw-bolder ms-auto">الحالة الإجتماعية</p>
                                         </div>
+                                        {{-- @dd($user->profile->type_of_marriage) --}}
                                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                            <!-- <i data-acorn-icon="user"></i> -->
                                             <p class="fw-bolder d-flex justify-content-start">نوع الزواج</p>
-                                            {{-- <label class="d-flex" for="type_of_marriage">نوع الزواج</label> --}}
                                             <select class="form-select width_input input_background"
                                                 name="type_of_marriage" id="type_of_marriage">
                                                 <option selected="selected" disabled>اختر...</option>
@@ -341,7 +348,7 @@
                                                 id="qualification">
                                                 <option selected="selected" disabled>اختر...</option>
                                                 @foreach ($qualifications as $qualification)
-                                                    <option value="{{ $maritalStatusName }}"
+                                                    <option value="{{ $qualification }}"
                                                         {{ $user->profile->qualification == $qualification ? 'selected' : '' }}>
                                                         {{ $qualification }}</option>
                                                 @endforeach

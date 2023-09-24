@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
@@ -140,34 +141,87 @@ class ProfileController extends Controller
     }
     public function update_profile(Request $request)
     {
-        // dd($request->all());
-        $user_id =Auth::id();
-        $user = User::find($user_id);
+        $customMessages = [
+            'name.required' => 'حقل مطلوب',
+            'email.required' => 'حقل مطلوب',
+            'password.required' => 'حقل مطلوب',
+            'gender.required' => 'حقل مطلوب',
+            'nationality.required' => 'حقل مطلوب',
+            'country_of_residence.required' => 'حقل مطلوب',
+            'city.required' => 'حقل مطلوب',
+            'type_of_marriage.required' => 'حقل مطلوب',
+            'marital_status.required' => 'حقل مطلوب',
+            'age.required' => 'حقل مطلوب',
+            'no_of_childs.required' => 'حقل مطلوب',
+            'phone.required' => 'حقل مطلوب',
+            'weight.required' => 'حقل مطلوب',
+            'height.required' => 'حقل مطلوب',
+            'skin_color.required' => 'حقل مطلوب',
+            'physique.required' => 'حقل مطلوب',
+            'job.required' => 'حقل مطلوب',
+            'qualification.required' => 'حقل مطلوب',
+            'financial_condition.required' => 'حقل مطلوب',
+            'health_status.required' => 'حقل مطلوب',
+            'religious_commitment.required' => 'حقل مطلوب',
+            'about.required' => 'حقل مطلوب',
+            'specification_of_partner.required' => 'حقل مطلوب',
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'name' => ['required'],
+            'gender' => ['required'],
+            'nationality' => ['required'],
+            'country_of_residence' => ['required'],
+            'city' => ['required'],
+            'type_of_marriage' => ['required'],
+            'marital_status' => ['required'],
+            'age' => ['required'],
+            'no_of_childs' => ['required'],
+            'phone' => ['required'],
+            'weight' => ['required'],
+            'height' => ['required'],
+            'skin_color' => ['required'],
+            'physique' => ['required'],
+            'job' => ['required'],
+            'qualification' => ['required'],
+            'financial_condition' => ['required'],
+            'health_status' => ['required'],
+            'religious_commitment' => ['required'],
+            'about' => ['required'],
+            'specification_of_partner' => ['required'],
+        ], $customMessages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
+
+        $user = User::find(Auth::id());
         $user->name = $request->name;
-        $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->gender = $request->gender;
         $user->nationality = $request->nationality;
         $user->country_of_residence = $request->country_of_residence;
         $user->city = $request->city;
         $user->save();
-        $profile = Profile::find($user_id);
-        $profile->type_of_marriage= $request->type_of_marriage;
-        $profile->marital_status= $request->marital_status;
-        $profile->age= $request->age;
-        $profile->no_of_childs= $request->no_of_childs;
-        $profile->phone= $request->phone;
-        $profile->weight= $request->weight;
-        $profile->height= $request->height;
-        $profile->skin_color= $request->skin_color;
-        $profile->physique= $request->physique;
-        $profile->job= $request->job;
-        $profile->qualification= $request->qualification;
-        $profile->financial_condition= $request->financial_condition;
-        $profile->health_status= $request->health_status;
-        $profile->religious_commitment= $request->religious_commitment;
-        $profile->about= $request->about;
-        $profile->specification_of_partner= $request->specification_of_partner;
-        return redirect()->back();
+        $profile = $user->profile;
+        $profile->type_of_marriage = $request->type_of_marriage;
+        $profile->marital_status = $request->marital_status;
+        $profile->age = $request->age;
+        $profile->no_of_childs = $request->no_of_childs;
+        $profile->phone = $request->phone;
+        $profile->weight = $request->weight;
+        $profile->height = $request->height;
+        $profile->skin_color = $request->skin_color;
+        $profile->physique = $request->physique;
+        $profile->job = $request->job;
+        $profile->qualification = $request->qualification;
+        $profile->financial_condition = $request->financial_condition;
+        $profile->health_status = $request->health_status;
+        $profile->religious_commitment = $request->religious_commitment;
+        $profile->about = $request->about;
+        $profile->specification_of_partner = $request->specification_of_partner;
+        $profile->save();
+        return redirect()->back()->with('success','hi');
     }
 }

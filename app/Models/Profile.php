@@ -5,14 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Auth\Authenticatable as AuthenticableTrait;
-
-class Profile extends Model implements Authenticatable
+class Profile extends Model
 {
-    use AuthenticableTrait;
     protected $fillable = [
         'type_of_marriage',
         'marital_status',
