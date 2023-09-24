@@ -11,29 +11,9 @@
     <!-- Favicon Tags Start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="apple-touch-icon-precomposed" sizes="57x57"
-        href="{{ asset('assets/img/favicon/apple-touch-icon-57x57.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-        href="{{ asset('assets/img/favicon/apple-touch-icon-114x114.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-        href="{{ asset('assets/img/favicon/apple-touch-icon-72x72.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-        href="{{ asset('assets/img/favicon/apple-touch-icon-144x144.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60"
-        href="{{ asset('assets/img/favicon/apple-touch-icon-60x60.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120"
-        href="{{ asset('assets/img/favicon/apple-touch-icon-120x120.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76"
-        href="{{ asset('assets/img/favicon/apple-touch-icon-76x76.png') }}" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152"
-        href="{{ asset('assets/img/favicon/apple-touch-icon-152x152.png') }}" />
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon/favicon-196x196.png') }}"
-        sizes="196x196" />
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon/favicon-96x96.png') }}" sizes="96x96" />
-    <link rel="icon" type="image/png"
-        href="{{ asset('img/favicon/favicon-32x32.png" sizes="assets/img/favicon/favicon-32x32.png') }}" />
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon/favicon-16x16.png') }}" sizes="16x16" />
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon/favicon-128.png') }}" sizes="128x128" />
+
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/hudhood_icon.png') }}" />
+
     <meta name="application-name" content="&nbsp;" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicon/mstile-144x144.png') }}" />
@@ -62,9 +42,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+    <link href="{{ asset('css/whatsapp_icon.css') }}" rel="stylesheet">
+
     @yield('css')
     <style>
-        *{
+        * {
             font-family: 'Tajawal', sans-serif !important;
         }
     </style>
@@ -76,6 +58,10 @@
         @include('layouts.partials.header')
         @yield('content')
     </div>
+    <a href="https://wa.me/923014750383?text=hello" target=”_blank” class="whatsapp-btn">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
     @include('layouts.partials.footer')
     <script src="{{ asset('js/vendor/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('js/vendor/bootstrap.bundle.min.js') }} "></script>
@@ -104,6 +90,15 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script>
+        var color_mode = localStorage.getItem('acorn-classic-dashboard-color');
+        console.log(color_mode);
+        if (color_mode == 'dark-blue') {
+            $('.light_text').html('الوضع النهاري')
+        } else {
+            $('.light_text').html('الوضع الليلي')
+        }
+    </script>
     @yield('js')
 </body>
 

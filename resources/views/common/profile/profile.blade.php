@@ -130,10 +130,6 @@
             <p class="user-info-value">{{ $user->profile->about }}</p>
         </div>
     </div>
-    {{-- <section class="scroll-section" id="default"> --}}
-    {{-- <h2 class="small-title">Default</h2> --}}
-
-    {{-- </section> --}}
 </div>
 <div class="">
     <div class="card-body">

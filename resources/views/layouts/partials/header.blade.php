@@ -156,7 +156,7 @@
 
             <li class="list-inline-item">
                 <a href="#" id="colorButton">
-                    <span class="fs-6" style="padding-left: 15px;"> الوضع النهاري</span>
+                    <span class="fs-6 light_text" style="padding-left: 15px;"> الوضع النهاري</span>
                     <i data-acorn-icon="moon" class="light" data-acorn-size="18"></i>
                     <i data-acorn-icon="sun" class="dark" data-acorn-size="18"></i>
                 </a>

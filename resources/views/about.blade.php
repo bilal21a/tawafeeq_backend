@@ -35,7 +35,7 @@
                                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
                                                 <div>
                                                     <img class="pt-3" width="77%"
-                                                        src="{{ asset('assets/img/tawfeeq.png') }}" alt="">
+                                                        src="{{ asset('assets/img/hudhood_baner.png') }}" alt="">
                                                 </div>
                                             </div>
                                         </div>
