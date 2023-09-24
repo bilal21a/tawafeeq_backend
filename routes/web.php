@@ -40,7 +40,7 @@ Route::get('contact', [ContentController::class, 'contact'])->name('contact');
 Route::get('login_page', [ContentController::class, 'login_page'])->name('login_page');
 
 // Home page
-Route::get('home', [UserController::class, 'home'])->name('home');
+Route::get('/', [UserController::class, 'home'])->name('home');
 // Members
 Route::match(['GET','POST'], '/members', [UserController::class, 'index'])->name('members');
 // advance Search
