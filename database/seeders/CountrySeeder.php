@@ -47,7 +47,7 @@ class CountrySeeder extends Seeder
 
             Country::create([
                 'country' => $countryName,
-                'cities' => json_encode($citiesData),
+                'cities' => $citiesData,
             ]);
         }
     }

@@ -28,11 +28,16 @@
                                         @enderror
                                     </div>
                                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                        <p class="fw-bolder fs-6 d-flex justify-content-start">كلمة المرور <i
-                                                class="m-0" data-acorn-icon="eye"></i></p>
-                                        <input id="password" type="password"
-                                            class="form-control @error('password') is-invalid @enderror" name="password"
-                                            required autocomplete="current-password">
+
+                                        <p class="fw-bolder d-flex justify-content-start">كلمة المرور
+                                            <i data-acorn-icon="eye" class="eye_icon m-0" onclick="hidePassword()"
+                                                style="display: none;"></i>
+                                            <i data-acorn-icon="eye-off" class="eye_off_icon m-0"
+                                                onclick="showPassword()"></i>
+                                        </p>
+                                        <input type="password" name="password" id="password"
+                                            class="form-control input_background password_field"
+                                            value="{{ old('password') }}" required autocomplete="password" >
                                         @error('password')
                                             <span class="invalid-feedback" role="alert"  style="justify-content: start;display: flex;">
                                                 <strong>{{ $message }}</strong>
@@ -60,8 +65,8 @@
                 <div class="col-8 mt-4 d-flex ">
                     <button class="btn btn-xl btn-primary" type="submit">تسجيل الدخول</button>
                     <div class="me-3 d-flex align-items-center">
-                        <p class="fw-bolder d-flex justify-content-start mb-0"><a href="#">نسيت كلمة
-                                المرور؟</a></p>
+                        {{-- <p class="fw-bolder d-flex justify-content-start mb-0"><a href="#">نسيت كلمة
+                                المرور؟</a></p> --}}
                     </div>
                 </div>
                 <div class="col-2"></div>

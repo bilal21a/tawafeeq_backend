@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\Profile;
 use App\Models\Rating;
 use App\Models\User;
@@ -28,116 +29,11 @@ class ProfileController extends Controller
     }
     public function edit_profile()
     {
-        $user = auth()->user();
-        $nationality = [
-            'أوكرانيا',
-            'اخر',
-            'الاردن',
-            'الامارات',
-            'البحرين',
-            'الجزائر',
-            'السعودية',
-            'السودان',
-            'الصومال',
-            'العراق',
-            'الكويت',
-            'المغرب',
-            'اليمن',
-            'ایران',
-            'باكستان',
-            'تونس',
-            'جزر القمر',
-            'جيبوتي',
-            'دول غربية',
-            'سوريا',
-            'عُمان',
-            'فلسطين',
-        ];
-        $cities = [
-            'أوبوك',
-            'الدوادمي',
-            'المجمعة',
-            'تاجورة',
-            'جازان',
-            'صامطة',
-            'صبيا',
-            'علايلي دادا',
-            'الحسيمة',
-            'الفنيدق',
-            'اليوسفية',
-            'جرادة',
-            'جرسيف',
-            'سلا الجديدة',
-            'سوق السبت أولاد النمة',
-            'شفشاون',
-            'صفرو',
-            'انتر',
-            'طانطان',
-            'محافظة الأحمدي',
-            'محافظة الجهراء',
-            'نبجرير',
-            'ورزازات',
-            'وزان',
-            'أسفي',
-            'أبها',
-            'أبو نصير',
-            'أبوظبي',
-            'أجد عبر بارزونن',
-            'أجد عبرين',
-        ];
-        $type_of_marriages =
-            [
-                'الزواج الأول',
-                'الزواج الثاني',
-                'الزواج الثالث',
-                'الزواج الرابع',
-                'زوجة واحدة',
-                'لا أمانع تعدد الزوجات',
-            ];
-        $maritalStatusNames = [
-            'أرمل',
-            'بكالوريوس',
-            'متزوج',
-            'مطلق',
-            'أرملة',
-            'أعزب',
-            'مُطلّق',
-        ];
-        $sikinColors = [
-            'القمح الأبيض',
-            'حنطي',
-            'أبيض',
-            'القمح البني',
-            'البني الفاتح',
-            'بني غامق',
-        ];
-        $qualifications =
-            [
-                'دراسة متوسطة',
-                'تعليم ثانوي',
-                'دراسة جامعية',
-                'دكتوراه',
-                'السيرة الذاتية',
-                'التعليم الابتدائي',
-            ];
-        $financial_conditions = [
-            'دخل محدود',
-            'أقل من المتوسط',
-            'متوسط',
-            'أكثر من المتوسط',
-            'جيد',
-            'ميسور',
-            'غني',
-        ];
-        $religiousOptions = [
-            "أفضل عدم الإفصاح",
-            "متدين جداً",
-            "متدين قليلاً",
-            "لست متدينًا",
-            "متدين",
-        ];
+        $data = $this->data_list();
+        $data['user'] = auth()->user();
+        $data['countries'] = Country::get();
 
-        return view('profile.edit_profile', compact('user', 'nationality', 'cities', 'type_of_marriages', 'maritalStatusNames', 'sikinColors', 'qualifications', 'financial_conditions', 'religiousOptions'));
+        return view('profile.edit_profile', $data);
     }
     public function update_profile(Request $request)
     {
@@ -239,8 +135,8 @@ class ProfileController extends Controller
         $rating->ratings = $request->stars;
         $rating->save();
 
-        $user=User::find($request->profile_id);
-        $user->rating=$new_rating;
+        $user = User::find($request->profile_id);
+        $user->rating = $new_rating;
         $user->save();
         return "success";
     }

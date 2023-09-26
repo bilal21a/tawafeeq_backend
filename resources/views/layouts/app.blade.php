@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>HUDHOOD</title>
+    <title>HUDHOODH</title>
     <meta name="description" content="Examples and usage guidelines for form control styles and layout options." />
     <meta name="description"
         content="Glidejs is a dependency-free JavaScript ES6 slider and carousel. It’s lightweight, flexible and fast. Designed to slide. No less, no more." />
@@ -97,6 +97,27 @@
             $('.light_text').html('الوضع النهاري')
         } else {
             $('.light_text').html('الوضع الليلي')
+        }
+
+        function isNumeric(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+        function hidePassword() {
+            console.log("im in");
+            $('.password_field').attr('type', 'password')
+            $('.eye_icon').hide()
+            $('.eye_off_icon').show()
+        }
+
+        function showPassword() {
+            console.log("im in");
+            $('.password_field').attr('type', 'text')
+            $('.eye_icon').show()
+            $('.eye_off_icon').hide()
         }
     </script>
     @yield('js')

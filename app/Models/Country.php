@@ -11,4 +11,7 @@ class Country extends Model
     protected $fillable = [
         'country', 'cities'
     ];
+    protected $casts = [
+        'cities'=>'array'
+    ];
 }
