@@ -175,6 +175,20 @@
     </main>
 @endsection
 @section('js')
+<script>
+      $(document).ready(function() {
+            // Attach a click event handler to the span with id "myStar"
+            $("#myStar").click(function() {
+                // Your code to run when the span is clicked
+                activestar();
+            });
+        });
+
+        function activestar() {
+            $(".forrating{{ $user->id }}").addClass("bi-star-fill");
+            $(".forrating{{ $user->id }}").removeClass("bi-star");
+        }
+</script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
     <script>

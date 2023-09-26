@@ -91,6 +91,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
+
+
         var color_mode = localStorage.getItem('acorn-classic-dashboard-color');
         console.log(color_mode);
         if (color_mode == 'dark-blue') {

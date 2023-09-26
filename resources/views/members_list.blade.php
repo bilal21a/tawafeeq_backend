@@ -90,3 +90,20 @@
         </section>
     </div>
 @endsection
+@section('js')
+<script>
+    $(document).ready(function() {
+          // Attach a click event handler to the span with id "myStar"
+          $("#myStar").click(function() {
+              // Your code to run when the span is clicked
+              var user_id ={{ $user->id }}
+              activestar(user_id);
+          });
+      });
+
+      function activestar() {
+          $(".forrating").addClass("bi-star-fill");
+          $(".forrating").removeClass("bi-star");
+      }
+</script>
+@endsection
