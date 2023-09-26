@@ -1,7 +1,7 @@
 @foreach ($users as $user)
     <div class="user-chat chats_active_all" id="chat_active_{{ $user->id }}" onclick="openChat({{ $user->id }})">
         <div class="user-chat-img">
-            <img src="{{ asset('assets/img/homepage_img/woman.png') }}" id="contactImg_{{ $user->id }}" alt="">
+            <img src="{{ $user->img_url }}" id="contactImg_{{ $user->id }}" alt="">
             <div class="offline"></div>
         </div>
 
