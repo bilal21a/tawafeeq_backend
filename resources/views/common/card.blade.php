@@ -42,7 +42,7 @@
         </div>
         <div class="d-flex justify-content-between ps-4 pb-3">
             <div class="me-3">
-                <i data-acorn-icon="star" class="me-2" data-acorn-size="17"></i>
+                <span class="forrating{{ $user->id }} golden-star bi bi-star" id="myStar" onclick="activestar()"></span>
                 <i data-acorn-icon="message" class="me-2" data-acorn-size="17"></i>
             </div>
             <a href="{{ route('members_profile', $user->id) }}">

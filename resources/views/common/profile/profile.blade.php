@@ -1,15 +1,16 @@
 <div class="tab-pane fade active show" id="first" role="tabpanel">
-    <div class="d-grid gap-2 d-md-flex justify-content-between">
+    <div class="d-grid gap-2 d-md-flex {{ $user->id== $user_id ? 'justify-content-between' :'justify-content-end' }} ">
         @if ($user_id == $user->id)
             <div class="d-grid gap-2 d-flex">
                 <a href="{{ route('edit_profile', $user->id) }}" class="btn btn-primary fs-5" style="padding-top: 12px;"
                     type="button"><i data-acorn-icon="pen" class="me-2 ms-3" data-acorn-size="17"></i>تعديل</a>
             </div>
-            <div>
-                <button type="button" class="btn btn-danger mb-1"><i data-acorn-icon="bin" class="me-2 ms-3"
-                        data-acorn-size="17"></i>حذف حسابي</button>
-            </div>
         @endif
+
+        <div>
+            <button type="button" class="btn btn-danger mb-1"><i data-acorn-icon="bin" class="me-2 ms-3"
+                    data-acorn-size="17"></i>حذف حسابي</button>
+        </div>
     </div>
     <div class="row justify-content-between">
         <div class="col-md-5">
@@ -38,15 +39,15 @@
 
                             <div class="star-rating" dir="ltr">
                                 @for ($i = 0; $i < $filledStars; $i++)
-                                <i class="golden-star bi bi-star-fill"></i>
+                                    <i class="golden-star bi bi-star-fill"></i>
                                 @endfor
 
                                 @if ($halfStar)
-                                <i class="golden-star bi bi-star-half"></i>
+                                    <i class="golden-star bi bi-star-half"></i>
                                 @endif
 
                                 @for ($i = 0; $i < $unfilledStars; $i++)
-                                <i class="golden-star bi bi-star"></i>
+                                    <i class="golden-star bi bi-star"></i>
                                 @endfor
                                 <span class="fw-bold">{{ $user->rating }}</span>
                             </div>

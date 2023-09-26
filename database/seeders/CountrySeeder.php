@@ -44,7 +44,6 @@ class CountrySeeder extends Seeder
             foreach ($cities as $city) {
                 $citiesData[] =  $city;
             }
-
             Country::create([
                 'country' => $countryName,
                 'cities' => json_encode($citiesData),
