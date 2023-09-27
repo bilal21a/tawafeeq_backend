@@ -1,10 +1,13 @@
 <?php
 
-use App\Activity;
-use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
-function user_id()
+
+function isUserActive($lastSeenTimestamp, $thresholdInMinutes = 5)
 {
-    $user_id = Auth::id();
-    return $user_id;
+    $lastSeenTime = Carbon::parse($lastSeenTimestamp);
+    $currentTime = Carbon::now();
+
+    // Check if the difference is within the threshold
+    return $lastSeenTime->diffInMinutes($currentTime) <= $thresholdInMinutes;
 }

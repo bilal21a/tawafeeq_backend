@@ -34,7 +34,8 @@
                                                 <form method="POST" action="{{ route('members') }}">
                                                     @csrf
                                                     <h5 class="fw-semibold mb-1">الاسم</h5>
-                                                    <input type="hidden" name="look_for" id="look_for_gender" value="ذكر">
+                                                    <input type="hidden" name="look_for" id="look_for_gender"
+                                                        value="ذكر">
                                                     <input type="text" name="name" id="name"
                                                         value="{{ isset($name_search) ? $name_search : '' }}"
                                                         class="form-control input_background" placeholder="الاسم">
@@ -175,20 +176,19 @@
     </main>
 @endsection
 @section('js')
-<script>
-      $(document).ready(function() {
-            // Attach a click event handler to the span with id "myStar"
-            $("#myStar").click(function() {
-                // Your code to run when the span is clicked
-                activestar();
-            });
-        });
-
-        function activestar() {
-            $(".forrating{{ $user->id }}").addClass("bi-star-fill");
-            $(".forrating{{ $user->id }}").removeClass("bi-star");
+    <script>
+        function activestar(user_id, element) {
+            if (element.classList.contains("bi-star")) {
+                element.classList.remove("bi-star");
+                element.classList.add("bi-star-fill");
+                console.log('Star is now active');
+            } else {
+                element.classList.remove("bi-star-fill");
+                element.classList.add("bi-star");
+                console.log('Star is now inactive');
+            }
         }
-</script>
+    </script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
     <script>

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
-use App\Models\Profile;
 use App\Models\Rating;
 use App\Models\User;
 use Illuminate\Http\Request;
