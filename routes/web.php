@@ -6,9 +6,15 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\FavlistController;
+use App\Http\Controllers\ProfileVistorController;
 use App\Http\Controllers\UserController;
+<<<<<<< HEAD
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+=======
+use App\Models\ProfileVistors;
+>>>>>>> 5444b53 (profilevistors)
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +54,18 @@ Route::middleware(['auth', 'last_seen'])->group(function () {
     Route::get('/get_chats_heads', [ChatController::class, 'get_chats_heads'])->name('chat.chats_heads');
     Route::get('/get_chat_id/{partner_id}', [ChatController::class, 'get_chat_id'])->name('chat.chat_id');
     Route::post('/send_message', [ChatController::class, 'send_message'])->name('chat.send_message');
+Route::middleware(['auth'])->group(function () {
+Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+Route::get('profile/edit', [ProfileController::class, 'edit_profile'])->name('edit_profile');
+Route::post('profile/update', [ProfileController::class, 'update_profile'])->name('update_profile');
+Route::get('members_profile/{id}', [ProfileController::class, 'members_profile'])->name('members_profile');
+Route::post('save_rating', [ProfileController::class, 'save_rating'])->name('save_rating');
+
+// This is for Fav lists
+Route::get('favlist', [FavlistController::class, 'favlist'])->name('favlist');
+Route::get('delete_favlist/{id}', [FavlistController::class, 'delete_favlist'])->name('delete_favlist');
+
+Route::get('profilevistor', [ProfileVistorController::class, 'profilevistor'])->name('profilevistor');
 });
 // Before Login
 Route::get('about', [ContentController::class, 'about'])->name('about');
@@ -72,3 +90,8 @@ Route::get('test', function () {
         // User is not active
     }
 });
+Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+Route::get('/get_chats_heads', [ChatController::class, 'get_chats_heads'])->name('chat.chats_heads');
+Route::get('/get_chat_id/{partner_id}', [ChatController::class, 'get_chat_id'])->name('chat.chat_id');
+Route::post('/send_message', [ChatController::class, 'send_message'])->name('chat.send_message');
+

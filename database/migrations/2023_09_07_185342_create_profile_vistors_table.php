@@ -15,7 +15,7 @@ class CreateProfileVistorsTable extends Migration
     {
         Schema::create('profile_vistors', function (Blueprint $table) {
             $table->id();
-            $table->string('type_of_marriage')->nullable();
+            $table->string('user_id')->nullable();
             $table->string('visitor_id')->nullable();
             $table->string('visited_to_id')->nullable();
             $table->timestamps();

@@ -15,6 +15,7 @@ class CreateFavlistsTable extends Migration
     {
         Schema::create('favlists', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id')->nullable();
             $table->string('rated_to_id')->nullable();
             $table->string('rater_id')->nullable();
             $table->string('ratings')->nullable();

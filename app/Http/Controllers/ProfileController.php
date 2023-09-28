@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use App\Models\ProfileVistors;
 use App\Models\Rating;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,14 +18,15 @@ class ProfileController extends Controller
         $user_id = Auth::id();
         $user = User::where('id', $user_id)
             ->first();
-        return view('profile.index', compact('user', 'user_id'));
+            $profilevistors = ProfileVistors::where('visited_to_id',Auth::id())->with('user')->latest()->get();
+        return view('profile.index', compact('user', 'user_id','profilevistors'));
     }
 
     public function members_profile($id)
     {
         $user_id = Auth::id();
         $user = User::where('id', $id)->first();
-        return view('members_profile', compact('user', 'user_id'));
+        return view('members_profile', compact('user','user_id'));
     }
     public function edit_profile()
     {
