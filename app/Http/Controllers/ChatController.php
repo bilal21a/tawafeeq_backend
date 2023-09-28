@@ -55,6 +55,9 @@ class ChatController extends Controller
     public function chat_load($partner_id)
     {
         $initiator_id = auth()->id();
+        if ($initiator_id==$partner_id) {
+            return redirect()->route('something_went_wrong');
+        }
         $chat = Chats::where('partner_id', $partner_id)->where('initiator_id', $initiator_id)->first();
         if ($chat) {
             return redirect()->route('profile', ['chat_id' => $chat->id]);

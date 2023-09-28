@@ -17,9 +17,9 @@
             <h5 class="card-title fw-bold">{{ $user->name }}</h5>
 
             @php
-                $rating=$user->rating;
+                $rating = $user->rating;
                 $filledStars = floor($rating);
-                $halfStar = ($rating - $filledStars) >= 0.5;
+                $halfStar = $rating - $filledStars >= 0.5;
                 $unfilledStars = 5 - ceil($rating);
             @endphp
 
@@ -39,12 +39,13 @@
 
             <p class="card-text mb-1" style="font-size: 13px;">{{ $user->nationality }}</p>
             <p class="mb-0">
-                {{ strlen($user->profile->specification_of_partner) > 50 ? substr($user->profile->specification_of_partner, 0, 50).'...' : $user->profile->specification_of_partner }}
+                {{ Illuminate\Support\Str::limit($user->profile->specification_of_partner, 50, '...') }}
             </p>
         </div>
         <div class="d-flex justify-content-between ps-4 pb-3">
             <div class="me-3">
-                <span class="golden-star bi bi-star cursor-pointer" onclick="activestar('{{ $user->id }}',this)"></span>
+                <span class="golden-star bi bi-star cursor-pointer"
+                    onclick="activestar('{{ $user->id }}',this)"></span>
                 <a href="{{ route('chat.chat_load', $user->id) }}">
                     <i data-acorn-icon="message" class="me-2 cursor-pointer" data-acorn-size="17"></i>
                 </a>
