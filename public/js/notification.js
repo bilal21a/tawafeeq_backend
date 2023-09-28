@@ -14,8 +14,8 @@ function generatealert(color = 'primary', message, timer = 5000) {
     var notification_area = $('.notification_area');
     const noti = `<div id="" class="toast mytoast_${rand} align-items-center bg-${color} border-0 fade show mb-2 myalertopacity" role="alert" aria-live="assertive" aria-atomic="true">
                   <div class="d-flex">
-                      <div class="toast-body text-white">${message}</div>
-                      <button type="button" class="text-white me-2 m-auto" style="background:transparent;border:none" data-bs-dismiss="toast"
+                      <div class="toast-body text-primary">${message}</div>
+                      <button type="button" class="text-primary me-2 m-auto" style="background:transparent;border:none" data-bs-dismiss="toast"
                           aria-label="Close" onClick="closeAlert(${rand})">X</button>
                   </div>
               </div>`
