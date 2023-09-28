@@ -10,12 +10,12 @@ var firebaseConfig = {
 
 function generatealert(color = 'primary', message, timer = 5000) {
     color = color == 'info' ? 'primary' : color
-    const rand = Math.ceil(Math.random() * 10000000);
+    const rand = Math.ceil(Math.random() * 1000000000000000000000000);
     var notification_area = $('.notification_area');
     const noti = `<div id="" class="toast mytoast_${rand} align-items-center bg-${color} border-0 fade show mb-2 myalertopacity" role="alert" aria-live="assertive" aria-atomic="true">
-                  <div class="d-flex">
-                      <div class="toast-body text-primary">${message}</div>
-                      <button type="button" class="text-primary me-2 m-auto" style="background:transparent;border:none" data-bs-dismiss="toast"
+                  <div class="d-flex" dir="ltr">
+                      <div class="toast-body">${message}</div>
+                      <button type="button" class= me-2 m-auto" style="background:transparent;border:none" data-bs-dismiss="toast"
                           aria-label="Close" onClick="closeAlert(${rand})">X</button>
                   </div>
               </div>`
