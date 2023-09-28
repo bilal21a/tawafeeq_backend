@@ -4,37 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Models\Chats;
 use App\Models\Messages;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class ChatController extends Controller
 {
     public function index()
     {
-        return view('profile.index');
+        //
     }
     public function get_chats_heads()
     {
-        $users = User::where('id', '!=', auth()->id())->get();
-        return view('profile.chat_heads', compact('users'));
+        $chats = Chats::where('partner_id', auth()->id())->orWhere('initiator_id', auth()->id())->get();
+        if ($chats->count()>0) {
+            return view('profile.chat_heads', compact('chats'));
+        }else{
+            return false;
+        }
     }
-    public function get_chat_id($partner_id)
+    public function chat_mark_as_read($chat_id)
     {
-        $initiator_id = auth()->id();
-        $chat = Chats::where('partner_id', $partner_id)->where('initiator_id', $initiator_id)->first();
-        if ($chat) {
-            return $chat->id;
-        }
-        $chat = Chats::where('partner_id', $initiator_id)->where('initiator_id', $partner_id)->first();
-        if ($chat) {
-            return $chat->id;
-        }
-        $chat = new Chats();
-        $chat->initiator_id = $initiator_id;
-        $chat->partner_id = $partner_id;
+        $chat = Chats::find($chat_id);
+        $count_type = $chat->initiator_id == auth()->id() ? 'initiator_count' : 'partner_count';
+        $chat->$count_type = 0;
         $chat->save();
-
-        return $chat->id;
+        return 'marked_as read';
     }
 
     public function send_message(Request $request)
@@ -47,6 +40,37 @@ class ChatController extends Controller
         $message->chat_id = $request->internet_conn;
         $message->save();
 
+        $chat = Chats::find($request->internet_conn);
+        $reciver = $chat->initiator_id == $sender_id ? $chat->partner : $chat->initiator;
+        $chat->initiator_count = $chat->initiator_id == $sender_id ? 0 : $chat->initiator_count + 1;
+        $chat->partner_count = $chat->partner_id == $sender_id ? 0 : $chat->partner_count + 1;
+        $chat->save();
+
+        $notification = 'رسالة جديدة وصلت من ' . $reciver->name;
+
+        generateNotification($sender_id, $reciver->id, $notification);
         return "message sent successfully";
+    }
+
+    public function chat_load($partner_id)
+    {
+        $initiator_id = auth()->id();
+        $chat = Chats::where('partner_id', $partner_id)->where('initiator_id', $initiator_id)->first();
+        if ($chat) {
+            return redirect()->route('profile', ['chat_id' => $chat->id]);
+        }
+        $chat = Chats::where('partner_id', $initiator_id)->where('initiator_id', $partner_id)->first();
+        if ($chat) {
+            return redirect()->route('profile', ['chat_id' => $chat->id]);
+        }
+        $chat = new Chats();
+        $chat->initiator_id = $initiator_id;
+        $chat->partner_id = $partner_id;
+        $chat->save();
+        return redirect()->route('profile', ['chat_id' => $chat->id]);
+    }
+    public function something_went_wrong()
+    {
+        return view('errors.went_wrong');
     }
 }

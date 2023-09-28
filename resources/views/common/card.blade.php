@@ -42,8 +42,10 @@
         </div>
         <div class="d-flex justify-content-between ps-4 pb-3">
             <div class="me-3">
-                <span class="golden-star bi bi-star" id="myStar" onclick="activestar('{{ $user->id }}',this)"></span>
-                <i data-acorn-icon="message" class="me-2" data-acorn-size="17"></i>
+                <span class="golden-star bi bi-star cursor-pointer" onclick="activestar('{{ $user->id }}',this)"></span>
+                <a href="{{ route('chat.chat_load', $user->id) }}">
+                    <i data-acorn-icon="message" class="me-2 cursor-pointer" data-acorn-size="17"></i>
+                </a>
             </div>
             <a href="{{ route('members_profile', $user->id) }}">
                 <i data-acorn-icon="user" class="me-2" data-acorn-size="17"></i>

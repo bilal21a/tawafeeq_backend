@@ -10,11 +10,11 @@
                     <div class="card-header border-0 pb-0">
                         <ul class="nav nav-tabs nav-tabs-line card-header-tabs responsive-tabs" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#first" role="tab"
+                                <button class="nav-link {{ $chat_id!=null?'':'active' }}" data-bs-toggle="tab" data-bs-target="#first" role="tab"
                                     type="button" aria-selected="true">الملف الشخصي</button>
                             </li>
                             <li class="nav-item chat_nav_item" role="presentation">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#second" role="tab"
+                                <button class="nav-link {{ $chat_id!=null?'active':'' }}" data-bs-toggle="tab" data-bs-target="#second" role="tab"
                                     type="button" aria-selected="false">الرسائل</button>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -42,11 +42,12 @@
                     </div>
                     <div class="card-body ">
                         <div class="tab-content">
-                            <div class="tab-pane fade active show" id="first" role="tabpanel">
+                            <div class="tab-pane fade {{ $chat_id!=null?'':'active show' }}" id="first" role="tabpanel">
                                 @include('common.profile.profile')
                             </div>
-                            <div class="tab-pane fade" id="second" role="tabpanel">
+                            <div class="tab-pane fade {{ $chat_id!=null?'active show':'' }}" id="second" role="tabpanel">
                                 @include('common.profile.chat')
+                                @include('common.profile.chat_error')
                             </div>
                             <div class="tab-pane fade" id="third" role="tabpanel">
                                 @include('common.profile.identity')
@@ -66,9 +67,7 @@
 @endsection
 
 @section('js')
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
 
     @include('profile.js.chat_mainjs')
 @endsection

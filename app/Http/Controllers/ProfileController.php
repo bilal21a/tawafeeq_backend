@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chats;
 use App\Models\Country;
 use App\Models\Rating;
 use App\Models\User;
@@ -12,12 +13,21 @@ use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
-    public function profile()
+    public function profile(Request $request)
     {
         $user_id = Auth::id();
         $user = User::where('id', $user_id)
             ->first();
-        return view('profile.index', compact('user', 'user_id'));
+        $chat_id = $request->chat_id;
+        $partner_id=null;
+        if ($request->chat_id != null) {
+            $chat = Chats::find($chat_id);
+            $partner_id=$chat->initiator_id == auth()->id() ? $chat->partner_id : $chat->initiator_id;
+            if (!$chat) {
+                return redirect()->route('something_went_wrong');
+            }
+        }
+        return view('profile.index', compact('user', 'user_id', 'chat_id','partner_id'));
     }
 
     public function members_profile($id)

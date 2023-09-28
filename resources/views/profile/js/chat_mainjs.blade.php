@@ -1,34 +1,39 @@
+<script>
+    @if ($chat_id != null)
+        const opponent_id = "{{ $partner_id }}"
+        const load_chat_id = "{{ $chat_id }}"
 
-<script>
-    // Initialize Firebase
-    const firebaseConfig = {
-        apiKey: "AIzaSyCglXM6RATdwKebapefwd9k4LLgbq3hCRc",
-        authDomain: "tawafeeqclone-b14fd.firebaseapp.com",
-        databaseURL: "https://tawafeeqclone-b14fd-default-rtdb.firebaseio.com",
-        projectId: "tawafeeqclone-b14fd",
-        storageBucket: "tawafeeqclone-b14fd.appspot.com",
-        messagingSenderId: "773303799890",
-        appId: "1:773303799890:web:b99bc4b1ed55c66bb50f8b"
-    };
-    firebase.initializeApp(firebaseConfig);
-</script>
-<script>
+        getChatHeads()
+        firebase_chat_counts()
+        openChat(load_chat_id, opponent_id)
+    @endif
     $('.chat_nav_item').on('click', function(event) {
         getChatHeads()
+        firebase_chat_counts()
     });
 
     function getChatHeads() {
         start_full_load()
-        axios.get("{{ route('chat.chats_heads') }}")
-            .then((response) => {
-                $('.chat_heads').html(response.data)
-                stop_full_load()
-            });
+        $.ajax({
+            type: 'GET',
+            async: false,
+            url:"{{ route('chat.chats_heads') }}",
+            success: function(data) {
+                if (!data) {
+                    $('.chat_work').hide()
+                    $('.chat_error').show()
+                    stop_full_load()
+                }else{
+                    $('.chat_heads').html(data)
+                    stop_full_load()
+                }
+            },
+        });
     }
 
-    function openChat(partner_id) {
+    function openChat(chat_id, partner_id) {
         start_full_load()
-        chat_id = getChatId(partner_id);
+        read_chat(chat_id)
         set_chat_attributes(partner_id, chat_id)
         get_chat(chat_id, partner_id)
         scroll_to_top()
@@ -56,6 +61,34 @@
             });
     }
 
+    function firebase_chat_counts() {
+        const authenticatedUserId = "{{ auth()->id() }}"; // Replace with the actual authenticated user's ID
+
+        const chatsRef = firebase.database().ref('chats');
+        const matchedChats = [];
+
+        chatsRef.on("value", snapshot => {
+
+            snapshot.forEach(childSnapshot => {
+                const chatId = childSnapshot.key;
+                const chat = childSnapshot.val();
+
+                if (chat.initiator_id == authenticatedUserId || chat.partner_id ==
+                    authenticatedUserId) {
+                    chat_count = chat.initiator_id == authenticatedUserId ? chat.initiator_count : chat
+                        .partner_count
+                    if (chat_count > 0) {
+                        $(`.unread_${chat.id}`).show()
+                        $(`.unread_${chat.id}`).html(chat_count)
+                    } else {
+                        $(`.unread_${chat.id}`).hide()
+                    }
+
+                }
+            });
+        });
+    }
+
     function start_chat_loading() {
         $('.chat_send_btn').hide()
         $('.chat_loading_btn').show()
@@ -72,20 +105,18 @@
         myDiv.scrollTop(myDiv[0].scrollHeight);
     }
 
-    function getChatId(partner_id) {
+    function read_chat(chat_id) {
         var url = '{{ route('chat.chat_id', ':id') }}';
-        url = url.replace(':id', partner_id);
-        var chat;
+        url = url.replace(':id', chat_id);
+
         $.ajax({
             type: 'GET',
-            async: false,
             url,
             success: function(data) {
 
-                chat = data;
+                $(`.unread_${chat_id}`).hide()
             },
         });
-        return chat;
     }
 
     function get_chat(chat_id, partner_id) {
@@ -146,7 +177,7 @@
 
     function set_chat_attributes(partner_id, internet_conn) {
         $('.chats_active_all').removeClass('active');
-        $('#chat_active_' + partner_id).addClass('active');
+        $(`#chat_active_${partner_id}`).addClass('active');
         var contactName = $('#contactName_' + partner_id).text();
         $('.active_chat_name').html(contactName);
         var contactsubHeading = $('#contactsubHeading_' + partner_id).text();

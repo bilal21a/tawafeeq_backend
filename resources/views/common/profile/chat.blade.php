@@ -1,4 +1,4 @@
-<div class="content-chat mt-20">
+<div class="content-chat mt-20 chat_work">
     <div class="content-chat-user">
         <div class="head-search-chat">
             <h4 class="text-center">Chat Finder</h4>

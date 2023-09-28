@@ -1,13 +1,26 @@
-@foreach ($users as $user)
-    <div class="user-chat chats_active_all" id="chat_active_{{ $user->id }}" onclick="openChat({{ $user->id }})">
+@foreach ($chats as $chat)
+    @php
+        $user = $chat->initiator_id == auth()->id() ? $chat->partner : $chat->initiator;
+        $count_type = $chat->initiator_id == auth()->id() ? 'initiator_count' : 'partner_count';
+    @endphp
+    <div class="user-chat chats_active_all" id="chat_active_{{ $user->id }}"
+        onclick="openChat({{ $chat->id }},{{ $user->id }})">
         <div class="user-chat-img">
             <img src="{{ $user->img_url }}" id="contactImg_{{ $user->id }}" alt="">
             <div class="offline"></div>
         </div>
 
         <div class="user-chat-text">
-            <p class="mt-0 mb-0"><strong id="contactName_{{ $user->id }}">{{ $user->name }}</strong></p>
-            <small id="contactsubHeading_{{ $user->id }}">{{ $user->nationality }} - {{ $user->city }}</small>
+            <div class="d-flex">
+                <div>
+                    <p class="mt-0 mb-0"><strong id="contactName_{{ $user->id }}">{{ $user->name }}</strong></p>
+                    <small id="contactsubHeading_{{ $user->id }}">{{ $user->nationality }} -
+                        {{ $user->city }}</small>
+                </div>
+                <div class="badge bg-primary unread_{{ $chat->id }}" id="contactUnread"
+                    style="height: fit-content; display:{{ $chat->$count_type > 0 ? 'block' : 'none' }}">
+                    {{ $chat->$count_type }}</div>
+            </div>
         </div>
     </div>
 @endforeach

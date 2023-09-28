@@ -49,6 +49,15 @@
         * {
             font-family: 'Tajawal', sans-serif !important;
         }
+
+        .notification_area {
+            padding: 0.5em;
+            float: right;
+            z-index: 9999999999999;
+            position: absolute;
+            right: 0;
+            backdrop-filter: blur(4px);
+        }
     </style>
 </head>
 
@@ -58,11 +67,20 @@
         @include('layouts.partials.header')
         @yield('content')
     </div>
+    {{-- <button type="button" class="btn settings-button btn-gradient-primary" data-bs-toggle="modal" data-bs-target="#settings" id="settingsButton">
+        <i class="d-inline-block icon-20 bi-bell"></i>
+    </button> --}}
     <a href="https://wa.me/923117926966?text=hello" target=”_blank” class="whatsapp-btn">
         <i class="bi bi-whatsapp"></i>
     </a>
 
+
     @include('layouts.partials.footer')
+    @include('layouts.partials.notification')
+
+
+
+
     <script src="{{ asset('js/vendor/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('js/vendor/bootstrap.bundle.min.js') }} "></script>
     <script src="{{ asset('js/vendor/OverlayScrollbars.min.js') }} "></script>
@@ -89,9 +107,12 @@
     <script src="{{ asset('js/forms/layouts.js') }} "></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="{{ asset('js/notification.js') }} "></script>
 
     <script>
-
 
         var color_mode = localStorage.getItem('acorn-classic-dashboard-color');
         console.log(color_mode);
@@ -108,6 +129,7 @@
             }
             return true;
         }
+
         function hidePassword() {
             console.log("im in");
             $('.password_field').attr('type', 'password')

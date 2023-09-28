@@ -221,3 +221,5 @@
     </div>
     <div class="nav-shadow"></div>
 </div>
+<div class="notification_area">
+</div>
