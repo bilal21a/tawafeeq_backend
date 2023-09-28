@@ -19,5 +19,6 @@ function generateNotification($senderId, $userId, $body)
         $notification->user_id = $userId;
         $notification->body = $body;
         $notification->is_read = 0;
+        $notification->alert_type = 'light';
         $notification->save();
     }
