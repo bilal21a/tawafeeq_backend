@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 line_height_footer">
             <h4 class="white fw-bold mb-6"> أعطنا رأيك</h4>
-            <textarea class="form-control blue_background" name="" id="" cols="25" rows="10" placeholder=" ما رأيك في موقع تَوَافِيْق " style="color:#fff;"></textarea>
+            <textarea class="form-control blue_background" name="" id="" cols="25" rows="10" placeholder=" ما رأيك في موقع هدهدة؟" style="color:#fff;"></textarea>
             <button type="button" class="btn btn-light mb-1 mt-4">أرسل</button>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 line_height_footer">
@@ -42,7 +42,7 @@
                     <p>+971 55 505 5911</p>
                 </div>
                 <div class="d-flex"> <i data-acorn-icon="email" class="ms-2" data-acorn-size="17"></i>
-                    <p>info@hudhood.com</p>
+                    <p>info@hi.com</p>
                 </div>
                 <div class="d-flex"> <i data-acorn-icon="pin" class="ms-2" data-acorn-size="17"></i>
                     <p>الامارات - دبي</p>
