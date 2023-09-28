@@ -6,9 +6,12 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\FavlistController;
+use App\Http\Controllers\ProfileVistorController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\ProfileVistors;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +45,13 @@ Route::middleware(['auth', 'last_seen'])->group(function () {
     Route::post('/create-checkout-session/{plan_id}', [PaymentController::class, 'createCheckoutSession'])->name('createCheckoutSession');
     Route::get('/success', [PaymentController::class, 'success'])->name('payment.success');
     Route::get('/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
+
+
+    // This is for Fav lists
+    Route::get('favlist', [FavlistController::class, 'favlist'])->name('favlist');
+    Route::get('delete_favlist/{id}', [FavlistController::class, 'delete_favlist'])->name('delete_favlist');
+    Route::get('profilevistor', [ProfileVistorController::class, 'profilevistor'])->name('profilevistor');
+    Route::post('save_rating', [ProfileController::class, 'save_rating'])->name('save_rating');
 
 
     Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');

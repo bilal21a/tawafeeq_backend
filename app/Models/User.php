@@ -38,6 +38,10 @@ class User extends Model implements Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
+    public function favlist()
+    {
+        return $this->hasOne(Favlist::class);
+    }
 
     public function profilevisitors()
     {
