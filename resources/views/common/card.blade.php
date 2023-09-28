@@ -38,7 +38,9 @@
             </div>
 
             <p class="card-text mb-1" style="font-size: 13px;">{{ $user->nationality }}</p>
-            <p class="mb-0"> {{ $user->profile->specification_of_partner }} </p>
+            <p class="mb-0">
+                {{ strlen($user->profile->specification_of_partner) > 50 ? substr($user->profile->specification_of_partner, 0, 50).'...' : $user->profile->specification_of_partner }}
+            </p>
         </div>
         <div class="d-flex justify-content-between ps-4 pb-3">
             <div class="me-3">
