@@ -70,7 +70,12 @@
     {{-- <button type="button" class="btn settings-button btn-gradient-primary" data-bs-toggle="modal" data-bs-target="#settings" id="settingsButton">
         <i class="d-inline-block icon-20 bi-bell"></i>
     </button> --}}
-    <a href="https://wa.me/923117926966?text=hello" target=”_blank” class="whatsapp-btn">
+    <a href="https://wa.me/+971566904982?text=اهلا بك
+    شكرا لتواصلكم مع حظوظ
+    المنصة الخليجية الرائدة والموثوقة
+    للتعارف بهدف الزواج
+    موظفونا مشغولين حاليا
+    سوف يتم الرد عليكم في اقرب وقت ممكن" target=”_blank” class="whatsapp-btn">
         <i class="bi bi-whatsapp"></i>
     </a>
 
