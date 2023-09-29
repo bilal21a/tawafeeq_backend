@@ -1,5 +1,5 @@
 <div class="p-0 width_silder">
-    <div class="card " dir="rtl">
+    <div class="card" dir="rtl">
         <div>
             @php
                 $timeDifference = Carbon\Carbon::parse($user->last_seen_at)->diffForHumans();

@@ -101,9 +101,6 @@ class UserController extends Controller
             $users = User::where('id','!=',auth()->id())->where(function ($query) use ($thresholdInMinutes) {
                 $query->where('last_seen_at', '>=', Carbon::now()->subMinutes($thresholdInMinutes));
             })->take(10)->get();
-            // $users = User::with('profile')->latest()->take(10)->get();
-
-            // dd($users);
         } else {
             $users = User::with('profile')->latest()->take(10)->get();
         }

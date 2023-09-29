@@ -11,6 +11,9 @@ var firebaseConfig = {
 function generatealert(color = 'primary', message, timer = 5000) {
     color = color == 'info' ? 'primary' : color
     const rand = Math.ceil(Math.random() * 10000000);
+    var audio = document.getElementById('audio');
+    console.log('audio: ', audio);
+    audio.play();
     var notification_area = $('.notification_area');
     const noti = `<div id="" class="toast mytoast_${rand} align-items-center bg-${color} border-0 fade show mb-2 myalertopacity" role="alert" aria-live="assertive" aria-atomic="true">
                   <div class="d-flex" dir="ltr">

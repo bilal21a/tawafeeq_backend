@@ -67,9 +67,6 @@
         @include('layouts.partials.header')
         @yield('content')
     </div>
-    {{-- <button type="button" class="btn settings-button btn-gradient-primary" data-bs-toggle="modal" data-bs-target="#settings" id="settingsButton">
-        <i class="d-inline-block icon-20 bi-bell"></i>
-    </button> --}}
     <a href="https://wa.me/+971566904982?text=اهلا بك
     شكرا لتواصلكم مع حظوظ
     المنصة الخليجية الرائدة والموثوقة
@@ -83,9 +80,7 @@
 
     @include('layouts.partials.footer')
     @include('layouts.partials.notification')
-
-
-
+    <audio id="audio" src="{{ asset('assets/img/audio_notification.wav') }}" style="display: none"></audio>
 
     <script src="{{ asset('js/vendor/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('js/vendor/bootstrap.bundle.min.js') }} "></script>
