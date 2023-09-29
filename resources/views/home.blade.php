@@ -211,10 +211,11 @@
             url = url.replace(':id', type);
             axios.get(url)
                 .then(response => {
-                    console.log('response: ', response);
+
                     if (!response.data) {
                         $(`.${type}_members_spinner`).hide()
                         $(`.${type}_no_members`).show()
+                        $(`.${type}_members_div`).hide()
                     } else {
                         $(`.${type}_no_members`).hide()
                         $(`.${type}_members_spinner`).hide()
