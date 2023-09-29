@@ -107,7 +107,9 @@ class ProfileController extends Controller
 
         $user = User::find(Auth::id());
         $user->name = $request->name;
-        $user->password = Hash::make($request->password);
+        if ($request->password!=null) {
+            $user->password = Hash::make($request->password);
+        }
         $user->gender = $request->gender;
         $user->nationality = $request->nationality;
         $user->country_of_residence = $request->country_of_residence;
