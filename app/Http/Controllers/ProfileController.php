@@ -19,23 +19,23 @@ class ProfileController extends Controller
         $user_id = Auth::id();
         $user = User::where('id', $user_id)->first();
         $chat_id = $request->chat_id;
-        $partner_id=null;
-        $profilevistors = ProfileVistors::where('visited_to_id',Auth::id())->with('user')->latest()->get();
+        $partner_id = null;
+        $profilevistors = ProfileVistors::where('visited_to_id', Auth::id())->with('user')->latest()->get();
         if ($request->chat_id != null) {
             $chat = Chats::find($chat_id);
-            $partner_id=$chat->initiator_id == auth()->id() ? $chat->partner_id : $chat->initiator_id;
-            if (!$chat) {
+            $partner_id = $chat->initiator_id == auth()->id() ? $chat->partner_id : $chat->initiator_id;
+            if (!$chat && ($chat->initiator_id == auth()->id() || $chat->partner_id == auth()->id())) {
                 return redirect()->route('something_went_wrong');
             }
         }
-        return view('profile.index', compact('user', 'user_id', 'chat_id','partner_id','profilevistors'));
+        return view('profile.index', compact('user', 'user_id', 'chat_id', 'partner_id', 'profilevistors'));
     }
 
     public function members_profile($id)
     {
         $user_id = Auth::id();
         $user = User::where('id', $id)->first();
-        return view('members_profile', compact('user','user_id'));
+        return view('members_profile', compact('user', 'user_id'));
     }
     public function edit_profile()
     {
