@@ -3,7 +3,13 @@
     <div class="container pt-5" style="margin-top:70px">
         <section class="scroll-section" dir="ltr" id="basic">
             <h2 class="d-flex justify-content-start" dir="rtl">
-                <span class="fw-bold fs-4">قائمة الأعضاء
+                <span class="fw-bold fs-4">
+                    @if (isset($page))
+                        القائمة المفضلة
+                    @else
+                        قائمة الأعضاء
+                    @endif
+                </span>
             </h2>
             @if (!isset($page))
                 <div class="card mb-5" dir="rtl">

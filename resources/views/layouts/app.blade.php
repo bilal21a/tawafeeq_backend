@@ -75,7 +75,8 @@
     المنصة الخليجية الرائدة والموثوقة
     للتعارف بهدف الزواج
     موظفونا مشغولين حاليا
-    سوف يتم الرد عليكم في اقرب وقت ممكن" target=”_blank” class="whatsapp-btn">
+    سوف يتم الرد عليكم في اقرب وقت ممكن"
+        target=”_blank” class="whatsapp-btn">
         <i class="bi bi-whatsapp"></i>
     </a>
 
@@ -118,7 +119,30 @@
     <script src="{{ asset('js/notification.js') }} "></script>
 
     <script>
-
+        function activestar(user_id, element) {
+            const data = {
+                rated_to_id: user_id
+            };
+            if (element.classList.contains("bi-star")) {
+                element.classList.remove("bi-star");
+                element.classList.add("bi-star-fill");
+                var url = "{{ route('favlist') }}";
+            } else {
+                element.classList.remove("bi-star-fill");
+                element.classList.add("bi-star");
+                var url = "{{ route('remove_from_favlist') }}";
+            }
+            axios.post(url, data)
+                .then(response => {})
+                .catch(error => {
+                    if (error.response.status === 401) {
+                        window.location.href = "{{ route('login') }}";
+                        console.log('Unauthorized access. Please login.');
+                    }
+                });
+        }
+    </script>
+    <script>
         var color_mode = localStorage.getItem('acorn-classic-dashboard-color');
         console.log(color_mode);
         if (color_mode == 'dark-blue') {

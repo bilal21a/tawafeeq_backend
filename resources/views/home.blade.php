@@ -176,33 +176,7 @@
     </main>
 @endsection
 @section('js')
-    <script>
-        function activestar(user_id, element) {
-            if (element.classList.contains("bi-star")) {
-                element.classList.remove("bi-star");
-                element.classList.add("bi-star-fill");
-                console.log('Star is now active');
-            } else {
-                element.classList.remove("bi-star-fill");
-                element.classList.add("bi-star");
-                console.log('Star is now inactive');
-            }
-        }
-    </script>
-{{-- <script>
-      $(document).ready(function() {
-            // Attach a click event handler to the span with id "myStar"
-            $("#myStar").click(function() {
-                // Your code to run when the span is clicked
-                activestar();
-            });
-        });
 
-        function activestar() {
-            $(".forrating{{ $user->id }}").addClass("bi-star-fill");
-            $(".forrating{{ $user->id }}").removeClass("bi-star");
-        }
-</script> --}}
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
     <script>

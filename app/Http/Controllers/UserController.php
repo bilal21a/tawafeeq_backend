@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use App\Models\Favlist;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class UserController extends Controller
         //for favourite listing
         $page = $request->page;
         if ($page == 'starred') {
-            $users = User::paginate(16);
+            $favs=Favlist::where('rater_id',auth()->id())->pluck('rated_to_id');
+            $users = User::whereIn('id',$favs)->paginate(16);
             return view('members_list', compact('users', 'page'));
         }
 

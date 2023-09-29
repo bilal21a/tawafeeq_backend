@@ -35,6 +35,10 @@
                         <div class="name fs-6">{{ $user_data->name }}</div>
                     </div>
                     <div class="d-flex justify-content-center">
+                        <a href="{{ route('members',['page'=>'starred']) }}">
+                            <i class="white" data-acorn-icon="star" data-acorn-size="15"></i>
+                        </a>
+                        &nbsp;&nbsp;
                         <a href="{{ route('logout') }}">
                             <i class="white" data-acorn-icon="logout" data-acorn-size="15"></i>
                         </a>

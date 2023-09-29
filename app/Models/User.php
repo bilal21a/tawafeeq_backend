@@ -62,4 +62,9 @@ class User extends Model implements Authenticatable
         $ratingz = Rating::where('rated_to_id', $rated_to_id)->where('rater_id', $rater_id)->count();
         return $ratingz == 0 ? true : false;
     }
+    public function check_star_status($rated_to_id, $rater_id)
+    {
+        $ratingz = Favlist::where('rated_to_id', $rated_to_id)->where('rater_id', $rater_id)->count();
+        return $ratingz > 0 ? true : false;
+    }
 }

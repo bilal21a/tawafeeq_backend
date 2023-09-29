@@ -44,7 +44,8 @@
         </div>
         <div class="d-flex justify-content-between ps-4 pb-3">
             <div class="me-3">
-                <span class="golden-star bi bi-star cursor-pointer"
+                <span
+                    class="golden-star bi bi-star{{ $user->check_star_status($user->id, auth()->id()) ? '-fill' : '' }} cursor-pointer"
                     onclick="activestar('{{ $user->id }}',this)"></span>
                 <a href="{{ route('chat.chat_load', $user->id) }}">
                     <i data-acorn-icon="message" class="me-2 cursor-pointer" data-acorn-size="17"></i>

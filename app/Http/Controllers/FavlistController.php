@@ -8,22 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class FavlistController extends Controller
 {
-    public function favlist(Request $request) {
-    //    $rated_to_id = $request->rated_to_id
-       $rated_to_id = '1';
-    //    $ratuser_ided_to_id = $request->user_id
-       $user_id = '2';
-       $user_auth_id = Auth::id();
+    public function favlist(Request $request)
+    {
         $favlist = new Favlist();
-        $favlist->rated_to_id = $rated_to_id;
-        $favlist->user_id = $user_id;
-        $favlist->rater_id = $user_auth_id;
+        $favlist->rated_to_id = $request->rated_to_id;
+        $favlist->rater_id = auth()->id();
         $favlist->save();
-        dd('saved');
+        return "add to fav list";
     }
-    public function delete_favlist($id) {
-        $favlist = Favlist::find($id);
+    public function delete_favlist(Request $request)
+    {
+        $favlist = Favlist::where('rated_to_id',$request->rated_to_id)->where('rater_id',auth()->id())->first();
         $favlist->delete();
-        dd('deleted');
+        return "remove from fav list";
     }
 }

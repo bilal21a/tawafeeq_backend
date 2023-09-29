@@ -48,8 +48,8 @@ Route::middleware(['auth', 'last_seen'])->group(function () {
 
 
     // This is for Fav lists
-    Route::get('favlist', [FavlistController::class, 'favlist'])->name('favlist');
-    Route::get('delete_favlist/{id}', [FavlistController::class, 'delete_favlist'])->name('delete_favlist');
+    Route::post('favlist', [FavlistController::class, 'favlist'])->name('favlist');
+    Route::post('remove_from_favlist', [FavlistController::class, 'delete_favlist'])->name('remove_from_favlist');
     Route::get('profilevistor', [ProfileVistorController::class, 'profilevistor'])->name('profilevistor');
     Route::post('save_rating', [ProfileController::class, 'save_rating'])->name('save_rating');
 
