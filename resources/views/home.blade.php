@@ -120,7 +120,16 @@
         @endphp
         <section class="scroll-section" dir="ltr" id="basic">
             @foreach ($memebers_data as $key => $data)
-                <h2 class="" dir="rtl"><span class="fw-bold fs-4">{{ $data }}</span>(عرض الكل)</h2>
+                <h2 class="" dir="rtl"><span class="fw-bold fs-4">{{ $data }}</span>(عرض الكل)
+                    @if ($key == 'online')
+                        <span class=" bi bi-arrow-clockwise cursor-pointer load_members" onclick="reloadMembers()"></span>
+                        <div class="spinner-border spinner-border-sm load_members_spinner" style="display: none"
+                            role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    @endif
+                </h2>
+
                 <div class="text-center {{ $key }}_members_spinner">
                     <div class="spinner-border" role="status"></div>
                 </div>
@@ -184,13 +193,18 @@
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
     <script>
-
         $('.male_head').on('click', function() {
             $('#look_for_gender').val('ذكر')
         });
         $('.female_head').on('click', function() {
             $('#look_for_gender').val('انثى')
         });
+
+        function reloadMembers() {
+            $('.load_members').hide()
+            $('.load_members_spinner').show()
+            load_members('online')
+        }
 
         function load_members(type) {
             var url = '{{ route('home_members', ':id') }}';
@@ -202,10 +216,12 @@
                         $(`.${type}_members_spinner`).hide()
                         $(`.${type}_no_members`).show()
                     } else {
+                        $(`.${type}_no_members`).hide()
                         $(`.${type}_members_spinner`).hide()
                         $(`.${type}_members_div`).show()
                         $(`.${type}_members`).html(response.data)
                     }
+                    stop_online_loading()
                 })
                 .catch(error => {
                     // Error handling is done in the response interceptor
@@ -213,5 +229,9 @@
         }
         load_members('latest')
         load_members('online')
+        function stop_online_loading(){
+            $('.load_members').show()
+            $('.load_members_spinner').hide()
+        }
     </script>
 @endsection
