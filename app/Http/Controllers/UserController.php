@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Country;
 use App\Models\Favlist;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+
+use function PHPSTORM_META\type;
 
 class UserController extends Controller
 {
@@ -14,8 +17,8 @@ class UserController extends Controller
         //for favourite listing
         $page = $request->page;
         if ($page == 'starred') {
-            $favs=Favlist::where('rater_id',auth()->id())->pluck('rated_to_id');
-            $users = User::whereIn('id',$favs)->paginate(16);
+            $favs = Favlist::where('rater_id', auth()->id())->pluck('rated_to_id');
+            $users = User::whereIn('id', $favs)->paginate(16);
             return view('members_list', compact('users', 'page'));
         }
 
@@ -28,8 +31,8 @@ class UserController extends Controller
         $marital_status_search = $request->marital_status;
         $look_for = $request->look_for;
         $users = User::when(request('name'), function ($q) use ($request) {
-                return $q->where('name', 'LIKE', "%{$request->name}%");
-            })
+            return $q->where('name', 'LIKE', "%{$request->name}%");
+        })
             ->when(request('nationality'), function ($q) {
                 return $q->where('nationality', request('nationality'));
             })
@@ -90,5 +93,24 @@ class UserController extends Controller
         ];
         $users = User::with('profile')->latest()->take(10)->get();
         return view('home', compact('countryNames', 'maritalStatusNames', 'users'));
+    }
+    public function home_members($type)
+    {
+        if ($type == 'online') {
+            $thresholdInMinutes = 5; // Set your desired thresholds
+            $users = User::where('id','!=',auth()->id())->where(function ($query) use ($thresholdInMinutes) {
+                $query->where('last_seen_at', '>=', Carbon::now()->subMinutes($thresholdInMinutes));
+            })->take(10)->get();
+            // $users = User::with('profile')->latest()->take(10)->get();
+
+            // dd($users);
+        } else {
+            $users = User::with('profile')->latest()->take(10)->get();
+        }
+        if ($users->count() > 0) {
+            return view('home.common.memebers', compact('users','type'));
+        } else {
+            return false;
+        }
     }
 }

@@ -161,21 +161,28 @@
 
 @media screen and (max-width: 1300px) {
     .pill_styling {
-        top: 10.5rem !important;
+        top: 21rem !important;
         padding-top: 4px !important;
     }
 }
 
 @media screen and (max-width: 1024px) {
     .pill_styling {
-        top: 8.5rem !important;
+        top: 17rem !important;
+        padding-top: 4px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pill_styling {
+        top: 20rem !important;
         padding-top: 4px !important;
     }
 }
 
 @media screen and (max-width: 600px) {
     .pill_styling {
-        top: 11.8rem !important;
+        top: 22.5rem !important;
         padding-top: 4px !important;
     }
 }

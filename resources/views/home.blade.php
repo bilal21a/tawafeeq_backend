@@ -115,22 +115,27 @@
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0"></div>
             </div>
         </div>
+        @php
+            $memebers_data = ['latest' => 'الأعضاء الجدد', 'online' => 'الأعضاء المتواجدون حاليًا'];
+        @endphp
         <section class="scroll-section" dir="ltr" id="basic">
-            <h2 class="" dir="rtl"><span class="fw-bold fs-4">الأعضاء الجدد</span>(عرض الكل)</h2>
-            <div class="slide-container swiper">
-                <div class="slide-content">
-                    <div class="card-wrapper swiper-wrapper" style="height: unset">
-                        @foreach ($users as $user)
-                            <div class="card swiper-slide" style="width: unset !important;">
-                                @include('common.card')
-                            </div>
-                        @endforeach
-
-                    </div>
+            @foreach ($memebers_data as $key => $data)
+                <h2 class="" dir="rtl"><span class="fw-bold fs-4">{{ $data }}</span>(عرض الكل)</h2>
+                <div class="text-center {{ $key }}_members_spinner">
+                    <div class="spinner-border" role="status"></div>
                 </div>
-                <div class="swiper-button-next swiper-navBtn"></div>
-                <div class="swiper-button-prev swiper-navBtn"></div>
-            </div>
+                <div class="text-center {{ $key }}_no_members" style="display: none">
+                    <img src="{{ asset('assets/img/' . $key . '_no_memebers.svg') }}" alt="">
+                </div>
+                <div class="slide-container swiper {{ $key }}_members_div" style="display: none">
+                    <div class="{{ $key }}-slide-content slide-content">
+                        <div class="card-wrapper swiper-wrapper {{ $key }}_members" style="height: unset">
+                        </div>
+                    </div>
+                    <div class="{{ $key }}-swiper-button-next swiper-button-next swiper-navBtn"></div>
+                    <div class="{{ $key }}-swiper-button-prev swiper-button-prev swiper-navBtn"></div>
+                </div>
+            @endforeach
 
             <h2 class="" dir="rtl"><span class="fw-bold fs-4">خدماتنا</span>(عرض الكل)</h2>
             <div class="row justify-content-center">
@@ -176,44 +181,37 @@
     </main>
 @endsection
 @section('js')
-
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
     <script>
-        var swiper = new Swiper(".slide-content", {
-            slidesPerView: 5,
-            spaceBetween: 25,
-            loop: true,
-            centerSlide: 'true',
-            fade: 'true',
-            grabCursor: 'true',
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
 
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                },
-                520: {
-                    slidesPerView: 2,
-                },
-                950: {
-                    slidesPerView: 3,
-                },
-            },
-        });
         $('.male_head').on('click', function() {
             $('#look_for_gender').val('ذكر')
         });
         $('.female_head').on('click', function() {
             $('#look_for_gender').val('انثى')
         });
+
+        function load_members(type) {
+            var url = '{{ route('home_members', ':id') }}';
+            url = url.replace(':id', type);
+            axios.get(url)
+                .then(response => {
+                    console.log('response: ', response);
+                    if (!response.data) {
+                        $(`.${type}_members_spinner`).hide()
+                        $(`.${type}_no_members`).show()
+                    } else {
+                        $(`.${type}_members_spinner`).hide()
+                        $(`.${type}_members_div`).show()
+                        $(`.${type}_members`).html(response.data)
+                    }
+                })
+                .catch(error => {
+                    // Error handling is done in the response interceptor
+                });
+        }
+        load_members('latest')
+        load_members('online')
     </script>
 @endsection

@@ -39,7 +39,7 @@ input[type="radio"]:checked+label {
     border-radius: 50%;
     left: 21px;
     margin-top: 2px;
-    margin-left: 64px;
+    margin-left: 72px;
 }
 
 .green_dot {
@@ -50,5 +50,5 @@ input[type="radio"]:checked+label {
     border-radius: 50%;
     left: 21px;
     margin-top: 2px;
-    margin-left: 64px;
+    margin-left: 72px;
 }
