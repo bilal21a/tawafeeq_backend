@@ -23,7 +23,7 @@ class ProfileController extends Controller
         $profilevistors = ProfileVistors::where('visited_to_id', Auth::id())->with('user')->latest()->get();
         if ($request->chat_id != null) {
             $chat = Chats::find($chat_id);
-            if (!$chat == null) {
+            if (!$chat) {
                 return redirect()->route('something_went_wrong');
             }
             if ($chat->initiator_id != auth()->id() && $chat->partner_id != auth()->id()) {
