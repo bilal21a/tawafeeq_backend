@@ -23,10 +23,10 @@ class ProfileController extends Controller
         $profilevistors = ProfileVistors::where('visited_to_id', Auth::id())->with('user')->latest()->get();
         if ($request->chat_id != null) {
             $chat = Chats::find($chat_id);
-            $partner_id = $chat->initiator_id == auth()->id() ? $chat->partner_id : $chat->initiator_id;
             if (!$chat && ($chat->initiator_id == auth()->id() || $chat->partner_id == auth()->id())) {
                 return redirect()->route('something_went_wrong');
             }
+            $partner_id = $chat->initiator_id == auth()->id() ? $chat->partner_id : $chat->initiator_id;
         }
         return view('profile.index', compact('user', 'user_id', 'chat_id', 'partner_id', 'profilevistors'));
     }
