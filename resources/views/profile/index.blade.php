@@ -19,13 +19,14 @@
                     <div class="card-header border-0 pb-0">
                         <ul class="nav nav-tabs nav-tabs-line card-header-tabs responsive-tabs" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link {{ $chat_id != null ? '' : 'active' }}" data-bs-toggle="tab"
-                                    data-bs-target="#first" role="tab" type="button" aria-selected="true">الملف
+                                <button class="nav-link {{ $chat_id != null || $page != null ? '' : 'active' }}"
+                                    data-bs-toggle="tab" data-bs-target="#first" role="tab" type="button"
+                                    aria-selected="true">الملف
                                     الشخصي</button>
                             </li>
                             <li class="nav-item chat_nav_item" role="presentation">
-                                <button class="nav-link {{ $chat_id != null ? 'active' : '' }}" data-bs-toggle="tab"
-                                    data-bs-target="#second" role="tab" type="button"
+                                <button class="nav-link {{ $chat_id != null || $page != null ? 'active' : '' }}"
+                                    data-bs-toggle="tab" data-bs-target="#second" role="tab" type="button"
                                     aria-selected="false">الرسائل</button>
                             </li>
                             <li class="nav-item" role="presentation">
