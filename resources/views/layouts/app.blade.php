@@ -111,6 +111,17 @@
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "{{ env('API_KEY') }}",
+            authDomain: "{{ env('AUTH_DOMAIN') }}",
+            databaseURL: "{{ env('FIREBASE_DATABASE_URL') }}",
+            projectId: "{{ env('FIREBASE_PROJECT_ID') }}",
+            storageBucket: "{{ env('STORAGE_BUCKET') }}",
+            messagingSenderId: "{{ env('FIREBASE_MESSEGING_SENDER_ID') }}",
+            appId: "{{ env('FIREBASE_APP_ID') }}"
+        };
+    </script>
     <script src="{{ asset('js/notification.js') }} "></script>
 
     <script>

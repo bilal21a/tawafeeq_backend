@@ -26,7 +26,6 @@
         <div class="user-container d-flex ms-md-7 ms-0 flex-md-row-reverse">
             @php
                 $user_data = Auth::user();
-
             @endphp
             @if ($user_data != null)
                 <div class="d-flex flex-column">
@@ -35,6 +34,13 @@
                         <div class="name fs-6">{{ $user_data->name }}</div>
                     </div>
                     <div class="d-flex justify-content-center">
+                        <a href="{{ route('profile') }}" class="position-relative">
+                            <i class="white" data-acorn-icon="message" data-acorn-size="15"></i>
+                            <span class="badge rounded-pill bg-light position-absolute top-0 start-100 translate-middle">
+                              3
+                            </span>
+                        </a>
+                        &nbsp;&nbsp;
                         <a href="{{ route('members',['page'=>'starred']) }}">
                             <i class="white" data-acorn-icon="star" data-acorn-size="15"></i>
                         </a>

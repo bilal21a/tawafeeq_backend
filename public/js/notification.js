@@ -1,12 +1,4 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyCglXM6RATdwKebapefwd9k4LLgbq3hCRc",
-    authDomain: "tawafeeqclone-b14fd.firebaseapp.com",
-    databaseURL: "https://tawafeeqclone-b14fd-default-rtdb.firebaseio.com",
-    projectId: "tawafeeqclone-b14fd",
-    storageBucket: "tawafeeqclone-b14fd.appspot.com",
-    messagingSenderId: "773303799890",
-    appId: "1:773303799890:web:b99bc4b1ed55c66bb50f8b"
-};
+console.log('firebaseConfig: ', firebaseConfig);
 
 function generatealert(color = 'primary', message, timer = 5000) {
     color = color == 'info' ? 'primary' : color
