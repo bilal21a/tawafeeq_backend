@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/custom_chat.css') }}" />
+    <style>
+        .card .card-body,
+        .card .card-footer,
+        .card .card-header {
+            padding: 0 !important;
+        }
+    </style>
 @endsection
 @section('content')
     <main>
@@ -10,12 +17,14 @@
                     <div class="card-header border-0 pb-0">
                         <ul class="nav nav-tabs nav-tabs-line card-header-tabs responsive-tabs" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link {{ $chat_id!=null?'':'active' }}" data-bs-toggle="tab" data-bs-target="#first" role="tab"
-                                    type="button" aria-selected="true">الملف الشخصي</button>
+                                <button class="nav-link {{ $chat_id != null ? '' : 'active' }}" data-bs-toggle="tab"
+                                    data-bs-target="#first" role="tab" type="button" aria-selected="true">الملف
+                                    الشخصي</button>
                             </li>
                             <li class="nav-item chat_nav_item" role="presentation">
-                                <button class="nav-link {{ $chat_id!=null?'active':'' }}" data-bs-toggle="tab" data-bs-target="#second" role="tab"
-                                    type="button" aria-selected="false">الرسائل</button>
+                                <button class="nav-link {{ $chat_id != null ? 'active' : '' }}" data-bs-toggle="tab"
+                                    data-bs-target="#second" role="tab" type="button"
+                                    aria-selected="false">الرسائل</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#third" role="tab"
@@ -42,10 +51,12 @@
                     </div>
                     <div class="card-body ">
                         <div class="tab-content">
-                            <div class="tab-pane fade {{ $chat_id!=null?'':'active show' }}" id="first" role="tabpanel">
+                            <div class="tab-pane fade {{ $chat_id != null ? '' : 'active show' }}" id="first"
+                                role="tabpanel">
                                 @include('common.profile.profile')
                             </div>
-                            <div class="tab-pane fade {{ $chat_id!=null?'active show':'' }}" id="second" role="tabpanel">
+                            <div class="tab-pane fade {{ $chat_id != null ? 'active show' : '' }}" id="second"
+                                role="tabpanel">
                                 @include('common.profile.chat')
                                 @include('common.profile.chat_error')
                             </div>
@@ -67,7 +78,5 @@
 @endsection
 
 @section('js')
-
-
     @include('profile.js.chat_mainjs')
 @endsection
