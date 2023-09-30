@@ -41,12 +41,13 @@ class ChatController extends Controller
         $message->save();
 
         $chat = Chats::find($request->internet_conn);
-        $reciver = $chat->initiator_id == $sender_id ? $chat->initiator : $chat->partner;
+        $sender = $chat->initiator_id == $sender_id ? $chat->initiator : $chat->partner;
+        $reciver = $chat->initiator_id == $sender_id ? $chat->partner : $chat->initiator;
         $chat->initiator_count = $chat->initiator_id == $sender_id ? 0 : $chat->initiator_count + 1;
         $chat->partner_count = $chat->partner_id == $sender_id ? 0 : $chat->partner_count + 1;
         $chat->save();
 
-        $notification = 'رسالة جديدة وصلت من ' . $reciver->name;
+        $notification = 'رسالة جديدة وصلت من ' . $sender->name;
 
         generateNotification($sender_id, $reciver->id, $notification);
         return "message sent successfully";
