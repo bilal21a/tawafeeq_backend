@@ -28,7 +28,7 @@
                                 عملية الحذف لايمكن التراجع عنها!
                             </div>
                         </div>
-                        <div class="" style="display: flex;justify-content: center;">
+                        <div class="mb-5" style="display: flex;justify-content: center;">
                             <form action="{{ route('delete_profile', Auth::id()) }}" method="POST">
                                 @csrf
 

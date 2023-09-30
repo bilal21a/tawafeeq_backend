@@ -30,7 +30,7 @@
             @if ($user_data != null)
                 <div class="d-flex flex-column">
                     <div class="d-flex user position-relative ps-md-2 ps-0">
-                        <img class="profile" id="goto_profile" alt="profile" src="{{ $user_data->img_url }}" />
+                        <img class="profile me-3" id="goto_profile" alt="profile" src="{{ $user_data->img_url }}" />
                         <div class="name fs-6">{{ $user_data->name }}</div>
                     </div>
                     <div class="d-flex justify-content-center">
