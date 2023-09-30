@@ -2,10 +2,12 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/custom_chat.css') }}" />
     <style>
-        .card .card-body,
-        .card .card-footer,
-        .card .card-header {
-            padding: 0 !important;
+        @media screen and (max-width: 600px) {
+
+            .card .card-body,
+            .card .card-footer {
+                padding: 0 !important;
+            }
         }
     </style>
 @endsection
