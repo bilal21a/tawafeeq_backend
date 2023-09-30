@@ -39,7 +39,7 @@ Route::middleware(['auth', 'last_seen'])->group(function () {
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
     Route::get('profile/edit', [ProfileController::class, 'edit_profile'])->name('edit_profile');
     Route::post('profile/update', [ProfileController::class, 'update_profile'])->name('update_profile');
-    Route::post('profile/delete_profile/{id}', [ProfileController::class, 'delete_profile'])->name('delete_profile');
+    Route::post('profile/delete_profile', [ProfileController::class, 'delete_profile'])->name('delete_profile');
     Route::get('members_profile/{id}', [ProfileController::class, 'members_profile'])->name('members_profile');
     Route::post('save_rating', [ProfileController::class, 'save_rating'])->name('save_rating');
 
@@ -78,13 +78,3 @@ Route::match(['GET', 'POST'], '/members', [UserController::class, 'index'])->nam
 Route::get('/advance_search', [HomeController::class, 'advance_search'])->name('advance_search');
 // Plans
 Route::get('/plans', [PlanController::class, 'plans'])->name('plans');
-
-Route::get('test', function () {
-    $user = User::find(1);
-    if ($user && isUserActive($user->last_seen_at)) {
-
-        dd($user);
-    } else {
-        // User is not active
-    }
-});

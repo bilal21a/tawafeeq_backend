@@ -22,13 +22,13 @@
         $.ajax({
             type: 'GET',
             async: false,
-            url:"{{ route('chat.chats_heads') }}",
+            url: "{{ route('chat.chats_heads') }}",
             success: function(data) {
                 if (!data) {
                     $('.chat_work').hide()
                     $('.chat_error').show()
                     stop_full_load()
-                }else{
+                } else {
                     $('.chat_heads').html(data)
                     stop_full_load()
                 }
@@ -47,53 +47,28 @@
 
     function ChatSend() {
         var message = $('#chatInput').val()
+        var conn = $('#internet_conn').val()
+        if (message != "" && conn != "") {
+            console.log('message: ', message);
+            start_chat_loading()
+            const url = "{{ route('chat.send_message') }}";
+            const data = {
+                internet_conn: conn,
+                message: message
+            };
 
-        start_chat_loading()
-        const url = "{{ route('chat.send_message') }}";
-        const data = {
-            internet_conn: $('#internet_conn').val(),
-            message: message
-        };
+            axios.post(url, data)
+                .then(response => {
+                    stop_chat_loading()
 
-        axios.post(url, data)
-            .then(response => {
-                stop_chat_loading()
+                })
+                .catch(error => {
+                    stop_chat_loading()
 
-            })
-            .catch(error => {
-                stop_chat_loading()
+                });
+        }
 
-            });
     }
-
-    // function firebase_chat_counts() {
-    //     const authenticatedUserId = "{{ auth()->id() }}"; // Replace with the actual authenticated user's ID
-
-    //     const chatsRef = firebase.database().ref('chats');
-    //     const matchedChats = [];
-
-    //     chatsRef.on("value", snapshot => {
-
-    //         snapshot.forEach(childSnapshot => {
-    //             const chatId = childSnapshot.key;
-    //             const chat = childSnapshot.val();
-
-    //             if (chat.initiator_id == authenticatedUserId || chat.partner_id ==
-    //                 authenticatedUserId) {
-    //                 chat_count = chat.initiator_id == authenticatedUserId ? chat.initiator_count : chat
-    //                     .partner_count
-    //                 if (chat_count > 0) {
-    //                     $(`.unread_${chat.id}`).show()
-    //                     $(`.unread_${chat.id}`).html(chat_count)
-    //                     $('.chat_new').show()
-    //                 } else {
-    //                     $(`.unread_${chat.id}`).hide()
-    //                     $('.chat_new').hide()
-    //                 }
-    //             }
-    //         });
-    //     });
-    // }
 
     function start_chat_loading() {
         $('.chat_send_btn').hide()

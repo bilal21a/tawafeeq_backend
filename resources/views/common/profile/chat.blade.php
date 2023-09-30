@@ -10,14 +10,11 @@
 
     <div class="content-chat-message-user active">
         <div class="head-chat-message-user">
-            <img src="{{ asset('assets/img/noimg.png') }}" id="active_chat_img"
-                alt="">
+            <img src="{{ asset('assets/img/noimg.png') }}" id="active_chat_img" alt="">
             <div class="message-user-profile">
                 <p class="mt-0 mb-0 text-white"><strong class="active_chat_name"></strong>
                 </p>
                 <small class="text-white active_chat_subHeading">
-                    {{-- <p class="offline  mt-0 mb-0"></p> --}}
-                    Offline
                 </small>
             </div>
         </div>
@@ -29,13 +26,11 @@
                 <input type="text" placeholder="Send Message" id="chatInput">
             </div>
             <input type="hidden" id="internet_conn" value="">
-            <button type="button" class="chat_send_btn" onclick="ChatSend()">
-                <i data-acorn-icon="send" class="d-inline-block"></i>
+            <button class="btn btn-icon btn-icon-only btn-primary mb-1 chat_send_btn" type="button" onclick="ChatSend()">
+                <i class="bi bi-arrow-left-short"></i>
             </button>
-            <button type="button" class="custom_chat_loader chat_loading_btn"
-                onclick="ChatSend()" style="display: none">
-                <span class="spinner-border spinner-border-sm" role="status"
-                    aria-hidden="true"></span>
+            <button type="button" class="btn btn-icon btn-icon-only btn-primary mb-1 chat_loading_btn" style="display: none">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="margin-right: 0px;"></span>
             </button>
         </div>
     </div>

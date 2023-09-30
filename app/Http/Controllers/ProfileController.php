@@ -157,10 +157,14 @@ class ProfileController extends Controller
         $user->save();
         return "success";
     }
-    public function delete_profile($id) {
-        $profile = Profile::find($id);
+    public function delete_profile() {
+        $user = User::find(auth()->id());
+        $profile = Profile::where('user_id',$user->id)->first();
+        $chats = Chats::where('initiator_id',$user->id)->orWhere('partner_id',$user->id)->get();
+        foreach ($chats as  $chat) {
+            $chat->delete();
+        }
         $profile->delete();
-        $user = User::find($id);
         $user->delete();
         return redirect()->route('logout');
     }
