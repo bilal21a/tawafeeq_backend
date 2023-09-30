@@ -1,15 +1,43 @@
 <div class="tab-pane fade active show" id="first" role="tabpanel">
-    <div class="d-grid gap-2 d-md-flex {{ $user->id== $user_id ? 'justify-content-between' :'justify-content-end' }} ">
+    <div class="d-grid gap-2 d-md-flex {{ $user->id == $user_id ? 'justify-content-between' : 'justify-content-end' }} ">
         @if ($user_id == $user->id)
             <div class="d-grid gap-2 d-flex">
                 <a href="{{ route('edit_profile') }}" class="btn btn-primary fs-5" style="padding-top: 12px;"
                     type="button"><i data-acorn-icon="pen" class="me-2 ms-3" data-acorn-size="17"></i>تعديل</a>
             </div>
         @endif
-
         <div>
-            <button type="button" class="btn btn-danger mb-1"><i data-acorn-icon="bin" class="me-2 ms-3"
+            <button type="button" class="btn btn-danger mb-1" data-bs-toggle="modal"
+            data-bs-target="#exampleModal"><i data-acorn-icon="bin" class="me-2 ms-3"
                     data-acorn-size="17"></i>حذف حسابي</button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabelDefault" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div style="text-align: center;">
+                                <img width="300px" src="{{ asset('assets/img/background/background-blue.webp') }}"
+                                    alt="">
+                            </div>
+                            <div class="swal-title">
+                                هل أنت متأكد؟
+                            </div>
+                            <div class="swal-text">
+                                عملية الحذف لايمكن التراجع عنها!
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <form action="{{ route('delete_profile', Auth::id()) }}" method="POST">
+                                @csrf
+
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                                <button type="submit" class="btn btn-primary">نعم</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row justify-content-between">

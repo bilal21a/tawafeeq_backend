@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chats;
 use App\Models\Country;
+use App\Models\Profile;
 use App\Models\ProfileVistors;
 use App\Models\Rating;
 use App\Models\User;
@@ -155,5 +156,12 @@ class ProfileController extends Controller
         $user->rating = $new_rating;
         $user->save();
         return "success";
+    }
+    public function delete_profile($id) {
+        $profile = Profile::find($id);
+        $profile->delete();
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('logout');
     }
 }

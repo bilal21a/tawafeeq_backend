@@ -38,6 +38,7 @@ Route::middleware(['auth', 'last_seen'])->group(function () {
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
     Route::get('profile/edit', [ProfileController::class, 'edit_profile'])->name('edit_profile');
     Route::post('profile/update', [ProfileController::class, 'update_profile'])->name('update_profile');
+    Route::post('profile/delete_profile/{id}', [ProfileController::class, 'delete_profile'])->name('delete_profile');
     Route::get('members_profile/{id}', [ProfileController::class, 'members_profile'])->name('members_profile');
     Route::post('save_rating', [ProfileController::class, 'save_rating'])->name('save_rating');
 
