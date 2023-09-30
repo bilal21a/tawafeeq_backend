@@ -114,7 +114,7 @@ class UserController extends Controller
                 $query->where('last_seen_at', '>=', Carbon::now()->subMinutes($thresholdInMinutes));
             })->take(10)->get();
         } else {
-            $users = User::with('profile')->latest()->take(10)->get();
+            $users = User::with('profile')->where('id','!=',auth()->id())->latest()->take(10)->get();
         }
         if ($users->count() > 0) {
             return view('home.common.memebers', compact('users','type'));
