@@ -14,6 +14,7 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
+        // dd($request->all());
         //for favourite listing
         $page = $request->page;
         if ($page == 'starred') {
@@ -22,6 +23,8 @@ class UserController extends Controller
             return view('members_list', compact('users', 'page'));
         }
 
+        $type = $request->type;
+        $thresholdInMinutes=5;
         //for search engine
         $name_search = $request->name;
         $nationality_search = $request->nationality;
@@ -30,7 +33,12 @@ class UserController extends Controller
         $age_to_search = $request->age_to;
         $marital_status_search = $request->marital_status;
         $look_for = $request->look_for;
-        $users = User::when(request('name'), function ($q) use ($request) {
+        $users = User::where('id','!=',auth()->id())
+
+        ->when($type=='online', function ($q) use ($thresholdInMinutes) {
+            return $q->where('last_seen_at', '>=', Carbon::now()->subMinutes($thresholdInMinutes));
+        })
+        ->when(request('name'), function ($q) use ($request) {
             return $q->where('name', 'LIKE', "%{$request->name}%");
         })
             ->when(request('nationality'), function ($q) {
@@ -64,7 +72,12 @@ class UserController extends Controller
                     ->when(request('age_from'), function ($q) {
                         return $q->whereBetween('age', request(['age_from', 'age_to']));
                     });
-            })->paginate(16);
+            })
+            ->when($type=='latest', function ($q) use ($request) {
+                return $q->latest();
+            })
+            ->paginate(16);
+            // dd($users);
         $countryNames = Country::select('country')->pluck('country')->toArray();
         $maritalStatusNames = [
             'أعزب',
@@ -76,7 +89,7 @@ class UserController extends Controller
             'عزباء',
         ];
 
-        return view('members_list', compact('maritalStatusNames', 'look_for', 'countryNames', 'users', 'name_search', 'nationality_search', 'country_of_residence_search', 'age_from_search', 'age_to_search', 'marital_status_search'));
+        return view('members_list', compact('type','maritalStatusNames', 'look_for', 'countryNames', 'users', 'name_search', 'nationality_search', 'country_of_residence_search', 'age_from_search', 'age_to_search', 'marital_status_search'));
     }
 
     public function home()

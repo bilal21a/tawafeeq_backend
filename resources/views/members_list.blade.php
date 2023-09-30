@@ -4,10 +4,16 @@
         <section class="scroll-section" dir="ltr" id="basic">
             <h2 class="d-flex justify-content-start" dir="rtl">
                 <span class="fw-bold fs-4">
-                    @if (isset($page))
-                        القائمة المفضلة
+                    @if ($type == 'latest')
+                        الأعضاء الجدد
+                    @elseif ($type == 'online')
+                        الأعضاء المتواجدون حاليًا
                     @else
-                        قائمة الأعضاء
+                        @if (isset($page))
+                            القائمة المفضلة
+                        @else
+                            قائمة الأعضاء
+                        @endif
                     @endif
                 </span>
             </h2>
@@ -16,6 +22,7 @@
                     <div class="p-4">
                         <form class="row gy-2 gx-3 align-items-center" method="POST" action="{{ route('members') }}">
                             @csrf
+                            <input type="hidden" name="type" value="{{ $type }}">
                             <div class="col-sm-12 col-md">
                                 <input type="hidden" name="look_for" value="{{ $look_for }}">
                                 <label class="d-flex" for="name">الاسم</label>
@@ -87,8 +94,9 @@
                 </div>
             @endif
 
-            <div class="row mt-5 mb-5 d-flex justify-content-center">
+            <div class="row mt-5 mb-5 d-flex justify-content-center" dir="rtl">
                 @forelse ($users as $user)
+                    {{-- @dd($user) --}}
                     <div class="col-sm-12 col-md-md-3 card swiper-slide m-md-3 p-0 mb-3" style="max-width: 350px;">
                         @include('common.card')
                     </div>

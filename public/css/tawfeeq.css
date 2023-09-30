@@ -2,6 +2,11 @@ input[type="radio"]:checked+label {
     color: white;
 }
 
+.transparent_btn {
+    background: transparent !important;
+    border: none !important;
+}
+
 .notification_area {
     padding: 0.5em;
     float: right;

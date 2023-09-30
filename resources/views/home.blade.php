@@ -120,7 +120,14 @@
         @endphp
         <section class="scroll-section" dir="ltr" id="basic">
             @foreach ($memebers_data as $key => $data)
-                <h2 class="" dir="rtl"><span class="fw-bold fs-4">{{ $data }}</span>(عرض الكل)
+                <h2 class="d-flex" dir="rtl">
+                    <span class="fw-bold fs-4">{{ $data }}</span>
+                    <form action="{{ route('members') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="type" value="{{ $key }}">
+                        <button class="transparent_btn">(عرض الكل)</button>
+                    </form>
+
                     @if ($key == 'online')
                         <span class=" bi bi-arrow-clockwise cursor-pointer load_members" onclick="reloadMembers()"></span>
                         <div class="spinner-border spinner-border-sm load_members_spinner" style="display: none"
@@ -230,7 +237,8 @@
         }
         load_members('latest')
         load_members('online')
-        function stop_online_loading(){
+
+        function stop_online_loading() {
             $('.load_members').show()
             $('.load_members_spinner').hide()
         }
