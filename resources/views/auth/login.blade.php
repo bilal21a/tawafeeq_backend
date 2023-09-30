@@ -43,13 +43,11 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-                                        <input type="hidden" name="remember" value="1">
                                     </div>
                                 </div>
                                 <div class="mb-3 pe-4">
                                     <div class="d-flex">
-                                        <label class="fw-bolder form-check-label ps-3" for="remember">
-                                            تذكرني                            </label>
+                                        <label class="fw-bolder form-check-label ps-3" for="remember">تذكرني</label>
                                         <input class="form-check-input mt-0" type="checkbox" name="remember" id="remember">
                                     </div>
                                 </div>
