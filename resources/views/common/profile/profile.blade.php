@@ -5,11 +5,12 @@
                 <a href="{{ route('edit_profile') }}" class="btn btn-primary fs-5" style="padding-top: 12px;"
                     type="button"><i data-acorn-icon="pen" class="me-2 ms-3" data-acorn-size="17"></i>تعديل</a>
             </div>
-        @endif
         <div>
             <button type="button" class="btn btn-danger mb-1" data-bs-toggle="modal"
             data-bs-target="#exampleModal"><i data-acorn-icon="bin" class="me-2 ms-3"
                     data-acorn-size="17"></i>حذف حسابي</button>
+        @endif
+
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabelDefault" aria-hidden="true">
@@ -17,7 +18,7 @@
                     <div class="modal-content">
                         <div class="modal-body">
                             <div style="text-align: center;">
-                                <img width="300px" src="{{ asset('assets/img/background/background-blue.webp') }}"
+                                <img width="300px" src="{{ asset('assets/img/delete_account.svg') }}"
                                     alt="">
                             </div>
                             <div class="swal-title">
@@ -27,7 +28,7 @@
                                 عملية الحذف لايمكن التراجع عنها!
                             </div>
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-footer" style="display: flex;justify-content: center;">
                             <form action="{{ route('delete_profile', Auth::id()) }}" method="POST">
                                 @csrf
 
