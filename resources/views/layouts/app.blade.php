@@ -50,7 +50,6 @@
             font-family: 'Tajawal', sans-serif !important;
         }
 
-
     </style>
 </head>
 
@@ -140,9 +139,11 @@
                             $(`.unread_${chat.id}`).show()
                             $(`.unread_${chat.id}`).html(chat_count)
                             $('.chat_new').show()
+                            $('.my_ring').addClass('my_ring_animation')
                         } else {
                             $(`.unread_${chat.id}`).hide()
                             $('.chat_new').hide()
+                            $('.my_ring').removeClass('my_ring_animation')
                         }
                     }
                 });

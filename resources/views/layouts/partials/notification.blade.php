@@ -5,7 +5,7 @@
         data-bs-target="#niches" id="nichesButton">
         <span class="d-inline-block no-delay" data-bs-delay="0" data-bs-offset="0,3" data-bs-toggle="tooltip"
             data-bs-placement="left" title="" data-bs-original-title="إشعارات">
-            <i class="d-inline-block icon-20 bi-bell"></i>
+            <i class="d-inline-block icon-20 bi-bell my_ring"></i>
         </span>
     </button>
 </div>
