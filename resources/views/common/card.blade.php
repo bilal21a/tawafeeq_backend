@@ -54,7 +54,7 @@
 
             <p class="card-text mb-1" style="font-size: 13px;">{{ $user->nationality }}</p>
             <p class="mb-0">
-                {{ Illuminate\Support\Str::limit($user->profile->specification_of_partner, 50, '...') }}
+                {{ Illuminate\Support\Str::limit($user->profile->about, 50, '...') }}
             </p>
         </div>
         <div class="d-flex justify-content-between ps-4 pb-3">
