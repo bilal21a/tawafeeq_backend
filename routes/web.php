@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\FavlistController;
 use App\Http\Controllers\ProfileVistorController;
+use App\Http\Controllers\TermConditionController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -65,6 +66,7 @@ Route::middleware(['auth', 'last_seen'])->group(function () {
 // Before Login
 Route::get('about', [ContentController::class, 'about'])->name('about');
 Route::get('contact', [ContentController::class, 'contact'])->name('contact');
+Route::get('terms', [TermConditionController::class, 'termcondition'])->name('termcondition');
 Route::get('login_page', [ContentController::class, 'login_page'])->name('login_page');
 
 // Home page
