@@ -4,13 +4,14 @@
         const load_chat_id = "{{ $chat_id }}"
 
         getChatHeads()
-        firebase_chat_counts()
+        // firebase_chat_counts()
         openChat(load_chat_id, opponent_id)
     @endif
     $('.chat_nav_item').on('click', function(event) {
         getChatHeads()
         firebase_chat_counts()
     });
+
 
     function getChatHeads() {
         start_full_load()
@@ -61,33 +62,34 @@
             });
     }
 
-    function firebase_chat_counts() {
-        const authenticatedUserId = "{{ auth()->id() }}"; // Replace with the actual authenticated user's ID
+    // function firebase_chat_counts() {
+    //     const authenticatedUserId = "{{ auth()->id() }}"; // Replace with the actual authenticated user's ID
 
-        const chatsRef = firebase.database().ref('chats');
-        const matchedChats = [];
+    //     const chatsRef = firebase.database().ref('chats');
+    //     const matchedChats = [];
 
-        chatsRef.on("value", snapshot => {
+    //     chatsRef.on("value", snapshot => {
 
-            snapshot.forEach(childSnapshot => {
-                const chatId = childSnapshot.key;
-                const chat = childSnapshot.val();
+    //         snapshot.forEach(childSnapshot => {
+    //             const chatId = childSnapshot.key;
+    //             const chat = childSnapshot.val();
 
-                if (chat.initiator_id == authenticatedUserId || chat.partner_id ==
-                    authenticatedUserId) {
-                    chat_count = chat.initiator_id == authenticatedUserId ? chat.initiator_count : chat
-                        .partner_count
-                    if (chat_count > 0) {
-                        $(`.unread_${chat.id}`).show()
-                        $(`.unread_${chat.id}`).html(chat_count)
-                    } else {
-                        $(`.unread_${chat.id}`).hide()
-                    }
-
-                }
-            });
-        });
-    }
+    //             if (chat.initiator_id == authenticatedUserId || chat.partner_id ==
+    //                 authenticatedUserId) {
+    //                 chat_count = chat.initiator_id == authenticatedUserId ? chat.initiator_count : chat
+    //                     .partner_count
+    //                 if (chat_count > 0) {
+    //                     $(`.unread_${chat.id}`).show()
+    //                     $(`.unread_${chat.id}`).html(chat_count)
+    //                     $('.chat_new').show()
+    //                 } else {
+    //                     $(`.unread_${chat.id}`).hide()
+    //                     $('.chat_new').hide()
+    //                 }
+    //             }
+    //         });
+    //     });
+    // }
 
     function start_chat_loading() {
         $('.chat_send_btn').hide()

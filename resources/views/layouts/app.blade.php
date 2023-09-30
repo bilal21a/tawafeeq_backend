@@ -50,14 +50,7 @@
             font-family: 'Tajawal', sans-serif !important;
         }
 
-        .notification_area {
-            padding: 0.5em;
-            float: right;
-            z-index: 9999999999999;
-            position: absolute;
-            right: 0;
-            backdrop-filter: blur(4px);
-        }
+
     </style>
 </head>
 
@@ -125,6 +118,37 @@
     <script src="{{ asset('js/notification.js') }} "></script>
 
     <script>
+        firebase_chat_counts()
+
+        function firebase_chat_counts() {
+            const authenticatedUserId = "{{ auth()->id() }}"; // Replace with the actual authenticated user's ID
+
+            const chatsRef = firebase.database().ref('chats');
+            const matchedChats = [];
+
+            chatsRef.on("value", snapshot => {
+
+                snapshot.forEach(childSnapshot => {
+                    const chatId = childSnapshot.key;
+                    const chat = childSnapshot.val();
+
+                    if (chat.initiator_id == authenticatedUserId || chat.partner_id ==
+                        authenticatedUserId) {
+                        chat_count = chat.initiator_id == authenticatedUserId ? chat.initiator_count : chat
+                            .partner_count
+                        if (chat_count > 0) {
+                            $(`.unread_${chat.id}`).show()
+                            $(`.unread_${chat.id}`).html(chat_count)
+                            $('.chat_new').show()
+                        } else {
+                            $(`.unread_${chat.id}`).hide()
+                            $('.chat_new').hide()
+                        }
+                    }
+                });
+            });
+        }
+
         function activestar(user_id, element) {
             const data = {
                 rated_to_id: user_id

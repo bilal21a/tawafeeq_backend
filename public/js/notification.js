@@ -62,7 +62,6 @@ var first = true;
 
 // TODO only for testing purposes to list all entries.
 notificationsRef.limitToLast(100).on('value', function(snapshot) {
-
     $('.all_noti').html(''); // clear prev notifications chapi
 
     Object.values(snapshot.val()) // convert object to array

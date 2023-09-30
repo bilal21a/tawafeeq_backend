@@ -36,8 +36,8 @@
                     <div class="d-flex justify-content-center">
                         <a href="{{ route('profile') }}" class="position-relative">
                             <i class="white" data-acorn-icon="message" data-acorn-size="15"></i>
-                            <span class="badge rounded-pill bg-light position-absolute top-0 start-100 translate-middle">
-                              3
+                            <span class="badge rounded-pill bg-light position-absolute top-0 start-100 translate-middle chat_new" style="display: none">
+                              جديد
                             </span>
                         </a>
                         &nbsp;&nbsp;
