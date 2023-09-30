@@ -53,12 +53,12 @@
                     </div>
                     <div class="card-body ">
                         <div class="tab-content">
-                            <div class="tab-pane fade {{ $chat_id != null ? '' : 'active show' }}" id="first"
-                                role="tabpanel">
+                            <div class="tab-pane fade {{ $chat_id != null || $page != null ? '' : 'active show' }}"
+                                id="first" role="tabpanel">
                                 @include('common.profile.profile')
                             </div>
-                            <div class="tab-pane fade {{ $chat_id != null ? 'active show' : '' }}" id="second"
-                                role="tabpanel">
+                            <div class="tab-pane fade {{ $chat_id != null || $page != null ? 'active show' : '' }}"
+                                id="second" role="tabpanel">
                                 @include('common.profile.chat')
                                 @include('common.profile.chat_error')
                             </div>

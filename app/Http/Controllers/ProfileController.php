@@ -31,7 +31,8 @@ class ProfileController extends Controller
             }
             $partner_id = $chat->initiator_id == auth()->id() ? $chat->partner_id : $chat->initiator_id;
         }
-        return view('profile.index', compact('user', 'user_id', 'chat_id', 'partner_id', 'profilevistors'));
+        $page=$request->page;
+        return view('profile.index', compact('user', 'user_id', 'chat_id', 'partner_id', 'profilevistors','page'));
     }
 
     public function members_profile($id)

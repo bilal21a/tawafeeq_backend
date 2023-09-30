@@ -7,6 +7,10 @@
         // firebase_chat_counts()
         openChat(load_chat_id, opponent_id)
     @endif
+    @if ($page == 'chat')
+        getChatHeads()
+        firebase_chat_counts()
+    @endif
     $('.chat_nav_item').on('click', function(event) {
         getChatHeads()
         firebase_chat_counts()
