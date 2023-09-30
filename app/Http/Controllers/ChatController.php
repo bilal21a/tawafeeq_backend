@@ -41,7 +41,7 @@ class ChatController extends Controller
         $message->save();
 
         $chat = Chats::find($request->internet_conn);
-        $reciver = $chat->initiator_id == $sender_id ? $chat->partner : $chat->initiator;
+        $reciver = $chat->initiator_id == $sender_id ? $chat->initiator : $chat->partner;
         $chat->initiator_count = $chat->initiator_id == $sender_id ? 0 : $chat->initiator_count + 1;
         $chat->partner_count = $chat->partner_id == $sender_id ? 0 : $chat->partner_count + 1;
         $chat->save();
