@@ -34,7 +34,8 @@
             <div class="ps-4 pb-7 white">
                 <div class="d-flex ">
                     <i data-acorn-icon="phone" class="ms-2" data-acorn-size="17"></i>
-                    <a class="white fw-bold text_decoration" href="tel:+971 55 505 5911">+971 55 505 5911</a>
+                    <a class="white fw-bold text_decoration" href="tel:+971 56 690 4982">
+                        +971 56 690 4982</a>
                 </div>
                 <div class="d-flex"> <i data-acorn-icon="email" class="ms-2" data-acorn-size="17"></i>
                     <a class="white fw-bold text_decoration" href="mailto:info@hi.com">info@hi.com</a>

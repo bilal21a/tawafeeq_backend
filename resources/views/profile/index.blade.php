@@ -11,7 +11,6 @@
         }
 
         .swal-title {
-            color: rgba(0, 0, 0, .65);
             font-weight: 600;
             text-transform: none;
             position: relative;
@@ -33,7 +32,6 @@
             margin: 0;
             padding: 0 10px;
             font-weight: 400;
-            color: rgba(0, 0, 0, .64);
             max-width: calc(100% - 20px);
             overflow-wrap: break-word;
             box-sizing: border-box;

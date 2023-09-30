@@ -9,7 +9,9 @@
         }
     </style>
 @endsection
+
 @section('content')
+    {{-- @dd(session('payment_success')) --}}
     <main>
         <div class="row">
             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0"></div>
@@ -104,8 +106,8 @@
                                 </div>
                                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 p-sm-0">
                                     <div class="">
-                                        <img class="width_couple_pic"
-                                            src="{{ asset('assets/img/find_partner.png') }}" alt="" srcset="">
+                                        <img class="width_couple_pic" src="{{ asset('assets/img/find_partner.png') }}"
+                                            alt="" srcset="">
                                     </div>
                                 </div>
                             </div>
@@ -195,11 +197,28 @@
             </div>
         </section>
     </main>
+    <div class="modal fade" id="payment_doneModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabelDefault" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class=" modal-header d-flex justify-content-center modal_title"
+                    style="border-bottom: 0px solid !important">
+                    <h1>تم الدفع بنجاح</h1>
+                </div>
+                <img src="{{ asset('assets/img/payment_done.svg') }}" width="100%" alt="">
+            </div>
+        </div>
+    </div>
 @endsection
 @section('js')
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
     <script>
+        @if (session('payment_success'))
+            $(document).ready(function() {
+                $('#payment_doneModal').modal('show')
+            });
+        @endif
         $('.male_head').on('click', function() {
             $('#look_for_gender').val('ذكر')
         });

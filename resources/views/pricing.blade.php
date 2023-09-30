@@ -103,7 +103,8 @@
                         }
                     })
                     .catch(error => {
-                        console.error('Error:', error);
+                        console.log('error: ', error);
+                        window.location.href = "{{ route('login') }}";
                     });
             });
         });

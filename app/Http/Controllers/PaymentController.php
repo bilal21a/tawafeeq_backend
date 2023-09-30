@@ -66,7 +66,7 @@ class PaymentController extends Controller
         $user->exipred_at = $newDate;
         $user->save();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('payment_success','payment done');
     }
     public function cancel(Request $request)
     {
