@@ -43,6 +43,7 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
+                                        <input type="hidden" name="remember" value="1">
                                     </div>
                                 </div>
                             </div>
