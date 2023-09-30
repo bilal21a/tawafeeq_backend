@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 p-sm-0">
                                     <div class="">
-                                        <img class="width_couple_pic" width="400px"
+                                        <img class="width_couple_pic"
                                             src="{{ asset('assets/img/find_partner.png') }}" alt="" srcset="">
                                     </div>
                                 </div>

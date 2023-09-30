@@ -50,6 +50,20 @@
             font-family: 'Tajawal', sans-serif !important;
         }
 
+        .hamburger {
+            margin-right: 200px;
+        }
+
+        @media screen and (min-width: 700px) and (max-width: 920px) {
+            .hamburger {
+                margin-right: 600px !important;
+            }
+        }
+        @media screen and (min-width: 500px) and (max-width: 600px) {
+            .hamburger {
+                margin-right: 350px !important;
+            }
+        }
     </style>
 </head>
 

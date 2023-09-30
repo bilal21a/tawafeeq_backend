@@ -28,8 +28,8 @@
                                 عملية الحذف لايمكن التراجع عنها!
                             </div>
                         </div>
-                        <div class="modal-footer" style="display: flex;justify-content: center;">
-                            <form action="{{ route('delete_profile') }}" method="POST">
+                        <div class="" style="display: flex;justify-content: center;">
+                            <form action="{{ route('delete_profile', Auth::id()) }}" method="POST">
                                 @csrf
 
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>

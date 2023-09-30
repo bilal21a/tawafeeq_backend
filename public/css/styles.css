@@ -17284,3 +17284,9 @@ h2 {
 .width_couple_pic {
     width: 350px;
 }
+
+@media screen and (max-width: 375px) {
+    .width_couple_pic {
+        width: 300px !important;
+    }
+}

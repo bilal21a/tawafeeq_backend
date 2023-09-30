@@ -222,7 +222,7 @@
             <!-- Scrollspy Mobile Dropdown End -->
 
             <!-- Menu Button Start -->
-            <a href="#" id="mobileMenuButton" class="menu-button" style="   margin-right: 200px !important;">
+            <a href="#" id="mobileMenuButton" class="menu-button hamburger">
                 <i data-acorn-icon="menu"></i>
             </a>
             <!-- Menu Button End -->

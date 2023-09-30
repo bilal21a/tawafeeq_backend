@@ -43,7 +43,7 @@
 @section('content')
     <main>
         <div class="row justify-content-center">
-            <div class="col-md-8 col-sm-12">
+            <div class="col-md-12 col-lg-12 col-xl-11 col-xxl-7 col-sm-12">
                 <div class="card mb-5 main_card">
                     <div class="card-header border-0 pb-0">
                         <ul class="nav nav-tabs nav-tabs-line card-header-tabs responsive-tabs" role="tablist">

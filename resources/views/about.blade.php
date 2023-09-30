@@ -48,8 +48,8 @@
     <main class="main_class2 padding_bottom_0 padding_top_0">
         <div id="root">
             <div class="row p-4 m-0">
-                <div class="col-2"></div>
-                <div class="col-8">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 col-12">
                     <div class="container">
                         <div class="page-title-container">
                             <div id="accordionCards">
@@ -80,15 +80,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </main>
     <main class="main_class padding_bottom_0 padding_top_0">
         <div id="root">
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 col-12">
                     <div class="container">
                         <div class="page-title-container">
                             <div id="accordionCards">
@@ -120,15 +120,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </main>
     <main class="main_class2 padding_top_0">
         <div id="root">
             <div class="row m-0">
-                <div class="col-2"></div>
-                <div class="col-8">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 col-12">
                     <div class="container">
                         <div class="page-title-container">
                             <div id="accordionCards">
@@ -160,15 +160,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </main>
     <main class="main_class padding_bottom_0 padding_top_0">
         <div id="root">
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 col-12">
                     <div class="container">
                         <div class="page-title-container">
                             <div id="accordionCards">
@@ -205,7 +205,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </main>
