@@ -29,7 +29,7 @@
             </a>
         </div>
         <div class="card-body pb-2" style="text-align: justify;">
-            <h5 class="card-title fw-bold">{{ $user->name }}</h5>
+            <h5 class="card-title fw-bold">{{ $user->name }} ({{ $user->profile->age }})</h5>
 
             @php
                 $rating = $user->rating;
@@ -52,7 +52,7 @@
                 @endfor
             </div>
 
-            <p class="card-text mb-1" style="font-size: 13px;">{{ $user->nationality }}</p>
+            <p class="card-text mb-1" style="font-size: 13px;">{{ $user->nationality }}-{{ $user->city }}</p>
             <p class="mb-0">
                 {{ Illuminate\Support\Str::limit($user->profile->about, 50, '...') }}
             </p>
