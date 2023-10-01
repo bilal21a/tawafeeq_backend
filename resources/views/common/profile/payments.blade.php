@@ -1,21 +1,16 @@
  <table class="">
      <tr>
-         <th>الحالة </th>
-         <th>طريقة الدفع </th>
-         <th>نوع الإشتراك </th>
-         <th>الرقم</th>
+         <th class="text_align">اسم الخطة</th>
+         <th class="text_align">تاريخ الانتهاء</th>
      </tr>
-     <tr>
-         <td></td>
-         <td colspan="2" class="text_align">لست مشترك بأي باقة
-         </td>
-         <td></td>
-         <td></td>
-     </tr>
-     <tr>
-         <td></td>
-         <td colspan="2" class="text_align">+ الإشتراك بباقة جديدة</td>
-         <td></td>
-         <td></td>
-     </tr>
+     @if ($payment)
+         <tr>
+             <td class="text_align">{{ $payment->plan->name }}</td>
+             <td colspan="2" class="text_align">{{ auth()->user()->exipred_at }}</td>
+         </tr>
+     @else
+         <tr>
+             <td colspan="2" class="text_align"><a href="{{ route('plans') }}">+ الإشتراك بباقة جديدة</a></td>
+         </tr>
+     @endif
  </table>

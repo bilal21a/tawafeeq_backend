@@ -1,42 +1,6 @@
 @extends('layouts.app')
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/custom_chat.css') }}" />
-    <style>
-        @media screen and (max-width: 600px) {
-
-            .card .card-body,
-            .card .card-footer {
-                padding: 0 !important;
-            }
-        }
-
-        .swal-title {
-            font-weight: 600;
-            text-transform: none;
-            position: relative;
-            display: block;
-            padding: 13px 16px;
-            font-size: 27px;
-            line-height: normal;
-            text-align: center;
-            margin-bottom: 0;
-        }
-
-        .swal-text {
-            text-align: center;
-            font-size: 16px;
-            position: relative;
-            float: none;
-            line-height: normal;
-            vertical-align: top;
-            margin: 0;
-            padding: 0 10px;
-            font-weight: 400;
-            max-width: calc(100% - 20px);
-            overflow-wrap: break-word;
-            box-sizing: border-box;
-        }
-    </style>
 @endsection
 @section('content')
     <main>
