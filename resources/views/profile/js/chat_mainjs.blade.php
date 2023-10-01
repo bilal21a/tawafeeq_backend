@@ -49,6 +49,7 @@
         var message = $('#chatInput').val()
         var conn = $('#internet_conn').val()
         if (message != "" && conn != "") {
+            $('#chatInput').val('')
             console.log('message: ', message);
             start_chat_loading()
             const url = "{{ route('chat.send_message') }}";
