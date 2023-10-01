@@ -22,7 +22,7 @@
                                                     </div>
                                                     <div class="d-flex"> <i data-acorn-icon="email" class="ms-2"
                                                             data-acorn-size="17"></i>
-                                                        <p>info@hudhood.com</p>
+                                                        <p>info@hudhoodh.com</p>
                                                     </div>
                                                     <div class="d-flex"> <i data-acorn-icon="pin" class="ms-2"
                                                             data-acorn-size="17"></i>
