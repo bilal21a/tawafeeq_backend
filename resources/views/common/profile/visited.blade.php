@@ -19,9 +19,8 @@
             </a>
         </div>
     @empty
-        <div class="text-center">
-            <img src="{{ asset('assets/img/latest_no_memebers.svg') }}" alt="">
-
+        <div class="row d-flex justify-content-center mt-2">
+            <img src="{{ asset('assets/img/latest_no_memebers.svg') }}" alt="" style="width: 30em" >
         </div>
     @endforelse
 </div>

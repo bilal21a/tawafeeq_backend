@@ -195,3 +195,20 @@ input[type="radio"]:checked+label {
         transform: rotate(0deg);
     }
 }
+
+.top-right-left-border {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+@media (min-width: 992px) {
+    .padding_right_lg {
+        padding-right: 3rem !important;
+    }
+}
+
+@media (min-width: 1220px) {
+    .padding_right_lg {
+        padding-right: 8rem !important;
+    }
+}
