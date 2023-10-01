@@ -18,7 +18,7 @@
                                                     <h5 class="fw-semibold color_green mb-0">تواصل معنا</h5><br>
                                                     <div class="d-flex"> <i data-acorn-icon="phone" class="ms-2"
                                                             data-acorn-size="17"></i>
-                                                        <p>+971566904982</p>
+                                                        <p dir="ltr">+971566904982</p>
                                                     </div>
                                                     <div class="d-flex"> <i data-acorn-icon="email" class="ms-2"
                                                             data-acorn-size="17"></i>
