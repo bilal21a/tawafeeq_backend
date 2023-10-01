@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="row justify-content-between">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="row">
                 <div class="col-md-4">
                     <div class="mt-3">
@@ -165,13 +165,13 @@
             <span class="user-info-value">{{ $user->profile->religious_commitment }}</span>
         </div>
     </div>
-    <div class="user-info margin_top justify-content-lg-start ps-7">
-        <div class="user-info-item sepcifyed_width me-md-7">
+    <div class="user-info margin_top justify-content-lg-start me-lg-4">
+        <div class="user-info-item sepcifyed_width">
             <span class="user-info-label">تاريخ التسجيل</span>
             <span class="user-info-value">{{ $user->profile->created_at->format('d/m/Y') }}</span>
         </div>
     </div>
-    <div class="user-info margin_top justify-content-lg-start me-md-7">
+    <div class="user-info margin_top justify-content-lg-start me-lg-4">
         <div class="user-info-item">
             <span class="user-info-label" style="color: var(--hudhood);">عن نفسي</span>
             <p class="user-info-value">{{ $user->profile->about }}</p>
