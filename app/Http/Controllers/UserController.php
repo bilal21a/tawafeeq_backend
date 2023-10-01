@@ -14,16 +14,15 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        // dd($request->all());
         //for favourite listing
+        $type = $request->type;
         $page = $request->page;
         if ($page == 'starred') {
             $favs = Favlist::where('rater_id', auth()->id())->pluck('rated_to_id');
             $users = User::whereIn('id', $favs)->paginate(16);
-            return view('members_list', compact('users', 'page'));
+            return view('members_list', compact('users', 'page','type'));
         }
 
-        $type = $request->type;
         $thresholdInMinutes=5;
         //for search engine
         $name_search = $request->name;
