@@ -30,7 +30,7 @@
                             <div class="mb-5 mt-5">
                                 <div class="row ">
                                     @foreach ($plans as $plan)
-                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4">
                                             <div class="card h-100 hover-scale-up plan_card">
                                                 <div class="card-body pb-0">
                                                     <div class="d-flex flex-column align-items-center ">

@@ -157,7 +157,7 @@
 
             <h2 class="" dir="rtl"><span class="fw-bold fs-4">خدماتنا</span>(عرض الكل)</h2>
             <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="card h-100 hover-scale-up  backgound_1 background_color">
                         <div class="card-body pb-0">
                             <div class="d-flex flex-column">
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="card h-100 hover-scale-up backgound_2 background_color pe-3">
                         <div class="card-body pb-0">
                             <div class="d-flex flex-column">
