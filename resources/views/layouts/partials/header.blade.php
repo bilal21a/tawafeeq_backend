@@ -29,8 +29,8 @@
             @endphp
             @if ($user_data != null)
                 <div class="d-flex flex-column">
-                    <div class="d-flex user position-relative ps-md-2 ps-0">
-                        <img class="profile me-3" id="goto_profile" alt="profile" src="{{ $user_data->img_url }}" />
+                    <div class="d-flex justify-content-center user position-relative ps-md-2 ps-0">
+                        <img class="profile me-3 img_left_right" id="goto_profile" alt="profile" src="{{ $user_data->img_url }}" />
                         <div class="name fs-6">{{ $user_data->name }}</div>
                     </div>
                     <div class="d-flex justify-content-center">
@@ -161,9 +161,7 @@
         <!-- User Menu End -->
 
         <!-- Icons Menu Start -->
-        <ul class="list-unstyled list-inline text-center menu-icons">
-
-
+        <ul class="list-unstyled list-inline text-center menu-icons mt-1">
             <li class="list-inline-item">
                 <a href="#" id="colorButton">
                     <span class="fs-6 light_text" style="padding-left: 15px;"> الوضع النهاري</span>
