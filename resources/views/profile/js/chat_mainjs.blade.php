@@ -45,6 +45,13 @@
         stop_full_load()
     }
 
+    $('#chatInput').on('keydown', function(e) {
+        if (e.keyCode === 13) {
+            console.log('e.keyCode: ', e.keyCode);
+            ChatSend()
+        }
+    });
+
     function ChatSend() {
         var message = $('#chatInput').val()
         var conn = $('#internet_conn').val()
