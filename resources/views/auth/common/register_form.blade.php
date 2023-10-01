@@ -243,8 +243,8 @@
                             <p class="fw-bolder d-flex justify-content-start">رقم الهاتف</p>
                             <input type="text" name="phone" id="phone"
                                 class="form-control input_background"
-                                value="{{ isset($user) ? $user->profile->phone : old('phone') }}"
-                                autocomplete="phone">
+                                value="{{ isset($user) ? $user->phone : old('phone') }}"
+                                autocomplete="phone" {{ isset($user) ? 'disabled="disabled"' : '' }}>
                             @error('phone')
                                 <span>
                                     <strong

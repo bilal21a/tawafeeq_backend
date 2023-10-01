@@ -71,7 +71,7 @@ class ProfileController extends Controller
             'marital_status.required' => 'حقل مطلوب',
             'age.required' => 'حقل مطلوب',
             'no_of_childs.required' => 'حقل مطلوب',
-            'phone.required' => 'حقل مطلوب',
+            // 'phone.required' => 'حقل مطلوب',
             'weight.required' => 'حقل مطلوب',
             'height.required' => 'حقل مطلوب',
             'skin_color.required' => 'حقل مطلوب',
@@ -95,7 +95,7 @@ class ProfileController extends Controller
             'marital_status' => ['required'],
             'age' => ['required'],
             'no_of_childs' => ['required'],
-            'phone' => ['required'],
+            // 'phone' => ['required'],
             'weight' => ['required'],
             'height' => ['required'],
             'skin_color' => ['required'],
@@ -123,13 +123,13 @@ class ProfileController extends Controller
         $user->nationality = $request->nationality;
         $user->country_of_residence = $request->country_of_residence;
         $user->city = $request->city;
+        // $user->phone = $request->phone;
         $user->save();
         $profile = $user->profile;
         $profile->type_of_marriage = $request->type_of_marriage;
         $profile->marital_status = $request->marital_status;
         $profile->age = $request->age;
         $profile->no_of_childs = $request->no_of_childs;
-        $profile->phone = $request->phone;
         $profile->weight = $request->weight;
         $profile->height = $request->height;
         $profile->skin_color = $request->skin_color;

@@ -53,6 +53,9 @@ class RegisterController extends Controller
         $customMessages = [
             'name.required' => 'حقل مطلوب',
             'email.required' => 'حقل مطلوب',
+            'email.unique' => 'موجود أصلا',
+            'phone.required' => 'حقل مطلوب',
+            'phone.unique' => 'موجود أصلا',
             'password.required' => 'حقل مطلوب',
             'gender.required' => 'حقل مطلوب',
             'nationality.required' => 'حقل مطلوب',
@@ -62,7 +65,6 @@ class RegisterController extends Controller
             'marital_status.required' => 'حقل مطلوب',
             'age.required' => 'حقل مطلوب',
             'no_of_childs.required' =>'حقل مطلوب',
-            'phone.required' => 'حقل مطلوب',
             'weight.required' => 'حقل مطلوب',
             'height.required' => 'حقل مطلوب',
             'skin_color.required' => 'حقل مطلوب',
@@ -78,7 +80,8 @@ class RegisterController extends Controller
 
         return Validator::make($data, [
             'name' => ['required'],
-            'email' => ['required'],
+            'email' => ['required','unique:users,email'],
+            'phone' => ['required','unique:users,phone'],
             'password' => ['required'],
             'gender' => ['required'],
             'nationality' => ['required'],
@@ -88,7 +91,6 @@ class RegisterController extends Controller
             'marital_status' => ['required'],
             'age' => ['required'],
             'no_of_childs' => ['required'],
-            'phone' => ['required'],
             'weight' => ['required'],
             'height' => ['required'],
             'skin_color' => ['required'],
@@ -116,6 +118,7 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
             'gender' => $data['gender'],
             'nationality' => $data['nationality'],
@@ -128,7 +131,6 @@ class RegisterController extends Controller
             'marital_status' => $data['marital_status'],
             'age' => $data['age'],
             'no_of_childs' => $data['no_of_childs'],
-            'phone' => $data['phone'],
             'weight' => $data['weight'],
             'height' => $data['height'],
             'skin_color' => $data['skin_color'],

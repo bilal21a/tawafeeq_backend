@@ -20,7 +20,6 @@ class CreateProfilesTable extends Migration
             $table->string('marital_status')->nullable();
             $table->string('age')->nullable();
             $table->string('no_of_childs')->nullable();
-            $table->string('phone')->nullable();
             $table->string('weight')->nullable();
             $table->string('height')->nullable();
             $table->string('skin_color')->nullable();

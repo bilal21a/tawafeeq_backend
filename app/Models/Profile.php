@@ -12,7 +12,6 @@ class Profile extends Model
         'marital_status',
         'age',
         'no_of_childs',
-        'phone',
         'weight',
         'height',
         'skin_color',
