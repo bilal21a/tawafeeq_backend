@@ -20,10 +20,10 @@
                                     data-bs-toggle="tab" data-bs-target="#second" role="tab" type="button"
                                     aria-selected="false">الرسائل</button>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#third" role="tab"
                                     type="button" aria-selected="false">تأكيد الهوية</button>
-                            </li>
+                            </li> --}}
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fourth" role="tab"
                                     type="button" aria-selected="false">
@@ -49,14 +49,22 @@
                                 id="first" role="tabpanel">
                                 @include('common.profile.profile')
                             </div>
-                            <div class="tab-pane fade {{ $chat_id != null || $page != null ? 'active show' : '' }}"
-                                id="second" role="tabpanel">
-                                @include('common.profile.chat')
-                                @include('common.profile.chat_error')
-                            </div>
-                            <div class="tab-pane fade" id="third" role="tabpanel">
+                            {{-- @dd(check_expiry()) --}}
+                            @if (check_expiry())
+                                <div class="tab-pane fade {{ $chat_id != null || $page != null ? 'active show' : '' }}"
+                                    id="second" role="tabpanel">
+                                    @include('common.profile.chat')
+                                    @include('common.profile.chat_error')
+                                </div>
+                            @else
+                                <div class="tab-pane fade {{ $chat_id != null || $page != null ? 'active show' : '' }}"
+                                    id="second" role="tabpanel">
+                                    @include('common.profile.chat_no_package')
+                                </div>
+                            @endif
+                            {{-- <div class="tab-pane fade" id="third" role="tabpanel">
                                 @include('common.profile.identity')
-                            </div>
+                            </div> --}}
                             <div class="tab-pane fade" id="fourth" role="tabpanel">
                                 @include('common.profile.payments')
                             </div>

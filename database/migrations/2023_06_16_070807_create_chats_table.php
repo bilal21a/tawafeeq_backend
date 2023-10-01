@@ -20,6 +20,8 @@ class CreateChatsTable extends Migration
 
             $table->integer('initiator_count')->default(0)->nullable();
             $table->integer('partner_count')->default(0)->nullable();
+            $table->integer('initiator_block')->default(0)->nullable();
+            $table->integer('partner_block')->default(0)->nullable();
             $table->timestamps();
         });
     }

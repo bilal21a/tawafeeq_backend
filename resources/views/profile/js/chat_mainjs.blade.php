@@ -1,5 +1,5 @@
 <script>
-    @if ($chat_id != null)
+    @if (check_expiry() && $chat_id != null)
         const opponent_id = "{{ $partner_id }}"
         const load_chat_id = "{{ $chat_id }}"
 

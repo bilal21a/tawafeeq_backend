@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Traits\RegistersUsers;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -110,6 +111,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $currentDate = Carbon::now();
+        $newDate = $currentDate->addDays(7);
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -117,6 +120,7 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'nationality' => $data['nationality'],
             'country_of_residence' => $data['country_of_residence'],
+            'expired_at' => $newDate,
             'city' => $data['city'],
         ]);
         $user->profile()->create([

@@ -19,7 +19,8 @@ class User extends Model implements Authenticatable
         'country_of_residence',
         'city',
         'password',
-        'last_seen_at'
+        'last_seen_at',
+        'expired_at'
     ];
     protected $casts = [
         'rated_by' => 'integer'

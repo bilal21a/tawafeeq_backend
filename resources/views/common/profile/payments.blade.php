@@ -6,7 +6,7 @@
      @if ($payment)
          <tr>
              <td class="text_align">{{ $payment->plan->name }}</td>
-             <td colspan="2" class="text_align">{{ auth()->user()->exipred_at }}</td>
+             <td colspan="2" class="text_align">{{ auth()->user()->expired_at }}</td>
          </tr>
      @else
          <tr>

@@ -40,7 +40,9 @@ Route::middleware(['auth', 'last_seen'])->group(function () {
     Route::get('profile/edit', [ProfileController::class, 'edit_profile'])->name('edit_profile');
     Route::post('profile/update', [ProfileController::class, 'update_profile'])->name('update_profile');
     Route::post('profile/delete_profile', [ProfileController::class, 'delete_profile'])->name('delete_profile');
-    Route::get('members_profile/{id}', [ProfileController::class, 'members_profile'])->name('members_profile');
+
+    Route::get('members_profile/{id}', [ProfileController::class, 'members_profile'])->name('members_profile')->middleware('expired_check');
+
     Route::post('save_rating', [ProfileController::class, 'save_rating'])->name('save_rating');
 
     Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');

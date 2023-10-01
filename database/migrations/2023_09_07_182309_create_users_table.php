@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('city')->nullable();
             $table->string('rating')->default('0.0')->nullable();
             $table->string('rated_by')->default(0)->nullable();
-            $table->dateTime('exipred_at')->nullable();
+            $table->dateTime('expired_at')->nullable();
             $table->dateTime('last_seen_at')->nullable();
             $table->string('remember_token', 100)->nullable()->default(null);
             $table->timestamps();

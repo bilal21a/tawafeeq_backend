@@ -15,9 +15,9 @@ class ChatController extends Controller
     public function get_chats_heads()
     {
         $chats = Chats::where('partner_id', auth()->id())->orWhere('initiator_id', auth()->id())->get();
-        if ($chats->count()>0) {
+        if (check_expiry() && $chats->count() > 0) {
             return view('profile.chat_heads', compact('chats'));
-        }else{
+        } else {
             return false;
         }
     }
@@ -32,31 +32,33 @@ class ChatController extends Controller
 
     public function send_message(Request $request)
     {
-        $sender_id = auth()->id();
+        if (check_expiry()) {
+            $sender_id = auth()->id();
 
-        $message = new Messages();
-        $message->body = $request->message;
-        $message->sender_id = $sender_id;
-        $message->chat_id = $request->internet_conn;
-        $message->save();
+            $message = new Messages();
+            $message->body = $request->message;
+            $message->sender_id = $sender_id;
+            $message->chat_id = $request->internet_conn;
+            $message->save();
 
-        $chat = Chats::find($request->internet_conn);
-        $sender = $chat->initiator_id == $sender_id ? $chat->initiator : $chat->partner;
-        $reciver = $chat->initiator_id == $sender_id ? $chat->partner : $chat->initiator;
-        $chat->initiator_count = $chat->initiator_id == $sender_id ? 0 : $chat->initiator_count + 1;
-        $chat->partner_count = $chat->partner_id == $sender_id ? 0 : $chat->partner_count + 1;
-        $chat->save();
+            $chat = Chats::find($request->internet_conn);
+            $sender = $chat->initiator_id == $sender_id ? $chat->initiator : $chat->partner;
+            $reciver = $chat->initiator_id == $sender_id ? $chat->partner : $chat->initiator;
+            $chat->initiator_count = $chat->initiator_id == $sender_id ? 0 : $chat->initiator_count + 1;
+            $chat->partner_count = $chat->partner_id == $sender_id ? 0 : $chat->partner_count + 1;
+            $chat->save();
 
-        $notification = 'رسالة جديدة وصلت من ' . $sender->name;
+            $notification = 'رسالة جديدة وصلت من ' . $sender->name;
 
-        generateNotification($sender_id, $reciver->id, $notification);
-        return "message sent successfully";
+            generateNotification($sender_id, $reciver->id, $notification);
+            return "message sent successfully";
+        }
     }
 
     public function chat_load($partner_id)
     {
         $initiator_id = auth()->id();
-        if ($initiator_id==$partner_id) {
+        if ($initiator_id == $partner_id) {
             return redirect()->route('something_went_wrong');
         }
         $chat = Chats::where('partner_id', $partner_id)->where('initiator_id', $initiator_id)->first();

@@ -63,7 +63,7 @@ class PaymentController extends Controller
         $currentDate = Carbon::now();
         $newDate = $currentDate->addDays($plan->days);
         $user = User::find(auth()->id());
-        $user->exipred_at = $newDate;
+        $user->expired_at = $newDate;
         $user->save();
 
         return redirect()->route('home')->with('payment_success','payment done');
