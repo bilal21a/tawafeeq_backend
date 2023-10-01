@@ -13,7 +13,11 @@
                     @if (strpos($timeDifference, 'minute') !== false)
                         {{ str_replace('minutes', 'دقائق', str_replace('ago', 'منذ', $timeDifference)) }}
                     @elseif (strpos($timeDifference, 'hour') !== false)
-                        {{ str_replace('hours', 'ساعات', str_replace('ago', 'منذ', $timeDifference)) }}
+                        @if ($timeDifference == 1)
+                            {{ str_replace('hour', 'ساعة', str_replace('ago', 'منذ', $timeDifference)) }}
+                        @else
+                            {{ str_replace('hours', 'ساعات', str_replace('ago', 'منذ', $timeDifference)) }}
+                        @endif
                     @else
                         {{ str_replace('ago', 'منذ', $timeDifference) }}
                     @endif
