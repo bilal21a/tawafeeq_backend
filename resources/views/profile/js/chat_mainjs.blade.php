@@ -190,6 +190,7 @@
             type: 'GET',
             url: "{{ route('get_profile_visitors') }}",
             success: function(data) {
+                $(".loader").hide();
                 console.log('data: ', data);
                 $('.get_vistors_data').html(data)
             },
