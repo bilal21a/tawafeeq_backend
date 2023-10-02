@@ -184,4 +184,15 @@
     function stop_full_load() {
         $('.main_card').removeClass('overlay-spinner')
     }
+
+    $('.visitors').click(function() {
+        $.ajax({
+            type: 'GET',
+            url: "{{ route('get_profile_visitors') }}",
+            success: function(data) {
+                console.log('data: ', data);
+                $('.get_vistors_data').html(data)
+            },
+        });
+    });
 </script>
