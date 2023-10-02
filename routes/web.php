@@ -73,6 +73,7 @@ Route::get('login_page', [ContentController::class, 'login_page'])->name('login_
 
 // Home page
 Route::get('/', [UserController::class, 'home'])->name('home');
+Route::get('total_members', [UserController::class, 'total_members'])->name('total_members');
 Route::get('home_members/{type}', [UserController::class, 'home_members'])->name('home_members');
 // Members
 Route::match(['GET', 'POST'], '/members', [UserController::class, 'index'])->name('members');

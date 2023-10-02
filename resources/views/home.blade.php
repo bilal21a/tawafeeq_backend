@@ -7,6 +7,19 @@
             display: flex;
             justify-content: start;
         }
+
+        .total_count {
+            margin: 0px;
+            direction: rtl;
+            text-align: right;
+            font-family: Tajawal, sans-serif;
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 1.5;
+            box-sizing: border-box;
+            margin: 0;
+            min-width: 0;
+        }
     </style>
 @endsection
 
@@ -96,6 +109,13 @@
                                     </div>
                                 </form>
                             </div>
+                            <div class="d-flex ">
+                                <div class="total_count ms-3">
+                                </div>
+                                <div class="total_members text-primary fw-bolder d-flex" style="font-size: large;align-items: center;">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -105,11 +125,6 @@
                             srcset="">
                     </div>
                 </div>
-                {{-- </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0"></div>
-                </div> --}}
             </div>
         </div>
         @php
@@ -209,6 +224,15 @@
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
     <script>
+        $.ajax({
+            type: 'GET',
+            url: "{{ route('total_members') }}",
+            success: function(data) {
+                $('.total_count').html('إجمالي الأعضاء')
+                $('.total_members').html(data)
+            },
+        });
+
         @if (session('payment_success'))
             $(document).ready(function() {
                 $('#payment_doneModal').modal('show')
