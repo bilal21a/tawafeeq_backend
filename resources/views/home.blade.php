@@ -2,37 +2,11 @@
 @section('css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <style>
-        form h5 {
-            display: flex;
-            justify-content: start;
-        }
-
-        .total_count {
-            margin: 0px;
-            direction: rtl;
-            text-align: right;
-            font-family: Tajawal, sans-serif;
-            font-size: 16px;
-            font-weight: 900;
-            line-height: 1.5;
-            box-sizing: border-box;
-            margin: 0;
-            min-width: 0;
-        }
-    </style>
 @endsection
-
 @section('content')
-    {{-- @dd(session('payment_success')) --}}
     <main>
         <div class="page-title-container">
             <div class="row">
-                {{-- <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0"></div> --}}
-                {{-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <div class="container">
-                        <div class="mb-5 mt-5">
-                            <div class="row custom-row"> --}}
                 <div class="col-xl-6 col-lg-5 col-md-5 col-sm-12 pb-3 p-sm-0 p-4 p-lg-5 padding_right_lg">
                     <div class="switch-field mb-0">
                         <input type="radio" id="radio-one" name="switch-one" value="yes" checked />
