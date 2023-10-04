@@ -12,7 +12,6 @@
 @section('js')
     <script>
 
-
         const countryCities = @json($countries);
         console.log('countryCities: ', countryCities);
 
