@@ -31,7 +31,7 @@
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fifth" role="tab"
+                                <button class="nav-link visitors" data-bs-toggle="tab" data-bs-target="#fifth" role="tab"
                                     type="button" aria-selected="false">من زار ملفي</button>
                             </li>
                             <li class="nav-item dropdown ms-auto pe-0 d-none responsive-tab-dropdown">

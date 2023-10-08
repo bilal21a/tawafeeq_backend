@@ -17,7 +17,6 @@ trait DataList
             ];
         $data['maritalStatusNames'] = [
             'أرمل',
-            'بكالوريوس',
             'متزوج',
             'مطلق',
             'أرملة',

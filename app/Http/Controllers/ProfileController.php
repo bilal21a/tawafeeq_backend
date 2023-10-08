@@ -38,7 +38,10 @@ class ProfileController extends Controller
         $page=$request->page;
         return view('profile.index', compact('user','payment', 'user_id', 'chat_id','chat', 'partner_id', 'profilevistors','page'));
     }
-
+    public function get_profile_visitors() {
+        $profilevistors = ProfileVistors::where('visited_to_id', Auth::id())->with('user')->latest()->get();
+        return view('profile.get_profile_visitors',compact('profilevistors'));
+        }
     public function members_profile($id)
     {
         $user_id = Auth::id();
