@@ -31,8 +31,8 @@
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link visitors" data-bs-toggle="tab" data-bs-target="#fifth" role="tab"
-                                    type="button" aria-selected="false">من زار ملفي</button>
+                                <button class="nav-link visitors" data-bs-toggle="tab" data-bs-target="#fifth"
+                                    role="tab" type="button" aria-selected="false">من زار ملفي</button>
                             </li>
                             <li class="nav-item dropdown ms-auto pe-0 d-none responsive-tab-dropdown">
                                 <button class="btn btn-icon btn-icon-only btn-foreground mt-2" type="button"
@@ -81,4 +81,17 @@
 
 @section('js')
     @include('profile.js.chat_mainjs')
+    <script>
+        $('.visitors').click(function() {
+            $.ajax({
+                type: 'GET',
+                url: "{{ route('get_profile_visitors') }}",
+                success: function(data) {
+                    $(".loader").hide();
+                    console.log('data: ', data);
+                    $('.get_vistors_data').html(data)
+                },
+            });
+        });
+    </script>
 @endsection
