@@ -63,6 +63,7 @@ Route::middleware(['auth', 'last_seen'])->group(function () {
     Route::get('/read_chat/{chat_id}', [ChatController::class, 'chat_mark_as_read'])->name('chat.chat_id');
     Route::post('/send_message', [ChatController::class, 'send_message'])->name('chat.send_message');
     Route::get('/chat_load/{partner_id}', [ChatController::class, 'chat_load'])->name('chat.chat_load');
+    Route::get('/chat_block/{chat_id}/{type}', [ChatController::class, 'chat_block'])->name('chat.chat_block');
     Route::get('/something_went_wrong', [ChatController::class, 'something_went_wrong'])->name('something_went_wrong');
 });
 // Before Login

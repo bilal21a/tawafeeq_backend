@@ -34,14 +34,16 @@ class ChatController extends Controller
     {
         if (check_expiry()) {
             $sender_id = auth()->id();
-
+            $chat = Chats::find($request->internet_conn);
+            if ($chat->partner_block == 1 || $chat->initiator_block == 1) {
+                return false;
+            }
             $message = new Messages();
             $message->body = $request->message;
             $message->sender_id = $sender_id;
             $message->chat_id = $request->internet_conn;
             $message->save();
 
-            $chat = Chats::find($request->internet_conn);
             $sender = $chat->initiator_id == $sender_id ? $chat->initiator : $chat->partner;
             $reciver = $chat->initiator_id == $sender_id ? $chat->partner : $chat->initiator;
             $chat->initiator_count = $chat->initiator_id == $sender_id ? 0 : $chat->initiator_count + 1;
@@ -74,6 +76,21 @@ class ChatController extends Controller
         $chat->partner_id = $partner_id;
         $chat->save();
         return redirect()->route('profile', ['chat_id' => $chat->id]);
+    }
+    public function chat_block($chat_id, $type)
+    {
+        $chat = Chats::find($chat_id);
+        if ($chat->partner_id == auth()->id()) {
+            $chat->initiator_block = $type;
+            $chat->save();
+            return $chat->partner_block==1||$chat->initiator_block==1?true:false;
+        } elseif ($chat->initiator_id == auth()->id()) {
+            $chat->partner_block = $type;
+            $chat->save();
+            return $chat->partner_block==1||$chat->initiator_block==1?true:false;
+        } else {
+            return false;
+        }
     }
     public function something_went_wrong()
     {

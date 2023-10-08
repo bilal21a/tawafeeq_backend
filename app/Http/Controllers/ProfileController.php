@@ -24,6 +24,7 @@ class ProfileController extends Controller
         $partner_id = null;
         $profilevistors = ProfileVistors::where('visited_to_id', Auth::id())->with('user')->latest()->get();
         $payment=Payment::with('plan')->where('user_id',auth()->id())->first();
+        $chat=null;
         if ($request->chat_id != null) {
             $chat = Chats::find($chat_id);
             if (!$chat) {
@@ -35,7 +36,7 @@ class ProfileController extends Controller
             $partner_id = $chat->initiator_id == auth()->id() ? $chat->partner_id : $chat->initiator_id;
         }
         $page=$request->page;
-        return view('profile.index', compact('user','payment', 'user_id', 'chat_id', 'partner_id', 'profilevistors','page'));
+        return view('profile.index', compact('user','payment', 'user_id', 'chat_id','chat', 'partner_id', 'profilevistors','page'));
     }
 
     public function members_profile($id)

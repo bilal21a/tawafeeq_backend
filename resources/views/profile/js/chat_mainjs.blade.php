@@ -1,11 +1,13 @@
 <script>
+    hide_chat_area(1)
     @if (check_expiry() && $chat_id != null)
         const opponent_id = "{{ $partner_id }}"
         const load_chat_id = "{{ $chat_id }}"
+        var block_type = "{{ $chat->initiator_id == auth()->id() ? 'partner_block' : 'initiator_block' }}";
 
         getChatHeads()
         // firebase_chat_counts()
-        openChat(load_chat_id, opponent_id)
+        openChat(load_chat_id, opponent_id, block_type)
     @endif
     @if ($page == 'chat')
         getChatHeads()
@@ -36,12 +38,15 @@
         });
     }
 
-    function openChat(chat_id, partner_id) {
+    function openChat(chat_id, partner_id, block_type = 0) {
+        console.log('block_type: ', block_type);
         start_full_load()
         read_chat(chat_id)
-        set_chat_attributes(partner_id, chat_id)
+        set_chat_attributes(partner_id, chat_id, block_type)
         get_chat(chat_id, partner_id)
         scroll_to_top()
+        show_chat_area()
+        check_block_status()
         stop_full_load()
     }
 
@@ -164,11 +169,46 @@
         $('.body-chat-message-user').html(`${messeges_html.join('')}`);
     }
 
-    function set_chat_attributes(partner_id, internet_conn) {
+    function block_user(chat_id, type = 1) {
+        if (type == 1) {
+            $('.unblock_btn').show()
+            $('.block_btn').hide()
+        } else {
+            $('.block_btn').show()
+            $('.unblock_btn').hide()
+        }
+        var url = '{{ route('chat.chat_block', [':id', ':type']) }}';
+        url = url.replace(':id', chat_id).replace(':type', type);
+        console.log('url: ', url);
+
+        $.ajax({
+            type: 'GET',
+            url,
+            success: function(data) {
+                console.log('data: ', data);
+                if (data) {
+                    hide_chat_area()
+                } else {
+                    show_chat_area()
+                }
+
+            },
+        });
+    }
+
+    function set_chat_attributes(partner_id, internet_conn, block_type) {
         $('.chats_active_all').removeClass('active');
         $(`#chat_active_${partner_id}`).addClass('active');
         var contactName = $('#contactName_' + partner_id).text();
-        $('.active_chat_name').html(contactName);
+        if (block_type == 1) {
+            var block_btn =
+                `<p class="bloack_status unblock_btn cursor-pointer" onclick="block_user(${internet_conn},0)">unblock</p>
+            <p class="bloack_status block_btn cursor-pointer" style="display:none"  onclick="block_user(${internet_conn},1)">block</p>`
+        } else {
+            var block_btn = `<p class="bloack_status cursor-pointer unblock_btn" style="display:none"  onclick="block_user(${internet_conn},0)">unblock</p>
+            <p class="bloack_status block_btn cursor-pointer"  onclick="block_user(${internet_conn},1)">block</p>`
+        }
+        $('.active_chat_name').html(`${contactName} ${block_btn}`);
         var contactsubHeading = $('#contactsubHeading_' + partner_id).text();
         $('.active_chat_subHeading').html(contactsubHeading);
         var contactImg = $('#contactImg_' + partner_id).attr('src');
@@ -183,5 +223,25 @@
 
     function stop_full_load() {
         $('.main_card').removeClass('overlay-spinner')
+    }
+
+    function show_chat_area() {
+        $('.footer-chat-message-user').show()
+        $('.footer-chat-blocked').hide()
+    }
+
+    function hide_chat_area(only=0) {
+        $('.footer-chat-message-user').hide()
+        if (only==0) {
+            $('.footer-chat-blocked').show()
+        }
+    }
+
+    function check_block_status() {
+        var partner_block = $('#partner_block').val()
+        var initiator_block = $('#initiator_block').val()
+        if (partner_block == 1 || initiator_block == 1) {
+            hide_chat_area()
+        }
     }
 </script>

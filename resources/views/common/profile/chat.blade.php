@@ -33,5 +33,10 @@
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="margin-right: 0px;"></span>
             </button>
         </div>
+        <div class="footer-chat-blocked" style="display: none">
+            <div class="message-user-send" style="text-align: center;">
+                المعذره لايمكنك مراسلة هذا العضو !!
+            </div>
+        </div>
     </div>
 </div>
