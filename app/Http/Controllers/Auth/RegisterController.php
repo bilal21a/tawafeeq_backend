@@ -114,7 +114,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $currentDate = Carbon::now();
-        $newDate = $currentDate->addDays(7);
+        $newDate = $currentDate->addDays(365);
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
