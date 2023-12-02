@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EmailNotificationMail;
 use App\Models\Chats;
+use App\Models\EmailNotification;
 use App\Models\Messages;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ChatController extends Controller
 {
@@ -27,6 +32,7 @@ class ChatController extends Controller
         $count_type = $chat->initiator_id == auth()->id() ? 'initiator_count' : 'partner_count';
         $chat->$count_type = 0;
         $chat->save();
+        EmailNotification::where('chat_id', $chat_id)->delete();
         return 'marked_as read';
     }
 
@@ -53,6 +59,7 @@ class ChatController extends Controller
             $notification = 'رسالة جديدة وصلت من ' . $sender->name;
 
             generateNotification($sender_id, $reciver->id, $notification);
+            generateEmailNoti($message->chat_id, $message->id, $sender_id, $reciver->id);
             return "message sent successfully";
         }
     }
@@ -83,11 +90,11 @@ class ChatController extends Controller
         if ($chat->partner_id == auth()->id()) {
             $chat->initiator_block = $type;
             $chat->save();
-            return $chat->partner_block==1||$chat->initiator_block==1?true:false;
+            return $chat->partner_block == 1 || $chat->initiator_block == 1 ? true : false;
         } elseif ($chat->initiator_id == auth()->id()) {
             $chat->partner_block = $type;
             $chat->save();
-            return $chat->partner_block==1||$chat->initiator_block==1?true:false;
+            return $chat->partner_block == 1 || $chat->initiator_block == 1 ? true : false;
         } else {
             return false;
         }

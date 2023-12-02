@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\EmailNotification;
 use App\Models\Notification;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -32,4 +33,12 @@ function check_expiry()
     } else {
         return false;
     }
+}
+function generateEmailNoti($chat_id,$message_id,$sender_id, $reciver_id) {
+    $email_notification = new EmailNotification();
+    $email_notification->chat_id = $chat_id;
+    $email_notification->message_id = $message_id;
+    $email_notification->reciver_id = $reciver_id;
+    $email_notification->sender_id = $sender_id;
+    $email_notification->save();
 }
