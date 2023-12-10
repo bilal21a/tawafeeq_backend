@@ -116,8 +116,7 @@
     function get_chat(chat_id, partner_id) {
         var itemsRef = firebase
         .database()
-        // .ref('messages').orderByChild('chat_id').equalTo(Number.parseInt(chat_id));
-        .ref('messages').orderByChild('chat_id').equalTo(24);
+        .ref('messages').orderByChild('chat_id').equalTo(Number.parseInt(chat_id));
         console.log('itemsRef: ', itemsRef);
 
         itemsRef.on("value", snapshot => {
