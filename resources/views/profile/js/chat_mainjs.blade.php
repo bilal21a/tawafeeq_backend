@@ -121,6 +121,7 @@
         itemsRef.on("value", snapshot => {
 
             let data = snapshot.val();
+            console.log('data: ', data);
             let messages = [];
             if (data) {
                 Object.keys(data).forEach(key => {

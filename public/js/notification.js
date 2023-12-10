@@ -1,5 +1,3 @@
-console.log('firebaseConfig: ', firebaseConfig);
-
 function generatealert(color = 'primary', message, timer = 5000) {
     color = color == 'info' ? 'primary' : color
     const rand = Math.ceil(Math.random() * 10000000);
