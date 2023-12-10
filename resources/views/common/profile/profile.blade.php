@@ -53,7 +53,7 @@
                 <div class="col-md-8 align-self-center">
                     <ul class="no-bullets">
                         <li>{{ $user->name }}
-                            <img width="30px" src="verified.png" alt="" srcset="">
+                            <img width="30px" src="{{ asset('assets/img/verified.png') }}" alt="" srcset="">
                         </li>
                         <li>{{ $user->country_of_residence }}-{{ $user->city }}</li>
                         <li> {{ $user->profile->age }}سنة</li>
