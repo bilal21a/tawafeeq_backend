@@ -106,7 +106,7 @@
     <script src="{{ asset('js/base/nav.js') }} "></script>
     <script src="{{ asset('js/base/search.js') }} "></script>
     <script src="{{ asset('js/base/settings.js') }} "></script>
-    <script src="{{ asset('js/base/init.js') }}"></script>
+    {{-- <script src="{{ asset('js/base/init.js') }}"></script> --}}
     <script src="{{ asset('js/cs/glide.custom.js') }} "></script>
     <script src="{{ asset('js/plugins/carousels.js') }} "></script>
     <script src="{{ asset('js/common.js') }} "></script>
