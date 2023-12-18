@@ -425,7 +425,7 @@
             <div class="card">
                 <div class="card-body p-0">
                     <div class=" p-4 fw-bold fs-6" dir="rtl">
-                        شروط وقوانين موقع تَوَافِيْق لجمع راسين بالحلال<br> <input type="checkbox" id="myCheckbox"
+                        شروط وقوانين موقع هدهدة لجمع راسين بالحلال<br> <input type="checkbox" id="myCheckbox"
                             name="myCheckbox" required> لقد قرأت <a href="{{ route('termcondition') }}" class="text-primary"> شروط
                             الموقع و قوانينه </a> وأوافق على كل ما
                         جاء فيه
